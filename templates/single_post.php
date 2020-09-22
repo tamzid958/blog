@@ -39,8 +39,10 @@ include "../includes/categories_header.php";
                     echo " <div class='card card-comment'><div class='media'>
                     <img src='https://dummyimage.com/64x64/000000/f5f5f5.png' class='mr-3 rounded-circle author' alt=''>
                     <div class='media-body'>
-                        <h5 class='mt-0'>Commenter Name</h5>
+                        <h5 class='mt-0 text-dark'>Commenter Name</h5>
+                        <p class='text-dark'>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <p>
                     </div>
                     </div>
                 </div>";
