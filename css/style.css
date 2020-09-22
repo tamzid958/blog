@@ -151,3 +151,6 @@ input:checked + .slider:before {
 #post-slug {
   text-transform: lowercase;
 }
+.analytics-card {
+  padding: 20px;
+}

@@ -11,13 +11,15 @@ include "includes/admin_header.php";
         <div class="wrapper">
             <h1 class="text-center">ANALYTICAL VIEW</h1>
             <div class="div-visit-view">
-                <div class="row">
+                <div class="card analytics-card">
+                    <div class="row">
 
-                    <div class="col-md-6">
-                        <canvas id="visit-view"></canvas>
-                    </div>
-                    <div class="col-md-6">
-                        <canvas id="site-stay-time"></canvas>
+                        <div class="col-md-6">
+                            <canvas id="visit-view"></canvas>
+                        </div>
+                        <div class="col-md-6">
+                            <canvas id="site-stay-time"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
