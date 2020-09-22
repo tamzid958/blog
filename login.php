@@ -11,8 +11,8 @@ include "includes/header.php";
                 <div class="col-sm-6" style="margin:0 auto;">
                     <div class="card card-login">
                         <h1 class="text-dark">Enter Login Details</h1>
-                        <input type="email" class="form-control" id="author_email">
-                        <input type="password" class="form-control" id="author_password">
+                        <input type="email" class="form-control" id="author_email" placeholder="Email Address">
+                        <input type="password" class="form-control" id="author_password" placeholder="Password">
                         <a href="post.php" type="button" class="btn btn-primary btn-lg btn-block">Login</a>
                     </div>
                 </div>
