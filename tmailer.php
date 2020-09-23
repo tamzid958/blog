@@ -33,13 +33,17 @@ include "includes/admin_header.php";
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>email@address.com</td>
-                                <td><a href='' type='button' class='btn btn-success btn-sm' data-toggle="modal" data-target="#editmail">Edit</a>
-                                    <a href='' type='button' class='btn btn-danger btn-sm'>Delete</a></td>
-                            </tr>
 
+                            <?php
+                            for ($i = 0; $i < 10; $i++) {
+
+                                echo " <tr><th scope='row'>$i</th>
+                                    <td>email@address.com</td>
+                                    <td><a href='' type='button' class='btn btn-success btn-sm' data-toggle='modal' data-target='#editmail'>Edit</a>
+                                        <a href='' type='button' class='btn btn-danger btn-sm'>Delete</a></td></tr>";
+                            }
+
+                            ?>
                         </tbody>
 
                     </table>
