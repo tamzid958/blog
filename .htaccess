@@ -1,7 +1,18 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php
+Options +FollowSymLinks -MultiViews
+DirectoryIndex index.php
 
-RewriteCond %{REQUEST_URI} !(.*)templates 
-RewriteRule ^(.*)$ templates/$1 [L]
+# enable apache rewrite engine
+RewriteEngine on
+
+# set your rewrite base
+# Edit this in your init method too if you script lives in a subfolder
+RewriteBase /
+
+# Deliver the folder or file directly if it exists on the server
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+ 
+# Push every request to index.php
+RewriteRule ^(.*)$ index.php [QSA]
+
+RewriteRule ^templates/(.*)$ /$1 [L,NC,R]
