@@ -21,7 +21,16 @@ include "includes/admin_header.php";
                     <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
                 </div>
             </div>
-
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="author-site-logo-img">
+                    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Logo and Favicon</label>
+                </div>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+                </div>
+            </div>
+            <input type="text" class="form-control" id="author_site_name" placeholder="Enter Site Name">
             <input type="text" class="form-control" id="author_name" placeholder="Enter Author Name">
             <input type="tel" class="form-control" id="author_tel" placeholder="Enter Author Mobile Number">
             <input type="email" class="form-control" id="author_email" placeholder="Enter Author Email">
