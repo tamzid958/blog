@@ -52,7 +52,7 @@ include "includes/admin_header.php";
                 </button>
             </div>
             <div class="modal-body">
-                <input type="text" id="edit_category_name" class="form-control" placeholder="Edit New Category">
+                <input type="text" id="edit_category_name" class="form-control" placeholder="Edit Category">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
