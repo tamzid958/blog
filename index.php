@@ -6,10 +6,10 @@ include "includes/categories_header.php";
 </head>
 
 <body>
-    <div class="container text-dark">
+    <div class="container">
         <div class="wrapper">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 text-dark">
                     <div class="row">
                         <?php
 
@@ -27,7 +27,7 @@ include "includes/categories_header.php";
                 </div>
                 <div class="col-md-4">
                     <br>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush text-dark">
                         <div class="card card-inner">
                             <h3>&nbsp; &nbsp; Featured Topics</h3>
                             <?php

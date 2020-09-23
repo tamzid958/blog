@@ -6,10 +6,10 @@ include "../includes/categories_header.php";
 </head>
 
 <body>
-    <div class="container text-dark">
+    <div class="container">
         <div class="wrapper">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 text-dark">
                     <div class="row">
                         <?php
 
