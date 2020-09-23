@@ -21,7 +21,7 @@ include "includes/admin_header.php";
                     <br>
                     <button type="button" class="btn btn-primary btn-lg btn-block">SEND MAIL</button>
                 </div>
-                <div class="col-md-4 text-dark">
+                <div class="col-md-4">
                     <h1 class="text-center">MAIL LIST</h1>
                     <input type="email" name="" class="form-control" id="search-mail" placeholder="SEARCH EMAIL ADDRESS">
                     <table class="table table-info">

@@ -21,7 +21,7 @@ include "includes/admin_header.php";
                         <img src='https://dummyimage.com/600x400/cc2669/f5f5f5.png' class='card-img' alt=''>
                     </div>
                     <div class='col-md-8'>
-                        <div class='card-body'>
+                        <div class='card-body text-dark'>
                             <h3 class='card-title'>Post Heading</h3>
                             <p class='card-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, quod. Maxime nesciunt architecto, earum laborum quasi quo nihil dolore repellat aperiam? Vero ad reiciendis atque excepturi itaque iste, ratione voluptatum.</p>
                             <p class='card-text'><span class='text-mute'>Category: </span><mark>category-name</mark> &nbsp;
