@@ -143,6 +143,9 @@ input:checked + .slider:before {
   margin-top: 5px;
 }
 .card {
+  transition: 0.6s;
+}
+.card:hover {
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 }
 #adsense-code {
