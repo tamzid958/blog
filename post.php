@@ -13,22 +13,23 @@ include "includes/admin_header.php";
             <input type="text" id="search-post" class="form-control" placeholder="Search Post">
             <?php
 
-            for ($i = 0; $i < 20; $i++) {
 
-                echo "     <div class='card mb-3 card-gap'>
+            foreach ($posts as $post) {
+
+                echo "<div class='card mb-3 card-gap'>
                 <div class='row no-gutters'>
                     <div class='col-md-4'>
-                        <img src='https://dummyimage.com/600x400/cc2669/f5f5f5.png' class='card-img' alt=''>
+                        <img src='" . $post["post_img"] . "' class='card-img' alt=''>
                     </div>
                     <div class='col-md-8'>
                         <div class='card-body text-dark'>
-                            <h3 class='card-title'>Post Heading</h3>
-                            <p class='card-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, quod. Maxime nesciunt architecto, earum laborum quasi quo nihil dolore repellat aperiam? Vero ad reiciendis atque excepturi itaque iste, ratione voluptatum.</p>
-                            <p class='card-text'><span class='text-mute'>Category: </span><mark>category-name</mark> &nbsp;
-                            <span class='text-muted'>Date: </span><mark>date-time</mark></p>
-                            <a href='edit_post.php' type='button' class='btn btn-success btn-lg'>Edit</a>
-                            <a href='#' type='button' data-toggle='modal' data-target='#commentModal' class='btn btn-info btn-lg'>Check Comments</a>
-                            <a href= '' type='button' class='btn btn-danger btn-lg'>Delete</a>
+                            <h3 class='card-title'>" . $post["post_heading"] . "</h3>
+                            <p class='card-text p-wrap'>" . $post["post_body"] . "</p>
+                            <p class='card-text'><span class='text-mute'>Category: </span><mark>" . $post["category_id"] . "</mark> &nbsp;
+                            <span class='text-muted'>Date: </span><mark>" . $post["created_at"] . "</mark></p>
+                            <a href='edit_post.php/" . $post["post_slug"] . "' type='button' class='btn btn-success btn-sm' id=" . $post["post_id"] . ">Edit</a>
+                            <a href='#' type='button' data-toggle='modal' data-target='#commentModal' id=" . $post["post_id"] . " class='btn btn-info btn-sm'>Check Comments</a>
+                            <a href= '' type='button' class='btn btn-danger btn-sm'>Delete</a>
                         </div>
                     </div>
                 </div>

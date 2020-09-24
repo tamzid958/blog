@@ -1,8 +1,13 @@
 <!-- Image and text -->
+<?php
+$author = getauthor();
+$categories = getcategories();
+$posts = getallposts();
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="author.php">
-        <img src="/images/logo/author.jpg" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
-        Tamzid Ahmed
+        <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
+        <?php echo $site_details[0]["author_name"] ?>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav_admin" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

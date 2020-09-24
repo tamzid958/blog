@@ -1,9 +1,11 @@
 <?php
 include "includes/header.php";
 include "includes/admin_header.php";
+$post_slug = substr($_SERVER['REQUEST_URI'], 15);
+$post = getPost($post_slug);
 ?>
 
-<title>Edit Post | </title>
+<title>Edit Post | <?php echo $post[0]["post_heading"] ?> </title>
 </head>
 
 <body>
@@ -13,17 +15,22 @@ include "includes/admin_header.php";
         <div class="wrapper">
 
             <h1>Edit Post</h1>
-            <input type="hidden" id="post_id" value="">
-            <input type="text" class="form-control" id="post-slug" placeholder="Edit Post Slug (Unique)">
-            <input type="text" class="form-control" id="post-heading" placeholder="Edit Heading">
-            <textarea class="form-control admin_textarea" id="post-body" rows="20" placeholder="Edit Post Description"></textarea>
-            <select class="form-control" id="post-cateogry">
-                <option selected disabled>Edit Category</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <input type="hidden" id="post_id" value="<?php echo $post[0]["post_id"] ?>" required>
+            <input type="text" class="form-control" value="<?php echo $post[0]["post_slug"] ?>" id="post-slug" placeholder="Edit Post Slug (Unique)" required>
+            <input type="text" class="form-control" value="<?php echo $post[0]["post_heading"] ?>" id="post-heading" placeholder="Edit Heading" required>
+            <textarea class="form-control admin_textarea" id="post-body" rows="20" placeholder="Edit Post Description" required><?php echo $post[0]["post_body"] ?></textarea>
+            <select class="form-control" id="post-cateogry" required>
+                <option disabled>Edit Category</option>
+                <?php
+                foreach ($categories as $category) {
+                    if ($post[0]["category_id"] == $category["category_id"]) {
+                        echo "<option selected value=" . $category["category_id"] . ">" . $category["category_name"] . "</option>";
+                    } else {
+                        echo "<option value=" . $category["category_id"] . ">" . $category["category_name"] . "</option>";
+                    }
+                }
+
+                ?>
             </select>
             <div class="input-group mb-3">
                 <div class="custom-file">
@@ -31,11 +38,18 @@ include "includes/admin_header.php";
                     <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Edit Featured Image</label>
                 </div>
             </div>
-            <input type="text" class="form-control" id="post-featured-img-alt" placeholder="Edit Alt text For Featured Image">
-            <select class="form-control" id="post-featured-cateogry">
+            <input type="text" class="form-control" id="post-featured-img-alt" value="<?php echo $post[0]["post_alt"] ?>" placeholder="Edit Alt text For Featured Image">
+            <select class="form-control" id="post-featured-cateogry" required>
                 <option disabled>Select Feature Category</option>
-                <option selected>Normal</option>
-                <option>Featured</option>
+                <?php
+                if ($post[0]["feature_category"] == "Featured") {
+                    echo "<option selected>Featured</option>";
+                } else {
+                    echo "<option selected>Normal</option>";
+                }
+
+
+                ?>
             </select>
             <button type="button" class="btn btn-success btn-lg btn-block">Edit</button>
 

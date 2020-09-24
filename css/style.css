@@ -1,5 +1,6 @@
 * {
   font-family: "Dosis", sans-serif;
+  font-size: 1rem;
 }
 a,
 a:hover,
@@ -22,6 +23,7 @@ a:active {
 }
 
 body {
+  height: 100vh;
   transition: 1s;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
@@ -110,6 +112,12 @@ input:checked + .slider:before {
   margin-bottom: 10px;
   clear: both;
 }
+.p-wrap {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .card-login,
 .card-inner {
   padding: 40px;
@@ -157,4 +165,7 @@ input:checked + .slider:before {
 }
 .analytics-card {
   padding: 20px;
+}
+#author-data-save {
+  transition: 0.4s;
 }

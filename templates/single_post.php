@@ -24,8 +24,8 @@ include "../includes/categories_header.php";
             <div class="addthis_inline_share_toolbox"></div>
 
             <a class="navbar-brand">
-                <img src="/images/logo/author.jpg" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
-                Tamzid Ahmed
+                <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
+                <?php echo $site_details[0]["author_name"] ?>
             </a>
             <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-info">Follow</a>
             <div class="comment-div">
