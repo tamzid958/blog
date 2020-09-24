@@ -176,6 +176,9 @@ function authenticate($email, $password)
     $password = md5($password);
     $query = "SELECT `author_mail` from `author` WHERE `author_mail`='$email' AND `password`='$password'";
     $author = getArray($query);
-    $_SESSION["username"] = md5($author[0]["author_mail"]);
-    return true;
+
+    if ($author) {
+        $_SESSION["username"] = md5($author[0]["author_mail"]);
+    }
+    return $author;
 }
