@@ -1,8 +1,12 @@
-<!-- Image and text -->
 <?php
 $author = getauthor();
 $categories = getcategories();
 $posts = getallposts();
+
+if ($_SESSION["username"] == md5($author[0]["author_mail"])) {
+} else {
+    header("Location: ./controller/log_out.php");
+}
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="author.php">
@@ -28,6 +32,9 @@ $posts = getallposts();
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="/add_new_post.php">Add New Post</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/controller/log_out.php">Log Out</a>
             </li>
         </ul>
     </div>

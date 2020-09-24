@@ -1,10 +1,13 @@
 <?php
 session_start();
 ob_start();
+?>
+<?php
+
 if (file_exists("./controller/controller.php")) {
-    include "./controller/controller.php";
+    require_once "./controller/controller.php";
 } else {
-    include "../controller/controller.php";
+    require_once "../controller/controller.php";
 }
 $site_details = sitedetails();
 ?>

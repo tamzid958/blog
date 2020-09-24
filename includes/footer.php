@@ -1,13 +1,9 @@
-<div class="bg-dark text-white copyright-div" id="copyright-div">
-    <div class="container">
-        <p class="text-center">Copyright &#169; by Tamzid Ahmed </p>
-    </div>
-</div>
-
-
-
 <footer>
-
+    <div class="bg-dark text-white copyright-div" id="copyright-div">
+        <div class="container">
+            <p class="text-center">Copyright &#169; by Tamzid Ahmed </p>
+        </div>
+    </div>
 
     <script type="text/javascript" src="/scripts/jquery.js"></script>
     <script type="text/javascript" src="/scripts/popper.min.js"></script>

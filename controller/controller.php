@@ -1,5 +1,4 @@
 <?php
-
 require_once "config.inc.php";
 
 $err_invalid = "";
@@ -80,6 +79,13 @@ if (isset($_POST["category_update_id"])) {
 
 if (isset($_POST["new_category_name"])) {
     insertcategory($_POST["new_category_name"]);
+}
+if (isset($_POST["login"])) {
+    if (authenticate($_POST["author_email"], $_POST["author_password"])) {
+        header("Location: post.php");
+    } else {
+        $err_invalid = "Wrong Email or Password";
+    }
 }
 function getauthor()
 {
@@ -163,4 +169,13 @@ function getpost($slug)
     $query = "SELECT * FROM `post` WHERE `post_slug` ='$slug'";
     $post = getArray($query);
     return $post;
+}
+
+function authenticate($email, $password)
+{
+    $password = md5($password);
+    $query = "SELECT `author_mail` from `author` WHERE `author_mail`='$email' AND `password`='$password'";
+    $author = getArray($query);
+    $_SESSION["username"] = md5($author[0]["author_mail"]);
+    return true;
 }

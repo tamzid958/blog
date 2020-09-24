@@ -23,11 +23,14 @@ a:active {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   transition: 1s;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+footer {
+  margin-top: 10vh;
 }
 body::-webkit-scrollbar {
   overflow-y: scroll;
