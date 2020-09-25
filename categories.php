@@ -21,8 +21,9 @@ include "includes/admin_header.php";
                     <thead>
                         <tr>
                             <th scope="col">#ID</th>
+                            <th></th>
+                            <th></th>
                             <th scope="col">Category</th>
-                            <th scope="col">Count of Posts</th>
                             <th scope="col">Edit/Delete</th>
                         </tr>
                     </thead>
@@ -31,8 +32,9 @@ include "includes/admin_header.php";
                         foreach ($categories as $category) {
                             echo "<tr>
                             <th scope='row'>" . $category["category_id"] . "</th>
-                            <td>" . $category["category_name"] . "</td>
-                            <td>10</td>";
+                            <th></th>
+                            <th></th>
+                            <td>" . $category["category_name"] . "</td>";
                             if ($category["category_id"] == "1") {
 
                                 echo "<td></td></tr>";
