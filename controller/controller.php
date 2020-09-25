@@ -175,13 +175,10 @@ if (isset($_POST["bulk-mail"])) {
 
 function bulkmailer($subject, $mailbody)
 {
-    $from = "mrtvirus@sgvip4.noc401.com";
 
-    $headers  = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From: ' . $from . "\r\n" .
-        'Reply-To: ' . $from . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
+    $headers .= 'From: name' . "\r\n";
 
     $email_subject = $subject;
     $email_body = "$mailbody";
