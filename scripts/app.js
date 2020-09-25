@@ -312,4 +312,101 @@ $(document).ready(function () {
       },
     });
   });
+  $(".edit-tmail").click(function () {
+    var tmail_id = $(this).attr("id");
+
+    $.ajax({
+      url: "./controller/controller.php",
+      method: "post",
+      datatype: "json",
+      data: {
+        tmail_id: tmail_id,
+      },
+      success: function (data) {
+        data = $.parseJSON(data);
+        $("#tmailer-modal-head").html(data["email"]);
+        $("#edit_mail_id").val(data["id"]);
+        $("#edit_email").val(data["email"]);
+        $("#editmail").modal();
+      },
+    });
+  });
+  setInterval(function () {
+    if ($("#edit_email").val() == null || $("#edit_email").val() == "") {
+      $("#edit-tmail-btn-modal").attr("disabled", true);
+    } else {
+      $("#edit-tmail-btn-modal").attr("disabled", false);
+    }
+  }, 200);
+
+  $("#edit-tmail-btn-modal").click(function () {
+    var edit_mail_id = $("#edit_mail_id").val();
+    var edit_email = $("#edit_email").val();
+
+    $("#edit-tmail-btn-modal").html(
+      'Changing <img src="/images/logo/ajax-loader.gif" id="ajax-loader width="15" height="15"" />'
+    );
+    $.ajax({
+      url: "./controller/controller.php",
+      method: "post",
+      data: {
+        edit_mail_id: edit_mail_id,
+        edit_email: edit_email,
+      },
+      success: function (data) {
+        setTimeout(function () {
+          $(".close").click();
+          $("#edit-tmail-btn-modal").html("Save changes");
+          location.reload();
+          return false;
+        }, 2000);
+      },
+    });
+  });
+  $(".delete-tmail").click(function () {
+    var delete_tmail = $(this).attr("id");
+    $.ajax({
+      url: "./controller/controller.php",
+      method: "post",
+      data: {
+        delete_tmail: delete_tmail,
+      },
+      success: function (data) {
+        location.reload();
+        return false;
+      },
+    });
+  });
+
+  $("#add_new-mail-btn").click(function () {
+    $("#add_new-mail-btn").html(
+      'Creating <img src="/images/logo/ajax-loader.gif" id="ajax-loader width="15" height="15"" />'
+    );
+    var addnew_mail = $("#addnew-mail").val();
+    $.ajax({
+      url: "./controller/controller.php",
+      method: "post",
+      data: {
+        addnew_mail: addnew_mail,
+      },
+      success: function (data) {
+        setTimeout(function () {
+          $("#add_new-mail-btn").html("Created");
+        }, 1000);
+        setTimeout(function () {
+          $("#add_new-mail-btn").html("Create");
+          location.reload();
+          return false;
+        }, 2000);
+      },
+    });
+  });
+
+  setInterval(function () {
+    if ($("#addnew-mail").val() == null || $("#addnew-mail").val() == "") {
+      $("#add_new-mail-btn").attr("disabled", true);
+    } else {
+      $("#add_new-mail-btn").attr("disabled", false);
+    }
+  }, 200);
 });

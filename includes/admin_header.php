@@ -2,7 +2,7 @@
 $author = getauthor();
 $categories = getcategories();
 $posts = getallposts();
-
+$subs = getallsubs();
 if ($_SESSION["username"] == md5($author[0]["author_mail"])) {
 } else {
     header("Location: ./controller/log_out.php");

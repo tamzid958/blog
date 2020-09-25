@@ -154,6 +154,62 @@ if (isset($_POST["add_new_post"])) {
 if (isset($_POST["post_id_del"])) {
     deletepost($_POST["post_id_del"]);
 }
+if (isset($_POST["tmail_id"])) {
+
+    gettmail($_POST["tmail_id"]);
+}
+if (isset($_POST["edit_mail_id"])) {
+    updatetmail($_POST["edit_mail_id"], $_POST["edit_email"]);
+}
+if (isset($_POST["delete_tmail"])) {
+    deletetmail($_POST["delete_tmail"]);
+}
+if (isset($_POST["addnew_mail"])) {
+    insertmail($_POST["addnew_mail"]);
+}
+if (isset($_POST["bulk-mail"])) {
+    if (bulkmailer($_POST["mail-subject"], $_POST["mail-subject"])) {
+        $err_invalid = "Something Seriously Wrong";
+    }
+}
+
+function bulkmailer($subject, $mailbody)
+{
+    $email_subject = $subject;
+    $email_body = wordwrap($mailbody);
+    $query = "SELECT `email` FROM `subscriber`";
+    $recipentsmail = getArray($query);
+    foreach ($recipentsmail as $recipentmail) {
+        $to = $recipentmail["email"];
+        try {
+            mail($to, $email_subject, $email_body);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+}
+function insertmail($mail)
+{
+    $query = "INSERT INTO `subscriber`(`id`, `email`) VALUES (NULL,'$mail')";
+    execute($query);
+}
+
+function deletetmail($id)
+{
+    $query = "DELETE FROM `subscriber` WHERE `id`= '$id'";
+    execute($query);
+}
+function updatetmail($mail_id, $mail)
+{
+    $query = "UPDATE `subscriber` SET `email`='$mail' WHERE `id`='$mail_id'";
+    execute($query);
+}
+function gettmail($tmail_id)
+{
+    $query = "SELECT * FROM `subscriber` WHERE`id`= '$tmail_id'";
+    $subs = getArray($query);
+    echo json_encode($subs[0]);
+}
 function deletepost($post_id)
 {
     $query = "DELETE FROM `post` WHERE `post_id`= '$post_id'";
@@ -304,4 +360,10 @@ function featuredpost()
     $query = "SELECT * FROM `post` WHERE `feature_category`='Featured'";
     $featuredpost = getArray($query);
     return  $featuredpost;
+}
+function getallsubs()
+{
+    $query = "SELECT * FROM `subscriber`";
+    $subs = getArray($query);
+    return $subs;
 }

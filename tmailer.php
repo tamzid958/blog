@@ -12,14 +12,16 @@ include "includes/admin_header.php";
             <div class="row">
                 <div class="col-md-8">
                     <h1 class="text-center">ADD NEW MAIL</h1>
-                    <input type="email" name="" class="form-control" id="add-new-mail" placeholder="EMAIL ADDRESS">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">ADD NEW MAIL</button>
+                    <input type="email" name="" class="form-control" id="addnew-mail" placeholder="EMAIL ADDRESS" required>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="add_new-mail-btn">ADD NEW MAIL</button>
                     <br>
-                    <h1 class="text-center">SEND BULK MAIL</h1>
-                    <input type="text" name="" class="form-control" id="mail-subject" placeholder="Subject of the mail">
-                    <textarea class="form-control admin_textarea" id="post-body" rows="20" placeholder="Mail Body"></textarea>
-                    <br>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">SEND MAIL</button>
+                    <form action="" method="post">
+                        <h1 class="text-center">SEND BULK MAIL</h1>
+                        <input type="text" name="mail-subject" class="form-control" id="mail-subject" placeholder="Subject of the mail" required>
+                        <textarea class="form-control admin_textarea" name="post-body" id="post-body" rows="20" placeholder="Mail Body"></textarea>
+                        <br>
+                        <button type="submit" name="bulk-mail" class="btn btn-primary btn-lg btn-block">SEND MAIL</button>
+                    </form>
                 </div>
                 <div class="col-md-4">
                     <h1 class="text-center">MAIL LIST</h1>
@@ -35,12 +37,12 @@ include "includes/admin_header.php";
                         <tbody>
 
                             <?php
-                            for ($i = 0; $i < 10; $i++) {
+                            foreach ($subs as $sub) {
 
-                                echo " <tr><th scope='row'>$i</th>
-                                    <td>email@address.com</td>
-                                    <td><a href='' type='button' class='btn btn-success btn-sm' data-toggle='modal' data-target='#editmail'>Edit</a>
-                                        <a href='' type='button' class='btn btn-danger btn-sm'>Delete</a></td></tr>";
+                                echo " <tr><th scope='row'>" . $sub['id'] . "</th>
+                                    <td>" . $sub['email'] . "</td>
+                                    <td><a href='' type='button' class='btn btn-success btn-sm edit-tmail' data-toggle='modal' id=" . $sub['id'] . ">Edit</a>
+                                        <a href='' type='button' class='btn btn-danger btn-sm delete-tmail' id=" . $sub['id'] . ">Delete</a></td></tr>";
                             }
 
                             ?>
@@ -61,17 +63,18 @@ include "includes/admin_header.php";
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Mail</h5>
+                    <h5 class="modal-title" id="">Edit Mail: <span id="tmailer-modal-head"></span></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
+                    <input type="hidden" id="edit_mail_id">
                     <input type="email" id="edit_email" class="form-control" placeholder="Edit Mail">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" id="edit-tmail-btn-modal" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
