@@ -21,6 +21,7 @@ include "includes/admin_header.php";
                         <textarea class="form-control admin_textarea" name="mail-body" id="mail-body" rows="20" placeholder="Mail Body"></textarea>
                         <br>
                         <button type="submit" name="bulk-mail" class="btn btn-primary btn-lg btn-block">SEND MAIL</button>
+                        <p class="text-center text-danger"><?php echo $err_invalid ?></p>
                     </form>
                 </div>
                 <div class="col-md-6">
