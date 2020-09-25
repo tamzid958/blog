@@ -226,7 +226,7 @@ function insertpost($post_slug, $post_heading, $post_body_add, $post_category, $
 {
     $post_body = base64_encode($post_body_add);
     $created_at = gmdate("Y-m-d H:i:s", time());
-    $query = "INSERT INTO `post`(`post_id`, `post_slug`, `post_heading`, `post_body`, `category_id`, `post_img`, `post_alt`, `feature_category`, `created_at`, `updated_at`, `post_view`) VALUES (NULL,'$post_slug','$post_heading','$post_body','$post_category','$post_featured_img','$post_featured_img_alt','$post_featured_category','$created_at',NULL,NULL)";
+    $query = "INSERT INTO `post`(`post_id`, `post_slug`, `post_heading`, `post_body`, `category_id`, `post_img`, `post_alt`, `feature_category`, `created_at`, `updated_at`, `post_view`) VALUES (NULL,'$post_slug','$post_heading','$post_body','$post_category','$post_featured_img','$post_featured_img_alt','$post_featured_category','$created_at',NULL,'0')";
     execute($query);
 }
 
@@ -373,4 +373,9 @@ function getallsubs()
     $query = "SELECT * FROM `subscriber` ORDER BY `id` DESC LIMIT 10";
     $subs = getArray($query);
     return $subs;
+}
+function countview($post_url)
+{
+    $query = "UPDATE `post` SET `post_view`=`post_view`+1 WHERE `post_slug`='$post_url'";
+    execute($query);
 }

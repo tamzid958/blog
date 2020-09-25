@@ -3,6 +3,7 @@ include "../includes/header.php";
 include "../includes/categories_header.php";
 $post_url = $_REQUEST["url"];
 $post = getPost($post_url);
+countview($post_url);
 ?>
 <title><?php echo $post[0]["post_heading"] ?> | <?php echo $site_details[0]["site_name"] ?></title>
 </head>
