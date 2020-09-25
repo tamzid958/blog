@@ -18,7 +18,7 @@ include "includes/admin_header.php";
                     <form action="" method="post">
                         <h1 class="text-center">SEND BULK MAIL</h1>
                         <input type="text" name="mail-subject" class="form-control" id="mail-subject" placeholder="Subject of the mail" required>
-                        <textarea class="form-control admin_textarea" name="post-body" id="post-body" rows="20" placeholder="Mail Body"></textarea>
+                        <textarea class="form-control admin_textarea" name="mail-body" id="mail-body" rows="20" placeholder="Mail Body"></textarea>
                         <br>
                         <button type="submit" name="bulk-mail" class="btn btn-primary btn-lg btn-block">SEND MAIL</button>
                     </form>

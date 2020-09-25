@@ -168,7 +168,7 @@ if (isset($_POST["addnew_mail"])) {
     insertmail($_POST["addnew_mail"]);
 }
 if (isset($_POST["bulk-mail"])) {
-    if (bulkmailer($_POST["mail-subject"], $_POST["mail-subject"])) {
+    if (bulkmailer($_POST["mail-subject"], $_POST["mail-body"])) {
         $err_invalid = "Something Seriously Wrong";
     }
 }
@@ -178,17 +178,18 @@ function bulkmailer($subject, $mailbody)
 
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
-    $headers .= 'From: name' . "\r\n";
+    $headers .= 'From: Tamzid Ahmed' . "\r\n";
 
     $email_subject = $subject;
-    $email_body = "$mailbody";
+    $mailbody = "'" . $mailbody . "'";
+
 
     $query = "SELECT `email` FROM `subscriber`";
     $recipentsmail = getArray($query);
     foreach ($recipentsmail as $recipentmail) {
         $to = $recipentmail["email"];
         try {
-            mail($to, $email_subject, $email_body, $headers);
+            mail($to, $email_subject, $mailbody, $headers);
         } catch (Exception $e) {
             return $e->getMessage();
         }
