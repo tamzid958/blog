@@ -184,7 +184,7 @@ function bulkmailer($subject, $mailbody)
         'X-Mailer: PHP/' . phpversion();
 
     $email_subject = $subject;
-    $email_body = $mailbody;
+    $email_body = "$mailbody";
 
     $query = "SELECT `email` FROM `subscriber`";
     $recipentsmail = getArray($query);
