@@ -370,7 +370,7 @@ function featuredpost()
 }
 function getallsubs()
 {
-    $query = "SELECT * FROM `subscriber`";
+    $query = "SELECT * FROM `subscriber` ORDER BY `id` DESC LIMIT 10";
     $subs = getArray($query);
     return $subs;
 }

@@ -39,12 +39,11 @@ include "includes/admin_header.php";
                             <?php
 
                             foreach ($subs as $sub) {
-                                for ($i = 0; $i <= 10; $i++) {
-                                    echo " <tr><th scope='row'>" . $sub['id'] . "</th>
+
+                                echo " <tr><th scope='row'>" . $sub['id'] . "</th>
                                         <td>" . $sub['email'] . "</td>
                                         <td><a href='' type='button' class='btn btn-success btn-sm edit-tmail' data-toggle='modal' id=" . $sub['id'] . ">Edit</a>
                                             <a href='' type='button' class='btn btn-danger btn-sm delete-tmail' id=" . $sub['id'] . ">Delete</a></td></tr>";
-                                }
                             }
 
 
