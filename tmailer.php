@@ -10,7 +10,7 @@ include "includes/admin_header.php";
     <div class="container">
         <div class="wrapper">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <h1 class="text-center">ADD NEW MAIL</h1>
                     <input type="email" name="" class="form-control" id="addnew-mail" placeholder="EMAIL ADDRESS" required>
                     <button type="button" class="btn btn-primary btn-lg btn-block" id="add_new-mail-btn">ADD NEW MAIL</button>
@@ -23,7 +23,7 @@ include "includes/admin_header.php";
                         <button type="submit" name="bulk-mail" class="btn btn-primary btn-lg btn-block">SEND MAIL</button>
                     </form>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <h1 class="text-center">MAIL LIST</h1>
                     <input type="email" name="" class="form-control" id="search-mail" placeholder="SEARCH EMAIL ADDRESS">
                     <table class="table table-info">
@@ -37,13 +37,15 @@ include "includes/admin_header.php";
                         <tbody>
 
                             <?php
-                            foreach ($subs as $sub) {
-
-                                echo " <tr><th scope='row'>" . $sub['id'] . "</th>
-                                    <td>" . $sub['email'] . "</td>
-                                    <td><a href='' type='button' class='btn btn-success btn-sm edit-tmail' data-toggle='modal' id=" . $sub['id'] . ">Edit</a>
-                                        <a href='' type='button' class='btn btn-danger btn-sm delete-tmail' id=" . $sub['id'] . ">Delete</a></td></tr>";
+                            for ($i = 0; $i <= 10; $i++) {
+                                foreach ($subs as $sub) {
+                                    echo " <tr><th scope='row'>" . $sub['id'] . "</th>
+                                        <td>" . $sub['email'] . "</td>
+                                        <td><a href='' type='button' class='btn btn-success btn-sm edit-tmail' data-toggle='modal' id=" . $sub['id'] . ">Edit</a>
+                                            <a href='' type='button' class='btn btn-danger btn-sm delete-tmail' id=" . $sub['id'] . ">Delete</a></td></tr>";
+                                }
                             }
+
 
                             ?>
                         </tbody>
