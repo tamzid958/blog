@@ -175,14 +175,19 @@ if (isset($_POST["bulk-mail"])) {
 
 function bulkmailer($subject, $mailbody)
 {
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
+    $headers .= 'From: name' . "\r\n";
+
     $email_subject = $subject;
-    $email_body = wordwrap($mailbody);
+    $email_body = $mailbody;
+
     $query = "SELECT `email` FROM `subscriber`";
     $recipentsmail = getArray($query);
     foreach ($recipentsmail as $recipentmail) {
         $to = $recipentmail["email"];
         try {
-            mail($to, $email_subject, $email_body);
+            mail($to, $email_subject, $email_body, $headers);
         } catch (Exception $e) {
             return $e->getMessage();
         }
