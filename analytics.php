@@ -72,7 +72,7 @@ include "includes/admin_header.php";
             </div>
         </div>
     </div>
-</body>
-<?php
-include "includes/footer.php";
-?>
+
+    <?php
+    include "includes/footer.php";
+    ?>

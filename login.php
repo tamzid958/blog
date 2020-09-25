@@ -22,7 +22,7 @@ include "includes/header.php";
             </form>
         </div>
     </div>
-</body>
-<?php
-include "includes/footer.php";
-?>
+
+    <?php
+    include "includes/footer.php";
+    ?>

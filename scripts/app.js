@@ -26,11 +26,14 @@ $(document).ready(function () {
 
   $("#author_new_pass").attr("disabled", true);
   $("#author_confirm_pass").attr("disabled", true);
+  $("#author_new_pass").attr("required", false);
+  $("#author_confirm_pass").attr("required", false);
 
   $("#author_old_pass").on("focusout", function () {
     var MD5 = new Hashes.MD5();
     var enc_password = MD5.hex($(this).val());
-
+    $("#author_new_pass").attr("required", true);
+    $("#author_confirm_pass").attr("required", true);
     $.ajax({
       url: "./controller/controller.php",
       method: "post",
@@ -131,6 +134,7 @@ $(document).ready(function () {
 
   $("#author_details_change").submit(function (e) {
     e.preventDefault();
+    tinyMCE.triggerSave();
     var author_details_change_a = $("#author_details_change").attr("id");
     $("#author-data-save").html(
       'Changing <img src="/images/logo/ajax-loader.gif" id="ajax-loader" />'
@@ -140,7 +144,6 @@ $(document).ready(function () {
     var author_tel = $("#author_tel").val();
     var author_email = $("#author_email").val();
     var author_confirm = $("#author_confirm_pass").val();
-    tinyMCE.triggerSave();
     var author_bio = $("#auther-bio").val();
     var author_adsense_code = $("#adsense-code").val();
 
@@ -264,6 +267,48 @@ $(document).ready(function () {
           location.reload();
           return false;
         }, 2000);
+      },
+    });
+  });
+  $("#post-featured-img-edit").on("change", function () {
+    var img = $("#post-featured-img-edit").val();
+    img = img.toLowerCase();
+
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+
+    if (!allowedExtensions.exec(img)) {
+      $("#edit_post_btn_e").text("Invalid File Format");
+      $("#edit_post_btn_e").addClass("bg-danger text-light");
+      $("#edit_post_btn_e").removeClass("bg-info");
+      $("#edit_post_btn_e").attr("disabled", true);
+      img = "";
+      return false;
+    } else {
+      $("#edit_post_btn_e").text("Upload");
+      $("#edit_post_btn_e").removeClass("bg-danger");
+      $("#edit_post_btn_e").addClass("bg-primary text-light");
+      $("#edit_post_btn_e").attr("disabled", false);
+    }
+  });
+  $("#edit_post_btn_e").hover(function () {
+    tinyMCE.triggerSave();
+  });
+  $("#add_new_post").hover(function () {
+    tinyMCE.triggerSave();
+  });
+
+  $(".del-post-btn").click(function (e) {
+    var post_id_del = $(this).attr("id");
+    e.preventDefault();
+    $.ajax({
+      url: "./controller/controller.php",
+      method: "post",
+      data: {
+        post_id_del: post_id_del,
+      },
+      success: function (data) {
+        location.reload();
+        return false;
       },
     });
   });

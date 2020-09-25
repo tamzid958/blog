@@ -1,6 +1,7 @@
 <?php
 session_start();
-ob_start();
+ob_start();;
+
 ?>
 <?php
 
@@ -10,6 +11,9 @@ if (file_exists("./controller/controller.php")) {
     require_once "../controller/controller.php";
 }
 $site_details = sitedetails();
+$categories = getcategories();
+$postsindex = getallposts();
+$featureposts = featuredpost();
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +29,7 @@ $site_details = sitedetails();
     <link rel="stylesheet" href="/css/chart.css" />
     <link rel="shortcut icon" href="/images/logo/<?php echo $site_details[0]["site_favicon"] ?>" type="image/x-icon">
     <link rel="icon" href="/images/logo/<?php echo $site_details[0]["site_favicon"] ?>" type="image/x-icon">
-    <?php echo $site_details[0]["adsense_code"] ?>
+    <?php echo base64_decode($site_details[0]["adsense_code"]) ?>
     <meta name="theme-color" content="#343a40">
     <link rel="stylesheet" href="/css/style.css">
     <header>

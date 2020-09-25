@@ -6,9 +6,9 @@
     <div class="collapse navbar-collapse" id="navbarNav_category">
         <ul class="navbar-nav ml-auto">
             <?php
-            for ($i = 0; $i < 10; $i++) {
+            foreach ($categories as $category) {
                 echo " <li class='nav-item '>
-                <a class='nav-link text-dark' href='/templates/single_category.php'>Category $i</a>
+                <a class='nav-link text-dark' href='/templates/category.php?id=" . $category['category_id'] . "'>" . $category['category_name'] . "</a>
                 </li>";
             }
             ?>

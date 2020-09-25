@@ -2,6 +2,7 @@
 require_once "config.inc.php";
 
 $err_invalid = "";
+$has_error = false;
 
 if (isset($_POST["enc_password"])) {
 
@@ -10,6 +11,7 @@ if (isset($_POST["enc_password"])) {
 
 if (isset($_POST["author-img-upload"])) {
     $file = $_FILES['author-img'];
+    $old_file_name = searchauthorimg();
     $fileName = $_FILES['author-img']['name'];
     $fileTmpName = $_FILES['author-img']['tmp_name'];
     $fileError = $_FILES['author-img']['error'];
@@ -18,6 +20,7 @@ if (isset($_POST["author-img-upload"])) {
     $allowed = array('jpg', 'jpeg', 'png');
     if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
+            @unlink('./images/logo/' . $old_file_name);
             $fileNameNew = "author" . "." . $fileActualExt;
             $fileDestination = './images/logo/' . $fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
@@ -36,6 +39,7 @@ if (isset($_POST["site-logo-upload"])) {
     $allowed = array('png');
     if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
+            @unlink('./images/logo/' . "logo.png");
             $fileNameNew = "logo" . "." . $fileActualExt;
             $fileDestination = './images/logo/' . $fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
@@ -54,6 +58,7 @@ if (isset($_POST["site-favicon-upload"])) {
     $allowed = array('ico');
     if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
+            @unlink('./images/logo/' . "favicon.ico");
             $fileNameNew = "favicon" . "." . $fileActualExt;
             $fileDestination = './images/logo/' . $fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
@@ -87,6 +92,94 @@ if (isset($_POST["login"])) {
         $err_invalid = "Wrong Email or Password";
     }
 }
+if (isset($_POST["edit_post_btn_e"])) {
+
+    $dupli_error = duplicateurlsearchwhileedit($_POST["post_id"], $_POST["post-slug"]);
+    if ($dupli_error > 0) {
+        $err_invalid = "DUPLICATE URL FOUND";
+    } else {
+        $post_img_old = searchimg($_POST["post_id"]);
+        $post_img_old_without_exec = $without_extension = substr($post_img_old, 0, strrpos($post_img_old, "."));
+        $file = $_FILES['post-featured-img-edit'];
+        $fileName = $_FILES['post-featured-img-edit']['name'];
+        $fileTmpName = $_FILES['post-featured-img-edit']['tmp_name'];
+        $fileError = $_FILES['post-featured-img-edit']['error'];
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (in_array($fileActualExt, $allowed)) {
+            if ($fileError === 0) {
+                @unlink('./images/' . $old_file_name);
+                $fileNameNew = $post_img_old_without_exec . "." . $fileActualExt;
+                $fileDestination = './images/' . $fileNameNew;
+                move_uploaded_file($fileTmpName, $fileDestination);
+            }
+        } else {
+            $fileNameNew = $post_img_old;
+        }
+        updatepost($_POST["post_id"], $_POST["post-slug"], $_POST["post-heading"], $_POST["post-body"], $_POST["post-cateogry"], $fileNameNew, $_POST["post-featured-img-alt"], $_POST["post-featured-cateogry"]);
+        header("Location : /post.php");
+    }
+}
+function duplicateurlsearchwhileedit($post_id, $post_slug)
+{
+    $query = "SELECT COUNT('post_slug') AS COUNT FROM `post` WHERE `post_slug` = '$post_slug' AND `post_id` != '$post_id'";
+    $duplicateurl = getArray($query);
+    $duplicateurl = $duplicateurl[0]["COUNT"];
+    return $duplicateurl;
+}
+
+if (isset($_POST["add_new_post"])) {
+    $dupli_error = duplicateurlsearch($_POST["post-slug"]);
+    if ($dupli_error > 0) {
+        $err_invalid = "DUPLICATE URL FOUND";
+    } else {
+        $file = $_FILES['post-featured-img'];
+        $fileName = $_FILES['post-featured-img']['name'];
+        $fileTmpName = $_FILES['post-featured-img']['tmp_name'];
+        $fileError = $_FILES['post-featured-img']['error'];
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (in_array($fileActualExt, $allowed)) {
+            if ($fileError === 0) {
+                $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                $fileDestination = './images/' . $fileNameNew;
+                move_uploaded_file($fileTmpName, $fileDestination);
+                insertpost($_POST["post-slug"], $_POST["post-heading"], $_POST["post-body-add"], $_POST["post-category"], $fileNameNew, $_POST["post-featured-img-alt"], $_POST["post-featured-category"]);
+            }
+        }
+    }
+}
+if (isset($_POST["post_id_del"])) {
+    deletepost($_POST["post_id_del"]);
+}
+function deletepost($post_id)
+{
+    $query = "DELETE FROM `post` WHERE `post_id`= '$post_id'";
+    execute($query);
+}
+function insertpost($post_slug, $post_heading, $post_body_add, $post_category, $post_featured_img, $post_featured_img_alt, $post_featured_category)
+{
+    $post_body = base64_encode($post_body_add);
+    $created_at = gmdate("Y-m-d H:i:s", time());
+    $query = "INSERT INTO `post`(`post_id`, `post_slug`, `post_heading`, `post_body`, `category_id`, `post_img`, `post_alt`, `feature_category`, `created_at`, `updated_at`, `post_view`) VALUES (NULL,'$post_slug','$post_heading','$post_body','$post_category','$post_featured_img','$post_featured_img_alt','$post_featured_category','$created_at',NULL,NULL)";
+    execute($query);
+}
+
+function duplicateurlsearch($post_slug)
+{
+    $query = "SELECT COUNT('post_slug') AS COUNT FROM `post` WHERE `post_slug` = '$post_slug'";
+    $duplicateurl = getArray($query);
+    $duplicateurl = $duplicateurl[0]["COUNT"];
+    return $duplicateurl;
+}
+function searchauthorimg()
+{
+    $query = "SELECT `author_img` FROM `author` WHERE `id` = '1'";
+    $author_old_img = getArray($query);
+    return $author_old_img[0]["author_img"];
+}
 function getauthor()
 {
     $query = "SELECT * FROM `author` WHERE `id` = '1'";
@@ -114,17 +207,17 @@ function updateauthorimg($author_img)
 }
 function updateauthorbio($site_name, $author_name, $author_tel, $author_email, $author_confirm, $authorbio, $author_ad_sense_code)
 {
-    $authorbio = wordwrap('"' . $authorbio . '"');
-    $author_ad_sense_code = wordwrap("'" .  $author_ad_sense_code . "'");
+    $authorbio = base64_encode($authorbio);
+    $author_ad_sense_code =  base64_encode($author_ad_sense_code);
     if (empty($author_confirm)) {
 
-        $query = "UPDATE `author` SET `author_name`='$author_name',`author_tel`='$author_tel',`author_mail`='$author_email',`biography`= {$authorbio} ,`adsense_code`={$author_ad_sense_code} ,`site_name`='$site_name' WHERE `id`='1' ";
+        $query = "UPDATE `author` SET `author_name`='$author_name',`author_tel`='$author_tel',`author_mail`='$author_email',`biography`= '$authorbio' ,`adsense_code`='$author_ad_sense_code' ,`site_name`='$site_name' WHERE `id`='1' ";
 
         execute($query);
     } else {
         $author_confirm = md5($author_confirm);
 
-        $query = "UPDATE `author` SET `author_name`='$author_name',`author_tel`='$author_tel',`author_mail`='$author_email',`password`='$author_confirm',`biography`={$authorbio} ,`adsense_code`={$author_ad_sense_code},`site_name`='$site_name' WHERE `id`='1' ";
+        $query = "UPDATE `author` SET `author_name`='$author_name',`author_tel`='$author_tel',`author_mail`='$author_email',`password`='$author_confirm',`biography`='$authorbio' ,`adsense_code`='$author_ad_sense_code',`site_name`='$site_name' WHERE `id`='1' ";
 
         execute($query);
     }
@@ -138,6 +231,8 @@ function getcategories()
 }
 function deletecategory($category_id)
 {
+    $query = "UPDATE `post` SET `category_id` = '1' WHERE `category_id` = '$category_id' ";
+    execute($query);
     $query = "DELETE FROM `category` WHERE `category_id`= $category_id";
     execute($query);
 }
@@ -160,7 +255,7 @@ function insertcategory($new_category_name)
 }
 function getallposts()
 {
-    $query = "SELECT * FROM `post` ORDER BY `post_id` DESC";
+    $query = "SELECT * FROM `post`,`category` WHERE post.category_id = category.category_id ORDER BY `post_id` DESC";
     $posts = getArray($query);
     return $posts;
 }
@@ -181,4 +276,32 @@ function authenticate($email, $password)
         $_SESSION["username"] = md5($author[0]["author_mail"]);
     }
     return $author;
+}
+
+function searchimg($post_id)
+{
+    $query = "SELECT `post_img` FROM `post` WHERE `post_id`= '1'";
+    $pic_name_q = getArray($query);
+    $pic_name_q = $pic_name_q[0]["post_img"];
+    return $pic_name_q;
+}
+function updatepost($post_id, $post_slug, $post_heading, $post_body, $category_id, $post_img, $post_alt, $feature_category)
+{
+
+    $post_body = base64_encode($post_body);
+
+    $query = "UPDATE `post` SET `post_slug`='$post_slug',`post_heading`='$post_heading',`post_body` ='$post_body',`category_id`='$category_id',`post_img`='$post_img',`post_alt`='$post_alt',`feature_category`='$feature_category' WHERE `post`.`post_id`='$post_id'";
+    execute($query);
+}
+function postsbycategory($category_id)
+{
+    $query = "SELECT * FROM `post` WHERE `category_id`='$category_id'";
+    $postsbycategory = getArray($query);
+    return $postsbycategory;
+}
+function featuredpost()
+{
+    $query = "SELECT * FROM `post` WHERE `feature_category`='Featured'";
+    $featuredpost = getArray($query);
+    return  $featuredpost;
 }

@@ -32,11 +32,16 @@ include "includes/admin_header.php";
                             echo "<tr>
                             <th scope='row'>" . $category["category_id"] . "</th>
                             <td>" . $category["category_name"] . "</td>
-                            <td>10</td>
-                            <td> <a href='' type='button' class='btn btn-success btn-sm category-edit-btn' data-toggle='modal' id=" . $category["category_id"] . ">Edit</a>
+                            <td>10</td>";
+                            if ($category["category_id"] == "1") {
+
+                                echo "<td></td></tr>";
+                            } else {
+                                echo "<td> <a href='' type='button' class='btn btn-success btn-sm category-edit-btn' data-toggle='modal' id=" . $category["category_id"] . ">Edit</a>
                                 <a href='' type='button' class='btn btn-danger btn-sm category-del-btn' id=" . $category["category_id"] . ">Delete</a>
                             </td>
-                        </tr>";
+                            </tr>";
+                            }
                         }
                         ?>
                     </tbody>
@@ -44,31 +49,31 @@ include "includes/admin_header.php";
             </div>
         </div>
     </div>
-</body>
 
 
-<!-- Modal -->
-<div class="modal fade" id="editcatgory" tabindex="-1" role="dialog" aria-labelledby="category-name-modal-label" aria-hidden="true">
-    <div class="modal-dialog" role="document">
 
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="category-name-modal-label">Edit Category: <span id="category-name-label"></span></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" id="category-id-h-input">
-                <input type="text" id="edit_category_name" class="form-control" placeholder="Edit Category" required>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" id="edit_category_btn_modal" class="btn btn-primary">Save changes</button>
+    <!-- Modal -->
+    <div class="modal fade" id="editcatgory" tabindex="-1" role="dialog" aria-labelledby="category-name-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="category-name-modal-label">Edit Category: <span id="category-name-label"></span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="category-id-h-input">
+                    <input type="text" id="edit_category_name" class="form-control" placeholder="Edit Category" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="edit_category_btn_modal" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<?php
-include "includes/footer.php";
-?>
+    <?php
+    include "includes/footer.php";
+    ?>

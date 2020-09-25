@@ -29,9 +29,7 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-footer {
-  margin-top: 10vh;
-}
+
 body::-webkit-scrollbar {
   overflow-y: scroll;
   display: none;

@@ -1,10 +1,9 @@
-<footer>
-    <div class="bg-dark text-white copyright-div" id="copyright-div">
-        <div class="container">
-            <p class="text-center">Copyright &#169; by Tamzid Ahmed </p>
-        </div>
+<div class="bg-dark text-white copyright-div" id="copyright-div">
+    <div class="container">
+        <p class="text-center">Copyright &#169; by Tamzid Ahmed </p>
     </div>
-
+</div>
+<footer>
     <script type="text/javascript" src="/scripts/jquery.js"></script>
     <script type="text/javascript" src="/scripts/popper.min.js"></script>
     <script type="text/javascript" src="/scripts/bootstrap.bundle.min.js"></script>
@@ -15,6 +14,9 @@
     <script type="text/javascript" src="/scripts/hashes.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/analytics.js"></script>
+
 </footer>
+</body>
+
 
 </html>

@@ -13,14 +13,14 @@ include "includes/categories_header.php";
                     <div class="row">
                         <?php
 
-                        for ($i = 0; $i < 20; $i++) {
-                            echo "  <div class='col-md-6'> <div class='card card-gap'> <a href='templates/single_post.php'>
-                    <img src='https://dummyimage.com/600x400/cc2669/f5f5f5.png' class='card-img-top' alt=''>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Card title</h5>
-                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div></a>
-                </div></div>";
+                        foreach ($postsindex as $post) {
+                            echo " <div class='col-md-6'> <div class='card card-gap'> <a href='/templates/post.php?url=" . $post["post_slug"] . "'>
+                            <img src='/images/" . $post["post_img"] . "' class='card-img-top' alt=''>
+                            <div class='card-body'>
+                                <h5 class='card-title'>" . $post["post_heading"] . "</h5>
+                                <p class='card-text'>" . substr(strip_tags(base64_decode($post["post_body"])), 0, 100) . "..</p>
+                            </div> </a>
+                        </div></div>";
                         }
                         ?>
                     </div>
@@ -31,8 +31,8 @@ include "includes/categories_header.php";
                         <div class="card card-inner">
                             <h3>&nbsp; &nbsp; Featured Topics</h3>
                             <?php
-                            for ($i = 0; $i < 5; $i++) {
-                                echo "<a href='templates/single_post.php'><li class='list-group-item'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li></a>";
+                            foreach ($featureposts as $post) {
+                                echo "<a href='templates/post.php?url=" . $post["post_slug"] . "'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
                             }
                             ?>
                         </div>
@@ -53,8 +53,8 @@ include "includes/categories_header.php";
                         <div class="card bg-success text-white">
                             <div class="card-body">
                                 <a class="navbar-brand">
-                                    <img src="/images/logo/author.jpg" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
-                                    Tamzid Ahmed
+                                    <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
+                                    <?php echo $site_details[0]["author_name"] ?>
                                 </a>
                                 <p class="card-text">Total Articles: 20</p>
                                 <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-light">Follow</a>
@@ -65,7 +65,7 @@ include "includes/categories_header.php";
             </div>
         </div>
     </div>
-</body>
-<?php
-include "includes/footer.php";
-?>
+
+    <?php
+    include "includes/footer.php";
+    ?>

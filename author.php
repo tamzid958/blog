@@ -45,7 +45,7 @@ include "includes/admin_header.php";
                     </div>
                 </div>
             </form>
-            <form id="author_details_change">
+            <form id="author_details_change" method="post">
                 <input type="text" class="form-control" id="author_site_name" value="<?php echo $author[0]["site_name"] ?>" placeholder="Enter Site Name" required>
                 <input type="text" class="form-control" id="author_name" value="<?php echo $author[0]["author_name"] ?>" placeholder="Enter Author Name" required>
                 <input type="tel" class="form-control" id="author_tel" value="<?php echo $author[0]["author_tel"] ?>" placeholder="Enter Author Mobile Number" required>
@@ -55,14 +55,14 @@ include "includes/admin_header.php";
                 <input type="password" class="form-control" id="author_new_pass" placeholder="New Password">
                 <input type="password" class="form-control" id="author_confirm_pass" placeholder="Confirm Password">
                 <p id="new_pass_match" class="text-danger"></p>
-                <textarea class="form-control admin_textarea" id="auther-bio" placeholder="Author BioGraphy" required><?php echo $author[0]["biography"] ?></textarea> <br>
-                <textarea class="form-control" id="adsense-code" placeholder="Put Your Adsense Code Here"><?php echo $author[0]["adsense_code"] ?></textarea>
+                <textarea class="form-control admin_textarea" id="auther-bio" placeholder="Author BioGraphy" required><?php echo base64_decode($author[0]["biography"]) ?></textarea>
+                <textarea class="form-control" id="adsense-code" placeholder="Put Your Adsense Code Here"><?php echo base64_decode($author[0]["adsense_code"])  ?></textarea>
                 <button type="submit" class="btn btn-success btn-lg btn-block" id="author-data-save">Save changes</button>
             </form>
         </div>
     </div>
-</body>
 
-<?php
-include "includes/footer.php";
-?>
+
+    <?php
+    include "includes/footer.php";
+    ?>
