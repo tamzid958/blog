@@ -37,8 +37,9 @@ include "includes/admin_header.php";
                         <tbody>
 
                             <?php
-                            for ($i = 0; $i <= 10; $i++) {
-                                foreach ($subs as $sub) {
+
+                            foreach ($subs as $sub) {
+                                for ($i = 0; $i <= 10; $i++) {
                                     echo " <tr><th scope='row'>" . $sub['id'] . "</th>
                                         <td>" . $sub['email'] . "</td>
                                         <td><a href='' type='button' class='btn btn-success btn-sm edit-tmail' data-toggle='modal' id=" . $sub['id'] . ">Edit</a>
