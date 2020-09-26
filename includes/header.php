@@ -52,10 +52,10 @@ $postcount =  postcount();
                         </label>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="/index.php">Blog</a>
+                        <a class="nav-link text-white" href="/index">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="/login.php">Login</a>
+                        <a class="nav-link text-white" href="/login">Login</a>
                     </li>
 
             </div>
