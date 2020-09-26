@@ -242,14 +242,23 @@ function bulkmailer($subject, $mailbody)
 
     $query = "SELECT `email` FROM `subscriber`";
     $recipentsmail = getArray($query);
+
+    $total_mail = [];
     foreach ($recipentsmail as $recipentmail) {
+        $total_mail[] = ($recipentmail["email"] . ", ");
+    }
+    $all_mails = implode(', ', $total_mail);
+
+    mail($all_mails, $email_subject, $mailbody, $headers);
+
+    /*foreach ($recipentsmail as $recipentmail) {
         $to = $recipentmail["email"];
         try {
             mail($to, $email_subject, $mailbody, $headers);
         } catch (Exception $e) {
             return $e->getMessage();
         }
-    }
+    }*/
 }
 function searchduplicatemailwhiteedit($mail, $id)
 {
