@@ -121,13 +121,19 @@ if (isset($_POST["edit_post_btn_e"])) {
         header("Location : /post.php");
     }
 }
-function duplicateurlsearchwhileedit($post_id, $post_slug)
-{
-    $query = "SELECT COUNT('post_slug') AS COUNT FROM `post` WHERE `post_slug` = '$post_slug' AND `post_id` != '$post_id'";
-    $duplicateurl = getArray($query);
-    $duplicateurl = $duplicateurl[0]["COUNT"];
-    return $duplicateurl;
+
+
+if (isset($_POST["comment_del_id"])) {
+    deletecomment($_POST["comment_del_id"]);
 }
+
+function deletecomment($comment_id)
+{
+
+    $query = "DELETE FROM `comments` WHERE `id`= '$comment_id'";
+    execute($query);
+}
+
 
 if (isset($_POST["add_new_post"])) {
     $dupli_error = duplicateurlsearch($_POST["post-slug"]);
@@ -159,20 +165,70 @@ if (isset($_POST["tmail_id"])) {
     gettmail($_POST["tmail_id"]);
 }
 if (isset($_POST["edit_mail_id"])) {
-    updatetmail($_POST["edit_mail_id"], $_POST["edit_email"]);
+    $dupli_error = searchduplicatemailwhiteedit($_POST["edit_email"], $_POST["edit_mail_id"]);
+    if ($dupli_error > 0) {
+        $err_invalid = "This Email Already in Database";
+    } else {
+        updatetmail($_POST["edit_mail_id"], $_POST["edit_email"]);
+    }
 }
 if (isset($_POST["delete_tmail"])) {
     deletetmail($_POST["delete_tmail"]);
 }
 if (isset($_POST["addnew_mail"])) {
-    insertmail($_POST["addnew_mail"]);
+    $dupli_error = searchduplicatemail($mail);
+    if ($dupli_error > 0) {
+        $err_invalid = "This Email Already in Database";
+    } else {
+        insertmail($_POST["addnew_mail"]);
+    }
 }
 if (isset($_POST["bulk-mail"])) {
     if (bulkmailer($_POST["mail-subject"], $_POST["mail-body"])) {
         $err_invalid = "Something Seriously Wrong";
     }
 }
+if (isset($_POST["cmnt-btn"])) {
+    insertcomment($_POST["post_id"], $_POST["comment-name"], $_POST["comment-mail"], $_POST["comment-body"]);
+}
+if (isset($_POST["new_comment_body"])) {
+    insertcomment($_POST["post_id_cmnt"], $_POST["commenter"], $_POST["post_mail_cmnt"], $_POST["new_comment_body"]);
+}
+if (isset($_POST["comment_edit_id_a"])) {
+    getcommentforedit($_POST["comment_edit_id_a"]);
+}
 
+function getcommentforedit($id)
+{
+    $query = "SELECT * FROM `comments` WHERE `id`='$id'";
+    $comments = getArray($query);
+    echo json_encode($comments[0]);
+}
+function getpost_id_for_comment($post_id)
+{
+    $query = "SELECT * FROM `comments` WHERE `post_id`='$post_id'";
+    $comments = getArray($query);
+    echo json_encode($comments);
+}
+
+function insertcomment($p_id, $commenter, $comment_mail, $comment_body)
+{
+    $query = "INSERT INTO `comments`(`id`, `commenter`, `comment`, `post_id`) VALUES (NULL, '$commenter', '$comment_body','$p_id')";
+    execute($query);
+    $dupli_error = searchduplicatemail($comment_mail);
+    if ($dupli_error == 0) {
+        $query = "INSERT INTO `subscriber`(`id`, `email`) VALUES (NULL,'$comment_mail')";
+        execute($query);
+    }
+}
+
+function duplicateurlsearchwhileedit($post_id, $post_slug)
+{
+    $query = "SELECT COUNT('post_slug') AS COUNT FROM `post` WHERE `post_slug` = '$post_slug' AND `post_id` != '$post_id'";
+    $duplicateurl = getArray($query);
+    $duplicateurl = $duplicateurl[0]["COUNT"];
+    return $duplicateurl;
+}
 function bulkmailer($subject, $mailbody)
 {
 
@@ -195,6 +251,22 @@ function bulkmailer($subject, $mailbody)
         }
     }
 }
+function searchduplicatemailwhiteedit($mail, $id)
+{
+    $query = "SELECT COUNT('email') AS COUNT FROM `subscriber` WHERE `email` = '$mail' AND `id` != '$id'";
+    $dupli_mail = getArray($query);
+    $dupli_mail = $dupli_mail[0]["COUNT"];
+    return $dupli_mail;
+}
+
+function searchduplicatemail($mail)
+{
+    $query = "SELECT COUNT('email') AS COUNT FROM `subscriber` WHERE `email` = '$mail'";
+    $dupli_mail = getArray($query);
+    $dupli_mail = $dupli_mail[0]["COUNT"];
+    return $dupli_mail;
+}
+
 function insertmail($mail)
 {
     $query = "INSERT INTO `subscriber`(`id`, `email`) VALUES (NULL,'$mail')";
@@ -213,12 +285,14 @@ function updatetmail($mail_id, $mail)
 }
 function gettmail($tmail_id)
 {
-    $query = "SELECT * FROM `subscriber` WHERE`id`= '$tmail_id'";
+    $query = "SELECT * FROM `subscriber` WHERE `id`= '$tmail_id'";
     $subs = getArray($query);
     echo json_encode($subs[0]);
 }
 function deletepost($post_id)
 {
+    $query = "DELETE FROM `comments` WHERE `post_id`= '$post_id'";
+    execute($query);
     $query = "DELETE FROM `post` WHERE `post_id`= '$post_id'";
     execute($query);
 }
@@ -302,13 +376,13 @@ function deletecategory($category_id)
 
 function getcategory($category_id)
 {
-    $query = "SELECT * FROM `category` WHERE `category_id`= $category_id";
+    $query = "SELECT * FROM `category` WHERE `category_id`= '$category_id'";
     $category = getArray($query);
     echo json_encode($category);
 }
 function updatecategory($category_id, $category_name)
 {
-    $query = "UPDATE `category` SET `category_name`= '$category_name' WHERE  `category_id`= $category_id";
+    $query = "UPDATE `category` SET `category_name`= '$category_name' WHERE  `category_id`= '$category_id'";
     execute($query);
 }
 function insertcategory($new_category_name)
@@ -343,7 +417,7 @@ function authenticate($email, $password)
 
 function searchimg($post_id)
 {
-    $query = "SELECT `post_img` FROM `post` WHERE `post_id`= '1'";
+    $query = "SELECT `post_img` FROM `post` WHERE `post_id`= '$post_id'";
     $pic_name_q = getArray($query);
     $pic_name_q = $pic_name_q[0]["post_img"];
     return $pic_name_q;
@@ -378,4 +452,16 @@ function countview($post_url)
 {
     $query = "UPDATE `post` SET `post_view`=`post_view`+1 WHERE `post_slug`='$post_url'";
     execute($query);
+}
+function getcommentsforpost($post_id)
+{
+    $query = "SELECT * FROM `comments` WHERE `post_id` = '$post_id' ORDER BY `comments`.`id` DESC";
+    $comments = getArray($query);
+    return $comments;
+}
+function getpostincomment($id)
+{
+    $query = "SELECT `post_heading` FROM `post` WHERE `post_id`='$id'";
+    $comment = getArray($query);
+    return $comment;
 }

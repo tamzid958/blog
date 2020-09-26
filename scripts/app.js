@@ -409,4 +409,57 @@ $(document).ready(function () {
       $("#add_new-mail-btn").attr("disabled", false);
     }
   }, 200);
+
+  setInterval(function () {
+    if ($("#comment_body").val() == null || $("#comment_body").val() == "") {
+      $("#add_new_comment").attr("disabled", true);
+    } else {
+      $("#add_new_comment").attr("disabled", false);
+    }
+  }, 200);
+
+  $("#add_new_comment").on("click", function () {
+    $("#add_new_comment").html(
+      'Creating <img src="/images/logo/ajax-loader.gif" id="ajax-loader width="15" height="15"" />'
+    );
+    var commenter = $("#commenter_name").val();
+    var new_comment_body = $("#comment_body").val();
+    var post_id_cmnt = $("#post_id_cmnt").val();
+    var post_mail_cmnt = $("#post_mail_cmnt").val();
+    $.ajax({
+      url: "./controller/controller.php",
+      method: "post",
+      data: {
+        post_id_cmnt: post_id_cmnt,
+        commenter: commenter,
+        new_comment_body: new_comment_body,
+        post_mail_cmnt: post_mail_cmnt,
+      },
+      success: function (data) {
+        setTimeout(function () {
+          $("#add_new_comment").html("Created");
+        }, 1000);
+        setTimeout(function () {
+          $("#add_new_comment").html("Create");
+          location.reload();
+          return false;
+        }, 2000);
+      },
+    });
+  });
+
+  $(".comment-del-btn").click(function () {
+    var comment_del_id = $(this).attr("id");
+    $.ajax({
+      url: "./controller/controller.php",
+      method: "post",
+      data: {
+        comment_del_id: comment_del_id,
+      },
+      success: function (data) {
+        location.reload();
+        return false;
+      },
+    });
+  });
 });

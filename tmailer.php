@@ -14,6 +14,7 @@ include "includes/admin_header.php";
                     <h1 class="text-center">ADD NEW MAIL</h1>
                     <input type="email" name="" class="form-control" id="addnew-mail" placeholder="EMAIL ADDRESS" required>
                     <button type="button" class="btn btn-primary btn-lg btn-block" id="add_new-mail-btn">ADD NEW MAIL</button>
+                    <p class="text-danger text-center"><?php echo $err_invalid ?></p>
                     <br>
                     <form action="" method="post">
                         <h1 class="text-center">SEND BULK MAIL</h1>
@@ -76,6 +77,7 @@ include "includes/admin_header.php";
                     <input type="email" id="edit_email" class="form-control" placeholder="Edit Mail">
                 </div>
                 <div class="modal-footer">
+                    <p class="text-danger"><?php echo $err_invalid ?></p>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" id="edit-tmail-btn-modal" class="btn btn-primary">Save changes</button>
                 </div>
