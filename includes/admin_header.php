@@ -19,22 +19,22 @@ if ($_SESSION["username"] == md5($author[0]["author_mail"])) {
     <div class="collapse navbar-collapse" id="navbarNav_admin">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link text-white" href="/tmailer">T-mail</a>
+                <a class="nav-link text-white" href="/tmailer.php">T-mail</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/analytics">Analytics</a>
+                <a class="nav-link text-white" href="/analytics.php">Analytics</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/post">Posts</a>
+                <a class="nav-link text-white" href="/post.php">Posts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/categories">Categories</a>
+                <a class="nav-link text-white" href="/categories.php">Categories</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/add_new_post">Add New Post</a>
+                <a class="nav-link text-white" href="/add_new_post.php">Add New Post</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/controller/log_out">Log Out</a>
+                <a class="nav-link text-white" href="/controller/log_out.php">Log Out</a>
             </li>
         </ul>
     </div>

@@ -74,6 +74,7 @@ $notengagingposts = chart2notengaging();
                         <div class="col-md-6">
                             <canvas id="site-stay-time"></canvas>
                             <script>
+                                console.log(<?php echo json_encode($engagingposts) ?>);
                                 $(document).ready(function() {
                                     var ctx2 = document.getElementById("site-stay-time");
                                     var myChart2 = new Chart(ctx2, {
