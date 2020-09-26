@@ -465,3 +465,41 @@ function getpostincomment($id)
     $comment = getArray($query);
     return $comment;
 }
+function postcount()
+{
+    $query = "SELECT COUNT('post_id') AS COUNT FROM `post`";
+    $post_count = getArray($query);
+    $post_count = $post_count[0]["COUNT"];
+    return $post_count;
+}
+function popularposts()
+{
+    $query = "SELECT `post_id`, `post_heading`, `post_view`,`created_at` FROM `post` GROUP BY `post_id` ORDER BY `post_view` DESC LIMIT 5";
+    $popularposts = getArray($query);
+    return $popularposts;
+}
+
+function fixposts()
+{
+    $query = "SELECT `post_id`, `post_heading`, `post_view`,`created_at` FROM `post` GROUP BY `post_id` ORDER BY `post_view` ASC LIMIT 5";
+    $fixposts = getArray($query);
+    return $fixposts;
+}
+function chart1title()
+{
+    $query = "SELECT `post_id`,`post_view` FROM `post` GROUP BY `post_id` ORDER BY `post_view` DESC LIMIT 5";
+    $popularposts = getArray($query);
+    return $popularposts;
+}
+function chart2engaging()
+{
+    $query = "SELECT COUNT(post_id) AS COUNT FROM `post` WHERE `post_view` > 100";
+    $engagingposts = getArray($query);
+    return $engagingposts[0]["COUNT"];
+}
+function chart2notengaging()
+{
+    $query = "SELECT COUNT(post_id) AS COUNT FROM `post` WHERE `post_view` < 100";
+    $notengagingposts = getArray($query);
+    return $notengagingposts[0]["COUNT"];
+}

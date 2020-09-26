@@ -14,6 +14,7 @@ $site_details = sitedetails();
 $categories = getcategories();
 $postsindex = getallposts();
 $featureposts = featuredpost();
+$postcount =  postcount();
 ?>
 
 <!DOCTYPE html>

@@ -195,7 +195,6 @@ $(document).ready(function () {
       },
       success: function (data) {
         data = $.parseJSON(data);
-        console.log();
         $("#category-name-label").html(data[0]["category_name"]);
         $("#category-id-h-input").val(data[0]["category_id"]);
         $("#edit_category_name").val(data[0]["category_name"]);

@@ -29,7 +29,10 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
+.post-img {
+  min-height: 240px;
+  max-height: 240px;
+}
 body::-webkit-scrollbar {
   overflow-y: scroll;
   display: none;
