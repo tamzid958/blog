@@ -180,3 +180,6 @@ input:checked + .slider:before {
 #author-data-save {
   transition: 0.4s;
 }
+#post-font {
+  font-size: 15px;
+}

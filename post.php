@@ -6,6 +6,7 @@ $post_url = substr($_SERVER['REQUEST_URI'], 10);
 $post = getPost($post_url);
 countview($post_url);
 $comments = getcommentsforpost($post[0]["post_id"]);
+$post_body = base64_decode($post[0]["post_body"]);
 ?>
 <title><?php echo $post[0]["post_heading"] ?> | <?php echo $site_details[0]["site_name"] ?></title>
 </head>
@@ -19,9 +20,9 @@ $comments = getcommentsforpost($post[0]["post_id"]);
                 <?php echo $post[0]["post_heading"] ?>
             </h1>
             <br><br>
-
-            <?php echo base64_decode($post[0]["post_body"])  ?>
-
+            <div id="post-font">
+                <?php echo  $post_body ?>
+            </div>
             <div class="addthis_inline_share_toolbox"></div>
 
             <a class="navbar-brand">
