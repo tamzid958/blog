@@ -118,7 +118,6 @@ if (isset($_POST["edit_post_btn_e"])) {
             $fileNameNew = $post_img_old;
         }
         updatepost($_POST["post_id"], $_POST["post-slug"], $_POST["post-heading"], $_POST["post-body"], $_POST["post-cateogry"], $fileNameNew, $_POST["post-featured-img-alt"], $_POST["post-featured-cateogry"]);
-        header("Location : /posts.php");
     }
 }
 
