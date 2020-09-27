@@ -9,7 +9,7 @@ $postsbycategory = postsbycategory($categoryid);
 </head>
 
 <body>
-    <div class="container">
+    <div class="container force-bottom">
         <div class="wrapper">
             <div class="row">
                 <div class="col-md-8 text-dark">
