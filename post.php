@@ -23,6 +23,7 @@ $post_body = base64_decode($post[0]["post_body"]);
             <div id="post-font">
                 <?php echo  $post_body ?>
             </div>
+            <br><br>
             <div class="addthis_inline_share_toolbox"></div>
 
             <a class="navbar-brand">
