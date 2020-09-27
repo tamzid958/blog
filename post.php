@@ -18,10 +18,9 @@ $comments = getcommentsforpost($post[0]["post_id"]);
             <h1>
                 <?php echo $post[0]["post_heading"] ?>
             </h1>
+            <br><br>
 
-            <p>
-                <?php echo base64_decode($post[0]["post_body"])  ?>
-            </p>
+            <?php echo base64_decode($post[0]["post_body"])  ?>
 
             <div class="addthis_inline_share_toolbox"></div>
 
