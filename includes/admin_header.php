@@ -9,7 +9,7 @@ if ($_SESSION["username"] == md5($author[0]["author_mail"])) {
 }
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="author.php">
+    <a class="navbar-brand" href="/author.php">
         <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
         <?php echo $site_details[0]["author_name"] ?>
     </a>

@@ -4,7 +4,7 @@ include "includes/admin_header.php";
 $post_slug = substr($_SERVER['REQUEST_URI'], 15);
 $post = getPost($post_slug);
 if (empty($post)) {
-    header("Location: /post.php");
+    header("Location: /posts.php");
 }
 ?>
 
