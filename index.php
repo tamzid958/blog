@@ -32,7 +32,7 @@ include "includes/categories_header.php";
                             <h3>&nbsp; &nbsp; Featured Topics</h3>
                             <?php
                             foreach ($featureposts as $post) {
-                                echo "<a href='post.php?url=" . $post["post_slug"] . "'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
+                                echo "<a href='post.php/" . $post["post_slug"] . "'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
                             }
                             ?>
                         </div>
