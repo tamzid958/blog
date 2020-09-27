@@ -52,7 +52,11 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-
+#footer {
+  bottom: 0;
+  width: 100%;
+  /* Footer height */
+}
 /* The slider */
 .slider {
   position: absolute;
@@ -131,7 +135,7 @@ input:checked + .slider:before {
   margin-bottom: 100%;
 }
 .force-bottom {
-  margin-bottom: 20%;
+  margin-bottom: 32%;
 }
 .copyright-div {
   margin-top: 20px;

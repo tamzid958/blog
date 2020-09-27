@@ -7,7 +7,7 @@ include "includes/admin_header.php";
 </head>
 
 <body>
-    <div class="container">
+    <div class="container force-bottom">
         <div class="wrapper">
             <h1>All Posts</h1>
             <input type="text" id="search-post" class="form-control" placeholder="Search Post">
