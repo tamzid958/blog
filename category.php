@@ -1,6 +1,6 @@
 <?php
-include "../includes/header.php";
-include "../includes/categories_header.php";
+include "includes/header.php";
+include "includes/categories_header.php";
 $categoryid = $_REQUEST["id"];
 $postsbycategory = postsbycategory($categoryid);
 
@@ -60,5 +60,5 @@ $postsbycategory = postsbycategory($categoryid);
 
 
     <?php
-    include "../includes/footer.php";
+    include "includes/footer.php";
     ?>
