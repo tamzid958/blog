@@ -11,5 +11,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 RewriteCond %{QUERY_STRING} (^|&)url=writing-a-good-blog-test($|&)
-RewriteRule ^post\.php$ /writing-a-good-blog-test? [L,R=301]
+RewriteRule ^post\.php$ /writing-a-good-blog-test?&%{QUERY_STRING}
 </IfModule>
