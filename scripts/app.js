@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  $("input").on("focus", function () {
+    $(this).attr("autocomplete", "off");
+  });
   tinymce.init({
     selector: ".admin_textarea",
     plugins:
