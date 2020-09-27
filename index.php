@@ -42,11 +42,12 @@ include "includes/categories_header.php";
                     <div>
                         <h3>Subscribe to NewsLetter</h3>
                         <input type="text" id="subscribe" class="form-control" placeholder="@email">
-                        <a type="button" class="btn btn-info text-white btn-lg btn-block">Subscribe</a>
+                        <p class="text-danger text-center" id="alert-mail"></p>
+                        <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block">Subscribe</a>
                     </div>
                     <br>
                     <div class="div_ad">
-                        <img class="ad" src="/images/test_ad.png" alt="">
+
                     </div>
                     <br>
                     <div>

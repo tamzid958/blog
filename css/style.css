@@ -33,6 +33,9 @@ body {
   min-height: 240px;
   max-height: 240px;
 }
+.div_ad {
+  min-height: 150px;
+}
 body::-webkit-scrollbar {
   overflow-y: scroll;
   display: none;

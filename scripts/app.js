@@ -495,4 +495,32 @@ $(document).ready(function () {
       }
     }
   });
+  $("#subscribe_btn").on("click", function () {
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var sub_mail = $("#subscribe").val();
+    if (sub_mail.match(mailformat)) {
+      $("#alert-mail").html("");
+      $("#subscribe_btn").html(
+        'Subscribing <img src="/images/logo/ajax-loader.gif" id="ajax-loader width="15" height="15"" />'
+      );
+      $.ajax({
+        url: "./controller/controller.php",
+        method: "post",
+        data: {
+          sub_mail: sub_mail,
+        },
+        success: function (data) {
+          setTimeout(function () {
+            $("#subscribe_btn").html("Subscribed");
+          }, 1000);
+          setTimeout(function () {
+            $("#subscribe_btn").html("Subscribe");
+            return false;
+          }, 2000);
+        },
+      });
+    } else {
+      $("#alert-mail").html("INSERT MAIL AT FIRST");
+    }
+  });
 });

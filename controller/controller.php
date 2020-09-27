@@ -126,6 +126,9 @@ if (isset($_POST["edit_post_btn_e"])) {
 if (isset($_POST["comment_del_id"])) {
     deletecomment($_POST["comment_del_id"]);
 }
+if (isset($_POST["sub_mail"])) {
+    insertmail($_POST["sub_mail"]);
+}
 
 function deletecomment($comment_id)
 {
