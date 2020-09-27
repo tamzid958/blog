@@ -461,4 +461,38 @@ $(document).ready(function () {
       },
     });
   });
+  $("#search-post").on("keyup", function () {
+    var filter = $("#search-post").val().toLowerCase();
+    var nodes = document.getElementsByClassName("search-div");
+
+    for (i = 0; i < nodes.length; i++) {
+      if (nodes[i].innerText.toLowerCase().includes(filter)) {
+        nodes[i].style.display = "block";
+      } else {
+        nodes[i].style.display = "none";
+      }
+    }
+  });
+
+  $("#search-mail").on("keyup", function () {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("search-mail");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("t-table");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  });
 });

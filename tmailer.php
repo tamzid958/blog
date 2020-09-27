@@ -28,7 +28,7 @@ include "includes/admin_header.php";
                 <div class="col-md-6">
                     <h1 class="text-center">MAIL LIST</h1>
                     <input type="email" name="" class="form-control" id="search-mail" placeholder="SEARCH EMAIL ADDRESS">
-                    <table class="table table-info">
+                    <table class="table table-info" id="t-table">
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>

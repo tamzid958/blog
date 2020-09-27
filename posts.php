@@ -15,7 +15,7 @@ include "includes/admin_header.php";
 
 
             foreach ($posts as $post) {
-                echo "<div class='card mb-3 card-gap'>
+                echo "<div class='card mb-3 card-gap search-div'>
                 <div class='row no-gutters'>
                     <div class='col-md-4'>
                         <img src='/images/" . $post["post_img"] . "' class='card-img' alt='' width='600' height='200'>
