@@ -25,7 +25,7 @@ if ($_SESSION["username"] == md5($author[0]["author_mail"])) {
                 <a class="nav-link text-white" href="/analytics.php">Analytics</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/post.php">Posts</a>
+                <a class="nav-link text-white" href="/posts.php">Posts</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="/categories.php">Categories</a>

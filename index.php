@@ -14,7 +14,7 @@ include "includes/categories_header.php";
                         <?php
 
                         foreach ($postsindex as $post) {
-                            echo " <div class='col-md-6'> <div class='card card-gap'> <a href='/t/post.php?url=" . $post["post_slug"] . "'>
+                            echo " <div class='col-md-6'> <div class='card card-gap'> <a href='post.php?url=" . $post["post_slug"] . "'>
                             <img src='/images/" . $post["post_img"] . "' class='card-img-top post-img' alt=''>
                             <div class='card-body'>
                                 <h5 class='card-title'>" . $post["post_heading"] . "</h5>
@@ -32,7 +32,7 @@ include "includes/categories_header.php";
                             <h3>&nbsp; &nbsp; Featured Topics</h3>
                             <?php
                             foreach ($featureposts as $post) {
-                                echo "<a href='t/post.php?url=" . $post["post_slug"] . "'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
+                                echo "<a href='post.php?url=" . $post["post_slug"] . "'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
                             }
                             ?>
                         </div>

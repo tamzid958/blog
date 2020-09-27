@@ -87,7 +87,7 @@ if (isset($_POST["new_category_name"])) {
 }
 if (isset($_POST["login"])) {
     if (authenticate($_POST["author_email"], $_POST["author_password"])) {
-        header("Location: post.php");
+        header("Location: posts.php");
     } else {
         $err_invalid = "Wrong Email or Password";
     }

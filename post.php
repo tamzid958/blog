@@ -1,47 +1,62 @@
 <?php
 include "includes/header.php";
-include "includes/admin_header.php";
+include "includes/categories_header.php";
+$post_url = $_REQUEST["url"];
+$post = getPost($post_url);
+countview($post_url);
+$comments = getcommentsforpost($post[0]["post_id"]);
 ?>
-
-<title>Posts</title>
+<title><?php echo $post[0]["post_heading"] ?> | <?php echo $site_details[0]["site_name"] ?></title>
 </head>
 
 <body>
+    <div class="container-fluid post-hero" style="background-image:linear-gradient(9deg, rgba(24,25,28,1) 0%, rgba(25,26,30,0.5578606442577031) 100%), url(../images/<?php echo $post[0]["post_img"] ?> ) ;">
+    </div>
     <div class="container">
         <div class="wrapper">
-            <h1>All Posts</h1>
-            <input type="text" id="search-post" class="form-control" placeholder="Search Post">
-            <?php
+            <h1>
+                <?php echo $post[0]["post_heading"] ?>
+            </h1>
 
+            <p>
+                <?php echo base64_decode($post[0]["post_body"])  ?>
+            </p>
 
-            foreach ($posts as $post) {
-                echo "<div class='card mb-3 card-gap'>
-                <div class='row no-gutters'>
-                    <div class='col-md-4'>
-                        <img src='/images/" . $post["post_img"] . "' class='card-img' alt='' width='600' height='200'>
+            <div class="addthis_inline_share_toolbox"></div>
+
+            <a class="navbar-brand">
+                <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
+                <?php echo $site_details[0]["author_name"] ?>
+            </a>
+            <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-info">Follow</a>
+            <div class="comment-div">
+                <form action="" method="post">
+                    <input type="hidden" name="post_id" value="<?php echo $post[0]["post_id"] ?>">
+                    <input type="text" class="form-control" name="comment-name" id="comment-name" placeholder="Enter Your Name" required>
+                    <input type="email" class="form-control" name="comment-mail" id="comment-mail" placeholder="@email" required>
+                    <textarea id="comment_post" class="form-control" name="comment-body" rows="4" placeholder="Leave a comment here" required></textarea>
+                    <button type="submit" name="cmnt-btn" class="btn btn-primary btn-lg btn-block text-white">Comment</button>
+                </form>
+                <br>
+                <?php
+                foreach ($comments as $comment) {
+                    echo " <div class='card card-comment'><div class='media'>
+                    <img src='../images/logo/commenter.png' class='mr-3 rounded-circle author' alt='' width='40' height='40'>
+                    <div class='media-body'>
+                        <h5 class='mt-0 text-dark'>" . $comment['commenter'] . "</h5>
+                        <p class='text-dark'>" .
+                        $comment['comment'] . "
+                        <p>
                     </div>
-                    <div class='col-md-8'>
-                        <div class='card-body text-dark'>
-                            <h3 class='card-title'>" . $post["post_heading"] . "</h3>
-                            <p class='card-text p-wrap'>" . substr(strip_tags(base64_decode($post["post_body"])), 0, 100) . "</p>
-                            <p class='card-text'><span class='text-mute'>Category: </span><mark>" . $post["category_name"] . "</mark> &nbsp;
-                            <span class='text-muted'>Date: </span><mark>" . $post["created_at"] . "</mark></p>
-                            <a href='edit_post.php/" . $post["post_slug"] . "' type='button' class='btn btn-success btn-sm' id=" . $post["post_id"] . ">Edit</a>
-                            <a href='comments.php/?id=" . $post["post_id"] . "' type='button'  class='btn btn-info btn-sm check-cmnt'>Check Comments</a>
-                            <button type='button' class='btn btn-danger btn-sm del-post-btn' id=" . $post["post_id"] . ">Delete</button>
-                        </div>
                     </div>
-                </div>
+                </div>";
+                }
+                ?>
+
             </div>
-                    ";
-            }
-            ?>
-
         </div>
+
     </div>
-
-
-
 
     <?php
     include "includes/footer.php";
