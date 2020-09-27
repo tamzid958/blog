@@ -127,7 +127,10 @@ if (isset($_POST["comment_del_id"])) {
     deletecomment($_POST["comment_del_id"]);
 }
 if (isset($_POST["sub_mail"])) {
-    insertmail($_POST["sub_mail"]);
+    $dupli_error =  searchduplicatemail($_POST["sub_mail"]);
+    if ($dupli_error == 0) {
+        insertmail($_POST["sub_mail"]);
+    }
 }
 
 function deletecomment($comment_id)
@@ -253,15 +256,6 @@ function bulkmailer($subject, $mailbody)
     $all_mails = implode(', ', $total_mail);
 
     mail($all_mails, $email_subject, $mailbody, $headers);
-
-    /*foreach ($recipentsmail as $recipentmail) {
-        $to = $recipentmail["email"];
-        try {
-            mail($to, $email_subject, $mailbody, $headers);
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }*/
 }
 function searchduplicatemailwhiteedit($mail, $id)
 {
