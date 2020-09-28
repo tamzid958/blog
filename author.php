@@ -50,7 +50,7 @@ include "includes/admin_header.php";
                 <input type="text" class="form-control" id="author_name" value="<?php echo $author[0]["author_name"] ?>" placeholder="Enter Author Name" required>
                 <input type="tel" class="form-control" id="author_tel" value="<?php echo $author[0]["author_tel"] ?>" placeholder="Enter Author Mobile Number" required>
                 <input type="email" class="form-control" id="author_email" value="<?php echo $author[0]["author_mail"] ?>" placeholder="Enter Author Email" required>
-                <input type="password" class="form-control" id="author_old_pass" placeholder="Old Password">
+                <input type="password" class="form-control" id="author_old_pass" placeholder="Old Password" autocomplete="off">
                 <p id="incorrect_old_pass" class="text-danger"></p>
                 <input type="password" class="form-control" id="author_new_pass" placeholder="New Password">
                 <input type="password" class="form-control" id="author_confirm_pass" placeholder="Confirm Password">
