@@ -16,7 +16,7 @@ include "includes/categories_header.php";
                     <form method="post" action="">
                         <input type="text" class="form-control" type="text" name="contact_name" id="" placeholder="NAME" required>
                         <input type="email" class="form-control" name="contact_mail" id="" placeholder="EMAIL" required>
-                        <textarea name="" class="form-control" name="contact_body" id="" cols="30" rows="10" placeholder="SHARE YOUR THOUGHTS" required></textarea>
+                        <textarea class="form-control" name="contact_body" id="" cols="30" rows="10" placeholder="SHARE YOUR THOUGHTS" required></textarea>
                         <button type="submit" name="contact_btn" class="btn btn-primary btn-lg btn-block">Contact</button>
                     </form>
                 </div>
