@@ -213,7 +213,7 @@ function contactform($name, $mail, $body)
         $query = "INSERT INTO `subscriber`(`id`, `email`) VALUES (NULL,'$mail')";
         execute($query);
     }
-    $email_subject = "NEW ENTRY CONTACT FORM BY" . $name;
+    $email_subject = "NEW ENTRY CONTACT FORM BY " . $name;
     $to = "tamjidahmed958@gmail.com";
     mail($to, $email_subject, $body);
 }
