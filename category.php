@@ -17,7 +17,7 @@ $postsbycategory = postsbycategory($categoryid);
                         <?php
 
                         foreach ($postsbycategory as $postbycategory) {
-                            echo " <div class='col-md-6'> <div class='card card-gap'> <a href='post.php/" . $postbycategory["post_slug"] . "'>
+                            echo " <div class='col-md-6'> <div class='card card-gap post-card'> <a href='post.php/" . $postbycategory["post_slug"] . "'>
                     <img src='images/" . $postbycategory["post_img"] . "' class='card-img-top post-img' alt=''>
                     <div class='card-body'>
                         <h5 class='card-title'>" . $postbycategory["post_heading"] . "</h5>

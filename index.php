@@ -14,7 +14,7 @@ include "includes/categories_header.php";
                         <?php
 
                         foreach ($postsindex as $post) {
-                            echo " <div class='col-md-6'> <div class='card card-gap'> <a href='post.php/" . $post["post_slug"] . "'>
+                            echo " <div class='col-md-6'> <div class='card card-gap post-card'> <a href='post.php/" . $post["post_slug"] . "'>
                             <img src='/images/" . $post["post_img"] . "' class='card-img-top post-img' alt=''>
                             <div class='card-body'>
                                 <h5 class='card-title'>" . $post["post_heading"] . "</h5>

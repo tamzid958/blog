@@ -183,3 +183,7 @@ input:checked + .slider:before {
 #post-font {
   font-size: 15px;
 }
+.post-card {
+  min-height: 400px;
+  max-height: 400px;
+}
