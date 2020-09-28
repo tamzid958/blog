@@ -2,7 +2,7 @@
 include "includes/header.php";
 include "includes/categories_header.php";
 ?>
-<title>Blog | MrTvirus</title>
+<title>Blog | <?php echo $site_details[0]["site_name"] ?></title>
 </head>
 
 <body>

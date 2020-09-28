@@ -1,12 +1,12 @@
 <?php
 include "includes/header.php";
 ?>
-<title>Login | MrTvirus</title>
+<title>Login | <?php echo $site_details[0]["site_name"] ?></title>
 </head>
 
 <body>
     <div class="container">
-        <div class="wrapper">
+        <div class="wrapper  text-dark">
             <form action="" method="post">
                 <div class="row ">
                     <div class="col-sm-6" style="margin:0 auto;">

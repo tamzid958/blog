@@ -55,6 +55,9 @@ $postcount =  postcount();
                         <a class="nav-link text-white" href="/index.php">Blog</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-white" href="/contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="/login.php">Login</a>
                     </li>
 

@@ -202,6 +202,21 @@ if (isset($_POST["new_comment_body"])) {
 if (isset($_POST["comment_edit_id_a"])) {
     getcommentforedit($_POST["comment_edit_id_a"]);
 }
+if (isset($_POST["contact_btn"])) {
+    contactform($_POST["contact_name"], $_POST["contact_mail"], $_POST["contact_body"]);
+}
+
+function contactform($name, $mail, $body)
+{
+    $dupli_error = searchduplicatemail($mail);
+    if ($dupli_error == 0) {
+        $query = "INSERT INTO `subscriber`(`id`, `email`) VALUES (NULL,'$mail')";
+        execute($query);
+    }
+    $email_subject = "NEW ENTRY CONTACT FORM BY" . $name;
+    $to = "tamjidahmed958@gmail.com";
+    mail($to, $email_subject, $body);
+}
 
 function getcommentforedit($id)
 {

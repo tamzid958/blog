@@ -190,3 +190,10 @@ input:checked + .slider:before {
 .div_ad img {
   max-width: 100%;
 }
+.contact-form {
+  padding: 40px;
+}
+.contact-body {
+  margin-top: 10%;
+  margin-bottom: 20%;
+}
