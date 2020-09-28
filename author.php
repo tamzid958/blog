@@ -52,8 +52,8 @@ include "includes/admin_header.php";
                 <input type="email" class="form-control" id="author_email" value="<?php echo $author[0]["author_mail"] ?>" placeholder="Enter Author Email" required>
                 <input type="password" class="form-control" id="author_old_pass" placeholder="Old Password" autocomplete="off">
                 <p id="incorrect_old_pass" class="text-danger"></p>
-                <input type="password" class="form-control" id="author_new_pass" placeholder="New Password">
-                <input type="password" class="form-control" id="author_confirm_pass" placeholder="Confirm Password">
+                <input type="password" class="form-control" id="author_new_pass" placeholder="New Password" autocomplete="off">
+                <input type="password" class="form-control" id="author_confirm_pass" placeholder="Confirm Password" autocomplete="off">
                 <p id="new_pass_match" class="text-danger"></p>
                 <textarea class="form-control admin_textarea" id="auther-bio" placeholder="Author BioGraphy" required><?php echo base64_decode($author[0]["biography"]) ?></textarea>
                 <textarea class="form-control" id="adsense-code" placeholder="Put Your Adsense Code Here"><?php echo base64_decode($author[0]["adsense_code"])  ?></textarea>
