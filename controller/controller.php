@@ -215,7 +215,7 @@ function contactform($name, $mail, $body)
     }
     $email_subject = "NEW ENTRY CONTACT FORM BY " . $name;
     $to = "tamjidahmed958@gmail.com";
-    mail($to, $email_subject, $body);
+    mail($to, $email_subject, "Email: \n $mail \n Message:\n $body\n");
 }
 
 function getcommentforedit($id)
