@@ -38,7 +38,9 @@ $postsbycategory = postsbycategory($categoryid);
                     </div>
                     <br>
                     <div class="div_ad">
-
+                        <a href="https://technologea.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="/images/test_ad.png" alt="technologea">
+                        </a>
                     </div>
                     <br>
                     <div>

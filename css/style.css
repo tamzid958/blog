@@ -187,3 +187,6 @@ input:checked + .slider:before {
   min-height: 400px;
   max-height: 400px;
 }
+.div_ad img {
+  max-width: 100%;
+}
