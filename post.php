@@ -11,7 +11,7 @@ $post_body = base64_decode($post[0]["post_body"]);
 <meta property="og:type" content="<?php echo $site_details[0]["site_name"] ?>" />
 <meta property="og:title" content="<?php echo $post[0]["post_heading"]  ?>">
 <meta property="og:description" content="<?php echo substr(strip_tags($post_body), 0, 100) ?>">
-<meta property="og:image:url" content="<?php echo $_SERVER['SERVER_NAME'] ?>/images/<?php echo $post[0]["post_img"] ?>">
+<meta property="og:image:url" content="https://<?php echo $_SERVER['SERVER_NAME'] ?>/images/<?php echo $post[0]["post_img"] ?>">
 <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI'] ?>">
 
 <title><?php echo $post[0]["post_heading"] ?> | <?php echo $site_details[0]["site_name"] ?></title>
