@@ -13,7 +13,7 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="htt
 
 foreach ($sitemap_urls as $sitemap_url) {
     echo '<url>' . PHP_EOL;
-    echo '<loc>' . $base_url . $sitemap_url[0]["post_slug"] . '/</loc>' . PHP_EOL;
+    echo '<loc>' . $base_url . $sitemap_url["post_slug"] . '/</loc>' . PHP_EOL;
     echo '<changefreq>daily</changefreq>' . PHP_EOL;
     echo '</url>' . PHP_EOL;
 }
