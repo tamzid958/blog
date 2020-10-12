@@ -8,9 +8,10 @@ countview($post_url);
 $comments = getcommentsforpost($post[0]["post_id"]);
 $post_body = base64_decode($post[0]["post_body"]);
 ?>
+<meta property="og:type" content="article.post" />
 <meta property="og:title" content="<?php echo $post[0]["post_heading"]  ?>">
 <meta property="og:description" content="<?php echo substr(strip_tags($post_body), 0, 100) ?>">
-<meta property="og:image" content="../images/<?php echo $post[0]["post_img"] ?> ">
+<meta property="og:image" content="<?php echo $_SERVER['SERVER_NAME'] ?>/images/<?php echo $post[0]["post_img"] ?> ">
 <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI'] ?>">
 
 <title><?php echo $post[0]["post_heading"] ?> | <?php echo $site_details[0]["site_name"] ?></title>
