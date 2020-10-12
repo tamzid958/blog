@@ -527,5 +527,5 @@ function sitemap()
 {
     $query = "SELECT `post_slug` FROM `post` ";
     $sitemap = getArray($query);
-    return  $sitemap;
+    return  $sitemap[0];
 }
