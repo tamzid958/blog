@@ -319,6 +319,7 @@ function deletepost($post_id)
 function insertpost($post_slug, $post_heading, $post_body_add, $post_category, $post_featured_img, $post_featured_img_alt, $post_featured_category)
 {
     $post_body = base64_encode($post_body_add);
+    $post_slug = strtolower($post_slug);
     $created_at = gmdate("Y-m-d H:i:s", time());
     $query = "INSERT INTO `post`(`post_id`, `post_slug`, `post_heading`, `post_body`, `category_id`, `post_img`, `post_alt`, `feature_category`, `created_at`, `updated_at`, `post_view`) VALUES (NULL,'$post_slug','$post_heading','$post_body','$post_category','$post_featured_img','$post_featured_img_alt','$post_featured_category','$created_at',NULL,'0')";
     execute($query);
@@ -446,7 +447,7 @@ function updatepost($post_id, $post_slug, $post_heading, $post_body, $category_i
 {
 
     $post_body = base64_encode($post_body);
-
+    $post_slug = strtolower($post_slug);
     $query = "UPDATE `post` SET `post_slug`='$post_slug',`post_heading`='$post_heading',`post_body` ='$post_body',`category_id`='$category_id',`post_img`='$post_img',`post_alt`='$post_alt',`feature_category`='$feature_category' WHERE `post`.`post_id`='$post_id'";
     execute($query);
 }
