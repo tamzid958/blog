@@ -525,7 +525,7 @@ function chart2notengaging()
 }
 function sitemap()
 {
-    $query = "SELECT `post_slug` FROM `post` ";
+    $query = "SELECT `post_slug` FROM `post`";
     $sitemap = getArray($query);
-    return  $sitemap['post_slug'];
+    return  $sitemap[0];
 }
