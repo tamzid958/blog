@@ -523,3 +523,9 @@ function chart2notengaging()
     $notengagingposts = getArray($query);
     return $notengagingposts[0]["COUNT"];
 }
+function sitemap()
+{
+    $query = "SELECT `post_slug` FROM `post` ";
+    $sitemap = getArray($query);
+    return  $sitemap;
+}
