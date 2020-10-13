@@ -2,7 +2,7 @@
 include "includes/header.php";
 include "includes/categories_header.php";
 
-$post_url = substr($_SERVER['REQUEST_URI'], 10);
+$post_url = $_REQUEST["url"];
 $post = getPost($post_url);
 countview($post_url);
 $comments = getcommentsforpost($post[0]["post_id"]);
