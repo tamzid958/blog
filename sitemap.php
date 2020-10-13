@@ -3,7 +3,7 @@
 require_once 'controller/controller.php';
 $sitemap_urls = sitemap();
 
-$base_url = "https://" . $_SERVER['SERVER_NAME'] . "/post.php/";
+$base_url = "https://" . $_SERVER['SERVER_NAME'] . "/post.php/?url=";
 
 header("Content-Type: application/xml; charset=utf-8");
 
