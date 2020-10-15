@@ -19,7 +19,7 @@ $post_body = base64_decode($post[0]["post_body"]);
 
 <body>
     <div class="container-fluid post-hero text-white" style="background-image:linear-gradient(9deg, rgba(24,25,28,1) 0%, rgba(25,26,30,0.5578606442577031) 100%), url(../images/<?php echo $post[0]["post_img"] ?> ) ; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <h1>
+        <h1 class="text-center">
             <?php echo $post[0]["post_heading"] ?>
         </h1>
         <a class="navbar-brand">
