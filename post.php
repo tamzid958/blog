@@ -18,25 +18,30 @@ $post_body = base64_decode($post[0]["post_body"]);
 </head>
 
 <body>
-    <div class="container-fluid post-hero" style="background-image:linear-gradient(9deg, rgba(24,25,28,1) 0%, rgba(25,26,30,0.5578606442577031) 100%), url(../images/<?php echo $post[0]["post_img"] ?> ) ;">
+    <div class="container-fluid post-hero text-white" style="background-image:linear-gradient(9deg, rgba(24,25,28,1) 0%, rgba(25,26,30,0.5578606442577031) 100%), url(../images/<?php echo $post[0]["post_img"] ?> ) ; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h1>
+            <?php $t = "testsddsfsdfadfafa";
+
+            echo $t;
+            $post[0]["post_heading"] ?>
+        </h1>
+        <a class="navbar-brand">
+            <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
+            <?php echo $site_details[0]["author_name"] ?>
+        </a>
+        <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-info btn-sm">Follow</a>
     </div>
     <div class="container">
         <div class="wrapper">
-            <h1>
-                <?php echo $post[0]["post_heading"] ?>
-            </h1>
+
             <br><br>
             <div id="post-font">
                 <?php echo  $post_body ?>
             </div>
             <br><br>
             <div class="addthis_inline_share_toolbox"></div>
-
-            <a class="navbar-brand">
-                <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
-                <?php echo $site_details[0]["author_name"] ?>
-            </a>
-            <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-info">Follow</a>
+            <br> <br>
+            <h4>Share Your Thoughts</h4>
             <div class="comment-div">
                 <form action="" method="post">
                     <input type="hidden" name="post_id" value="<?php echo $post[0]["post_id"] ?>">
