@@ -20,7 +20,7 @@
 
 <script type="text/javascript">
     function parseJSAtOnload() {
-        var links = ["/scripts/jquery.js", "/scripts/popper.min.js", "/scripts/bootstrap.bundle.min.js", "/scripts/chart.bundle.js", "/scripts/fontawesome.min.js", "/scripts/hashes.min.js", "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f6a2229f290dcba", "https://cdn.tiny.cloud/1/e4f32vgxciwftxmzhe11ch7ruh2i0wyw6jrb0qh5v986h2xr/tinymce/5/tinymce.min.js", "/scripts/app.js"],
+        var links = ["/scripts/jquery.js", "/scripts/popper.min.js", "/scripts/bootstrap.bundle.min.js", "/scripts/chart.bundle.js", "/scripts/fontawesome.min.js", "/scripts/hashes.min.js", "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f6a2229f290dcba", "/scripts/app.js"],
             headElement = document.getElementsByTagName("head")[0],
             linkElement, i;
         for (i = 0; i < links.length; i++) {
