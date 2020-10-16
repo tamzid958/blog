@@ -1,8 +1,10 @@
+<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 Header always set Content-Security-Policy "upgrade-insecure-requests;"
 RewriteRule ^sitemap\.xml/?$ sitemap.php
-RewriteCond %{QUERY_STRING} (^([^/]*)$)
-RewriteRule ^([^/]*)$ /post.php/?url=$1 [L]
+RewriteCond %{QUERY_STRING} ^post.php/?url=* [NC]
+RewriteRule (.*) /*? [R=301,L]
+</IfModule>
