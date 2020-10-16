@@ -423,6 +423,12 @@ function getpost($slug)
     $post = getArray($query);
     return $post;
 }
+function getPostForEdit($id)
+{
+    $query = "SELECT * FROM `post` WHERE `post_id` ='$id'";
+    $post = getArray($query);
+    return $post;
+}
 
 function authenticate($email, $password)
 {

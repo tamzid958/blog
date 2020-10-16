@@ -1,8 +1,8 @@
 <?php
 include "includes/header.php";
 include "includes/admin_header.php";
-$post_slug = substr($_SERVER['REQUEST_URI'], 15);
-$post = getPost($post_slug);
+$post_id = $_REQUEST["id"];
+$post = getPostForEdit($post_id);
 if (empty($post)) {
     header("Location: /posts.php");
 }
