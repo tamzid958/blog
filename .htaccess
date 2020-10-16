@@ -8,6 +8,6 @@ Header always set Content-Security-Policy "upgrade-insecure-requests;"
 RewriteRule ^sitemap\.xml/?$ sitemap.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /
 RewriteRule ^([^/]*)/$ /post.php?url=$1 [L]
+RewriteRule . /
 </IfModule>
