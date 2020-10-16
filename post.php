@@ -11,6 +11,7 @@ if ($_REQUEST["url"]) {
     header("Location: /");
 }
 ?>
+<meta name="description" content="<?php echo substr(strip_tags($post_body), 0, 100) ?>">
 <meta property="og:type" content="article:section">
 <meta property="og:title" content="<?php echo $post[0]["post_heading"]  ?>">
 <meta property="og:description" content="<?php echo substr(strip_tags($post_body), 0, 100) ?>">
