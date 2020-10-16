@@ -1,21 +1,9 @@
 RewriteEngine On
+RewriteBase /
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 Header always set Content-Security-Policy "upgrade-insecure-requests;"
-# RewriteCond %{QUERY_STRING} (^([^/]*)$)
-# RewriteRule ^([^/]*)$ /post.php/?url=$1 [L]
-
-
-# Rewrite --- https://blog.mrtvirushub.com/post.php/?url=codeforces-solution-domino-piling-python-solve => https://blog.mrtvirushub.com/codeforces-solution-domino-piling-python-solve
-RewriteCond %{QUERY_STRING} (?:^|&)url\=*(?:$|&)
-RewriteRule ^post\.php/$ /*?&%{QUERY_STRING}
-
-<IfModule mod_rewrite.c>
-RewriteEngine On
 RewriteRule ^sitemap\.xml/?$ sitemap.php
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
+RewriteCond %{REQUEST_URI} ^/404/$ [OR]
+RewriteCond %{REQUEST_URI} ^/500/$
+RewriteRule ^(.*)$ / [L]
