@@ -54,6 +54,4 @@ mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
   # Others
   ExpiresByType application/pdf "access plus 1 month"
   ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
-
-  SetEnv session.use_cookies='0';
 </IfModule>
