@@ -63,7 +63,7 @@ if (empty($post)) {
 
 
 
-    <script src="https://cdn.tiny.cloud/1/e4f32vgxciwftxmzhe11ch7ruh2i0wyw6jrb0qh5v986h2xr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
     <?php
     include "includes/footer.php";
     ?>
