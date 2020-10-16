@@ -5,5 +5,5 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 Header always set Content-Security-Policy "upgrade-insecure-requests;"
 RewriteRule ^sitemap\.xml/?$ sitemap.php
-RewriteRule ^(.*)$ post.php/?url=$1 [L]
+RewriteRule ^(.*)$ post.php?url=$1 [L,QSA]
 </IfModule>
