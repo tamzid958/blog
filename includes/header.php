@@ -23,16 +23,16 @@ $postcount =  postcount();
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome.min.css" />
     <link href="/fonts/dosisfont.css?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/chart.css" />
-    <link rel="shortcut icon" href="images/logo/<?php echo $site_details[0]["site_favicon"] ?>" type="image/x-icon">
-    <link rel="icon" href="images/logo/<?php echo $site_details[0]["site_favicon"] ?>" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/chart.css" />
+    <link rel="shortcut icon" href="/images/logo/<?php echo $site_details[0]["site_favicon"] ?>" type="image/x-icon">
+    <link rel="icon" href="/images/logo/<?php echo $site_details[0]["site_favicon"] ?>" type="image/x-icon">
     <?php echo base64_decode($site_details[0]["adsense_code"]) ?>
     <meta name="theme-color" content="#343a40">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <header>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
