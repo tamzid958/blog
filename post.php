@@ -1,7 +1,7 @@
 <?php
 include "includes/header.php";
 include "includes/categories_header.php";
-if ($_REQUEST["url"]) {
+if (getPost($_REQUEST["url"])) {
     $post_url = $_REQUEST["url"];
     $post = getPost($post_url);
     countview($post_url);
