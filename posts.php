@@ -18,7 +18,7 @@ include "includes/admin_header.php";
                 echo "<div class='card mb-3 card-gap search-div'>
                 <div class='row no-gutters'>
                     <div class='col-md-4'>
-                        <img src='/images/" . $post["post_img"] . "' class='card-img' alt='' width='600' height='200'>
+                        <img src='/images/" . $post["post_img"] . "' class='card-img' alt='' width='600' height='200' loading='lazy'>
                     </div>
                     <div class='col-md-8'>
                         <div class='card-body text-dark'>

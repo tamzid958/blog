@@ -23,7 +23,7 @@ if ($_REQUEST["id"]) {
 
                         foreach ($postsbycategory as $postbycategory) {
                             echo " <div class='col-md-6'> <div class='card card-gap post-card'> <a href='" . $postbycategory["post_slug"] . "/'>
-                    <img src='images/" . $postbycategory["post_img"] . "' class='card-img-top post-img' alt=''>
+                    <img src='images/" . $postbycategory["post_img"] . "' class='card-img-top post-img' alt='' loading='lazy'>
                     <div class='card-body'>
                         <h5 class='card-title'>" . $postbycategory["post_heading"] . "</h5>
                         <p class='card-text'>" . substr(strip_tags(base64_decode($postbycategory["post_body"])), 0, 100) . "..</p>

@@ -148,6 +148,12 @@ input:checked + .slider:before {
 .ad {
   max-width: 100%;
 }
+.post-hero.lazy {
+  background-image: none;
+  background-color: #191919;
+  
+}
+
 .post-hero {
   min-height: 400px;
   background-position: center;

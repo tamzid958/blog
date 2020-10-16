@@ -56,7 +56,7 @@ if ($_REQUEST["url"]) {
                 <?php
                 foreach ($comments as $comment) {
                     echo " <div class='card card-comment'><div class='media'>
-                    <img src='../images/logo/commenter.png' class='mr-3 rounded-circle author' alt='' width='70' height='70'>
+                    <img src='../images/logo/commenter.png' class='mr-3 rounded-circle author' alt='' width='70' height='70' loading='lazy'>
                     <div class='media-body'>
                         <h5 class='mt-0 text-dark'>" . $comment['commenter'] . "</h5>
                         <p class='text-dark'>" .
