@@ -1,8 +1,13 @@
 <?php
 include "includes/header.php";
 include "includes/categories_header.php";
-$categoryid = $_REQUEST["id"];
-$postsbycategory = postsbycategory($categoryid);
+if ($_REQUEST["id"]) {
+    $categoryid = $_REQUEST["id"];
+    $postsbycategory = postsbycategory($categoryid);
+} else {
+    header("Location: /");
+}
+
 
 ?>
 <title>Blog | <?php echo $site_details[0]["site_name"] ?></title>

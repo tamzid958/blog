@@ -1,12 +1,15 @@
 <?php
 include "includes/header.php";
 include "includes/categories_header.php";
-
-$post_url = $_REQUEST["url"];
-$post = getPost($post_url);
-countview($post_url);
-$comments = getcommentsforpost($post[0]["post_id"]);
-$post_body = base64_decode($post[0]["post_body"]);
+if ($_REQUEST["url"]) {
+    $post_url = $_REQUEST["url"];
+    $post = getPost($post_url);
+    countview($post_url);
+    $comments = getcommentsforpost($post[0]["post_id"]);
+    $post_body = base64_decode($post[0]["post_body"]);
+} else {
+    header("Location: /");
+}
 ?>
 <meta property="og:type" content="article:section">
 <meta property="og:title" content="<?php echo $post[0]["post_heading"]  ?>">
