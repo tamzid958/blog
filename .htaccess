@@ -6,7 +6,7 @@ Header always set Content-Security-Policy "upgrade-insecure-requests;"
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule ^sitemap\.xml/?$ sitemap.php
-RewriteCond %{QUERY_STRING} (^|&)url=*($|&)
+RewriteCond %{QUERY_STRING} (^([^/]*)$)
 RewriteRule ^([^/]*)$ /post.php/?url=$1 [L]
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
