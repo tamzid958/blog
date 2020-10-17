@@ -8,7 +8,7 @@ include "includes/admin_header.php";
 
 <body>
 
-    <div class="container">
+    <div class="container force-bottom">
         <div class="wrapper">
             <div class="card">
                 <div class="card-body">
