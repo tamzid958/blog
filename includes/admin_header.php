@@ -3,6 +3,9 @@ $author = getauthor();
 $categories = getcategories();
 $posts = getallposts();
 $subs = getallsubs();
+$dirname = "images/";
+$images = glob($dirname . "*.{jpg,jpeg,png}", GLOB_BRACE);
+//$images = glob($dirname . "*.jpg");
 if ($_SESSION["username"] == md5($author[0]["author_mail"])) {
 } else {
     header("Location: ./controller/log_out");
@@ -32,6 +35,9 @@ if ($_SESSION["username"] == md5($author[0]["author_mail"])) {
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="/add_new_post.php">Add New Post</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/gallery.php">Gallery</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="/controller/log_out.php">Log Out</a>

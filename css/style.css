@@ -153,7 +153,25 @@ input:checked + .slider:before {
   background-color: #191919;
   
 }
-
+.gallery-img{
+  min-height: 150px;
+  max-height: 150px;
+  overflow: hidden;
+}
+.gallery-img img {
+  min-width:100%;
+}
+.delete_gallery_img{
+  animation-timing-function: ease-out;
+  animation-duration: 5s;
+}
+.choose-img{
+  cursor: pointer;
+}
+.delete_gallery_img:hover{
+  box-shadow:  4px 4px 34px #ef6464, 
+             -4px -4px 34px #f36666;
+}
 .post-hero {
   min-height: 400px;
   background-position: center;

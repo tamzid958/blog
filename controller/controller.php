@@ -66,6 +66,33 @@ if (isset($_POST["site-favicon-upload"])) {
     }
 }
 
+if (isset($_POST["gallery-img-upload"])) {
+    $file = $_FILES['gallery-img'];
+    $fileName = $_FILES['gallery-img']['name'];
+    $fileTmpName = $_FILES['gallery-img']['tmp_name'];
+    $fileError = $_FILES['gallery-img']['error'];
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpg', 'jpeg', 'png');
+    if (in_array($fileActualExt, $allowed)) {
+        if ($fileError === 0) {
+            $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+            $fileDestination = './images/' . $fileNameNew;
+            move_uploaded_file($fileTmpName, $fileDestination);
+        }
+    }
+}
+if (isset($_POST["delete_gallery_img"])) {
+
+    $file_pointer = $_POST["gallery_img_value"];
+    // Use unlink() function to delete a file  
+    if (@unlink('./images/' . $file_pointer)) {
+        $err_invalid = "$file_pointer has been deleted";
+    } else {
+        $err_invalid = "$file_pointer cannot be deleted due to an error";
+    }
+}
+
 if (isset($_POST["author_details_change_a"])) {
     updateauthorbio($_POST["site_name"], $_POST["author_name"], $_POST["author_tel"], $_POST["author_email"], $_POST["author_confirm"], $_POST["author_bio"], $_POST["author_adsense_code"]);
 }
@@ -93,7 +120,7 @@ if (isset($_POST["login"])) {
     }
 }
 if (isset($_POST["edit_post_btn_e"])) {
-
+    $exist_or_not = $_POST['post-featured-img-gallery'];
     $dupli_error = duplicateurlsearchwhileedit($_POST["post_id"], $_POST["post-slug"]);
     if ($dupli_error > 0) {
         $err_invalid = "DUPLICATE URL FOUND";
@@ -114,6 +141,9 @@ if (isset($_POST["edit_post_btn_e"])) {
                 $fileDestination = './images/' . $fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
             }
+        } elseif ($_POST["post-featured-img-gallery"] && file_exists("./images/$exist_or_not")) {
+
+            $fileNameNew = $_POST["post-featured-img-gallery"];
         } else {
             $fileNameNew = $post_img_old;
         }
@@ -141,25 +171,30 @@ function deletecomment($comment_id)
 
 
 if (isset($_POST["add_new_post"])) {
-    $dupli_error = duplicateurlsearch($_POST["post-slug"]);
-    if ($dupli_error > 0) {
-        $err_invalid = "DUPLICATE URL FOUND";
-    } else {
-        $file = $_FILES['post-featured-img'];
-        $fileName = $_FILES['post-featured-img']['name'];
-        $fileTmpName = $_FILES['post-featured-img']['tmp_name'];
-        $fileError = $_FILES['post-featured-img']['error'];
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $allowed = array('jpg', 'jpeg', 'png');
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-                $fileDestination = './images/' . $fileNameNew;
-                move_uploaded_file($fileTmpName, $fileDestination);
-                insertpost($_POST["post-slug"], $_POST["post-heading"], $_POST["post-body-add"], $_POST["post-category"], $fileNameNew, $_POST["post-featured-img-alt"], $_POST["post-featured-category"]);
+
+    if (empty($_POST["post-featured-img-gallery"])) {
+        $dupli_error = duplicateurlsearch($_POST["post-slug"]);
+        if ($dupli_error > 0) {
+            $err_invalid = "DUPLICATE URL FOUND";
+        } else {
+            $file = $_FILES['post-featured-img'];
+            $fileName = $_FILES['post-featured-img']['name'];
+            $fileTmpName = $_FILES['post-featured-img']['tmp_name'];
+            $fileError = $_FILES['post-featured-img']['error'];
+            $fileExt = explode('.', $fileName);
+            $fileActualExt = strtolower(end($fileExt));
+            $allowed = array('jpg', 'jpeg', 'png');
+            if (in_array($fileActualExt, $allowed)) {
+                if ($fileError === 0) {
+                    $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                    $fileDestination = './images/' . $fileNameNew;
+                    move_uploaded_file($fileTmpName, $fileDestination);
+                    insertpost($_POST["post-slug"], $_POST["post-heading"], $_POST["post-body-add"], $_POST["post-category"], $fileNameNew, $_POST["post-featured-img-alt"], $_POST["post-featured-category"]);
+                }
             }
         }
+    } else {
+        insertpost($_POST["post-slug"], $_POST["post-heading"], $_POST["post-body-add"], $_POST["post-category"], $_POST["post-featured-img-gallery"], $_POST["post-featured-img-alt"], $_POST["post-featured-category"]);
     }
 }
 if (isset($_POST["post_id_del"])) {

@@ -26,12 +26,21 @@ include "includes/admin_header.php";
 
                     ?>
                 </select>
-                <div class="input-group mb-3">
+                <br>
+                <button type="button" class="btn btn-primary" id='gallery_upload' data-toggle="modal" data-target="#gallerytab" style="width: 50%;">
+                    Upload From Gallery
+                </button>
+                <button type="button" id='direct_upload' class="btn btn-primary" style="width: 49%;">
+                    Direct Upload
+                </button>
+                <br><br>
+                <div id="direct_upload_input_div" class="input-group mb-3">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="post-featured-img" name="post-featured-img" required>
+                        <input type="file" id="direct_upload_input" class="custom-file-input" id="post-featured-img" name="post-featured-img">
                         <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Featured Image</label>
                     </div>
                 </div>
+                <input type="text" class="form-control" name="post-featured-img-gallery" id="post-featured-img-gallery" placeholder="Choose Featured Image">
                 <input type="text" class="form-control" id="post-featured-img-alt" name="post-featured-img-alt" placeholder="Add Alt text For Featured Image" required>
                 <select class="form-control" id="post-featured-cateogry" name="post-featured-category" required>
                     <option disabled>Select Feature Category</option>
@@ -46,6 +55,49 @@ include "includes/admin_header.php";
 
 
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="gallerytab" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Upload From Gallery</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <?php
+
+                                        foreach ($images as $image) {
+                                            echo " 
+                            <div class='col-md-3 choose-img' id='" . substr($image, 7)  . "'>                          
+                            <div class='card card-gap'>        
+                            <div class='card-body gallery-img'>
+                            <img src='$image' class='card-img-top' alt='' loading='lazy'>
+                            </div>                                    
+                            </div>  
+                            </div>";
+                                        }
+                                        ?>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <?php

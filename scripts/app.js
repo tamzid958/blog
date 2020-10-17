@@ -93,6 +93,27 @@ $(document).ready(function () {
     }
   });
 
+  $("#gallery-img").on("change", function () {
+    var author_img = $("#gallery-img").val();
+    author_img = author_img.toLowerCase();
+
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+
+    if (!allowedExtensions.exec(author_img)) {
+      $("#gallery-img-upload").text("Invalid File Format");
+      $("#gallery-img-upload").addClass("bg-danger text-light");
+      $("#gallery-img-upload").removeClass("bg-info");
+      $("#gallery-img-upload").attr("disabled", true);
+      author_img = "";
+      return false;
+    } else {
+      $("#gallery-img-upload").text("Upload");
+      $("#gallery-img-upload").removeClass("bg-danger");
+      $("#gallery-img-upload").addClass("bg-primary text-light");
+      $("#gallery-img-upload").attr("disabled", false);
+    }
+  });
+
   $("#author-site-logo-img").on("change", function () {
     var site_logo = $("#author-site-logo-img").val();
     site_logo = site_logo.toLowerCase();
@@ -526,4 +547,34 @@ $(document).ready(function () {
       $("#alert-mail").html("INSERT MAIL AT FIRST");
     }
   });
+  
+  $("#direct_upload_input_div").attr("hidden",true);
+  $("#direct_upload_input").attr("required",false);
+  $('#post-featured-img-gallery').attr("hidden",true);
+  $('#post-featured-img-gallery').attr("required",false);
+  $('#post-featured-img-gallery').val(null);
+  $('#post-featured-img').val(null);
+
+  $("#gallery_upload").click(function () {
+    $("#direct_upload_input_div").attr("hidden",true);
+    $("#direct_upload_input").attr("required",false);
+    $('#post-featured-img-gallery').attr("hidden",false);
+    $('#post-featured-img-gallery').attr("required",true);
+    $('#post-featured-img-gallery').val(null);
+    $('#post-featured-img').val(null);
+  });
+
+  $(".choose-img").on("click",function (){
+    var choose_img = $(this).attr("id");
+    $('#post-featured-img-gallery').val(choose_img);
+    $('#gallerytab').modal('hide');
+  });
+
+  $("#direct_upload").click(function (){
+  $("#direct_upload_input_div").attr("hidden",false);
+  $("#direct_upload_input").attr("required",true);
+  $('#post-featured-img-gallery').attr("hidden",true);
+  $('#post-featured-img-gallery').attr("required",false);
+  $('#post-featured-img-gallery').val(null);
+  } );
 });
