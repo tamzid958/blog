@@ -6,7 +6,7 @@ if (getPost($_REQUEST["url"])) {
     $post = getPost($post_url);
     countview($post_url);
     $comments = getcommentsforpost($post[0]["post_id"]);
-    $post_body = base64_decode($post[0]["post_body"]);
+    $post_body = utf8_decode(base64_decode($post[0]["post_body"]));
 } else {
     header("Location: /");
 }

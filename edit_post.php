@@ -22,7 +22,7 @@ if (empty($post)) {
                 <input type="text" class="form-control" value="<?php echo $post[0]["post_slug"] ?>" name="post-slug" id="post-slug" placeholder="Edit Post Slug (Unique)" required>
                 <p class="text-center text-danger"><?php echo $err_invalid ?></p>
                 <input type="text" class="form-control" value="<?php echo $post[0]["post_heading"] ?>" name="post-heading" id="post-heading" placeholder="Edit Heading" required>
-                <textarea class="form-control admin_textarea" name="post-body" id="post-body-edit" rows="20" placeholder="Edit Post Description" required><?php echo base64_decode($post[0]["post_body"])  ?></textarea>
+                <textarea class="form-control admin_textarea" name="post-body" id="post-body-edit" rows="20" placeholder="Edit Post Description" required><?php echo utf8_decode(base64_decode($post[0]["post_body"]))  ?></textarea>
                 <select class="form-control" name="post-cateogry" id="post-cateogry" required>
                     <option disabled>Edit Category</option>
                     <?php
