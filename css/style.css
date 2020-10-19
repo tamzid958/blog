@@ -11,7 +11,7 @@ p{
   font-size:1 rem;
 }
 .card-title{
-  font-size: 1.2 rem;
+  font-size: 1.2 rem !important;
 }
 strong{
 font-family: Visage_Bold !important;
