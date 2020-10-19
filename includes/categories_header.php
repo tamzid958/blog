@@ -7,9 +7,11 @@
         <ul class="navbar-nav ml-auto">
             <?php
             foreach ($categories as $category) {
-                echo " <li class='nav-item '>
+                if ($category['category_name'] != "Uncategorized") {
+                    echo " <li class='nav-item '>
                 <a class='nav-link text-dark' href='/category.php?id=" . $category['category_id'] . "'>" . $category['category_name'] . "</a>
                 </li>";
+                }
             }
             ?>
 

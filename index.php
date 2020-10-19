@@ -18,7 +18,7 @@ include "includes/categories_header.php";
                             <img src='/images/" . $post["post_img"] . "' class='card-img-top post-img' alt='' loading='lazy'>
                             <div class='card-body'>
                                 <h5 class='card-title'>" . $post["post_heading"] . "</h5>
-                                <p class='card-text'>" . substr(strip_tags(base64_decode($post["post_body"])), 0, 100) . "..</p>
+                                <p class='card-text'>" . substr(strip_tags(base64_decode($post["post_body"])), 0, 90) . "..</p>
                             </div> </a>
                         </div></div>";
                         }
