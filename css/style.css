@@ -14,6 +14,9 @@ p{
 .card-title{
   font-size: 1.2rem !important;
 }
+.navbar-brand{
+  font-family: Visage_Bold !important;
+}
 strong{
 font-family: NewHelvetica-Regular !important;
 font-size: 1.1rem;
