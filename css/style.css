@@ -1,18 +1,17 @@
 * {
   /*font-family:Dosis,sans-serif;font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;*/
-  font-family: Oliwe;
   font-size: 0.8rem;
 }
 h1,h2,h3,h4,h6{
-  font-family: Oliwe;
+  font-family: Oliwe !important;
 }
 p{
-  font-family: Visage_Regular;
+  font-family: Visage_Regular !important;
   font-size:1.2 rem;
 }
 strong{
-font-family: Visage_Bold;
+font-family: Visage_Bold !important;
 font-size: 1.2rem;
 }
 a,
