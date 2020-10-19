@@ -11,8 +11,11 @@ if (getPost($_REQUEST["url"])) {
     header("Location: /");
 }
 ?>
+<meta property="fb:app_id" content="568504490481111" />
 <meta name="description" content="<?php echo substr(strip_tags($post_body), 0, 100) ?>">
-<meta property="og:type" content="article:section">
+<meta property="og:type" content="article">
+<meta property='article:author' content='https://www.linkedin.com/in/tamzid-ahmed958/' />
+<meta property='article:publisher' content='https://technologea.com/' />
 <meta property="og:title" content="<?php echo $post[0]["post_heading"]  ?>">
 <meta property="og:description" content="<?php echo substr(strip_tags($post_body), 0, 100) ?>">
 <meta property="og:image:url" content="https://<?php echo $_SERVER['SERVER_NAME'] ?>/images/<?php echo $post[0]["post_img"] ?>">
