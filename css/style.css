@@ -1,13 +1,14 @@
 * {
   /*font-family:Dosis,sans-serif;font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;*/
+  font-family: visage_Regular;
   font-size: 1rem;
 }
 h1,h2,h3,h4,h5,h6{
   font-family: Oliwe !important;
 }
 p{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+  font-family: visage_Regular !important;
   font-size:1rem;
 }
 .card-title{
