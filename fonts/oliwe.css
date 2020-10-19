@@ -4,3 +4,13 @@
          url(Oliwe-Regular.ttf);
 
   }
+  @font-face{
+      font-family:Visage_Bold;
+      src: local("Visage_Bold"),
+      url(Visage_Bold.woff2);
+  }
+  @font-face{
+    font-family:Visage_Regular;
+    src: local("Visage_Regular"),
+    url(Visage_Regular.woff2);
+}

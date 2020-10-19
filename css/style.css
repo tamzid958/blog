@@ -4,6 +4,17 @@
   font-family: Oliwe;
   font-size: 0.8rem;
 }
+h1,h2,h3,h4,h6{
+  font-family: Oliwe;
+}
+p{
+  font-family: Visage_Regular;
+  font-size:1 rem;
+}
+strong{
+font-family: Visage_Bold;
+font-size: 1.2rem;
+}
 a,
 a:hover,
 a:active {
@@ -189,6 +200,9 @@ input:checked + .slider:before {
   margin-top: 5px;
 }
 .card {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   transition: 0.6s;
 }
 .card:hover {
