@@ -9,7 +9,7 @@ h1,h2,h3,h4,h6{
 }
 p{
   font-family: Visage_Regular;
-  font-size:1 rem;
+  font-size:1.2 rem;
 }
 strong{
 font-family: Visage_Bold;
@@ -201,7 +201,7 @@ input:checked + .slider:before {
 }
 .card {
   overflow: hidden;
-  white-space: nowrap;
+  white-space: initial;
   text-overflow: ellipsis;
   transition: 0.6s;
 }
