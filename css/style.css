@@ -1,7 +1,7 @@
 * {
   /*font-family:Dosis,sans-serif;font-family: 'Open Sans', sans-serif;*/
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 a,
 a:hover,
@@ -204,9 +204,6 @@ input:checked + .slider:before {
 }
 #author-data-save {
   transition: 0.4s;
-}
-#post-font {
-  font-size: 15px;
 }
 .post-card {
   min-height: 400px;
