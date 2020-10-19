@@ -53,7 +53,7 @@ include "includes/categories_header.php";
                     </div>
                     <br>
                     <div>
-                        <div class="card bg-success text-white">
+                        <div class="card bg-info text-white">
                             <div class="card-body">
                                 <a class="navbar-brand">
                                     <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
