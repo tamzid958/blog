@@ -32,7 +32,7 @@ if (getPost($_REQUEST["url"])) {
             <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
             <?php echo $site_details[0]["author_name"] ?>
         </a>
-        <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-info btn-sm bg-light">Follow</a>
+        <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-info btn-sm bg-light text-dark">Follow</a>
     </div>
     <div class="container">
         <div class="wrapper">
