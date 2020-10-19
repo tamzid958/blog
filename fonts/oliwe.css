@@ -14,3 +14,9 @@
     src: local("Visage_Regular"),
     url(Visage_Regular.woff2);
 }
+
+@font-face{
+    font-family:NewHelvetica-Regular;
+    src: local("NewHelvetica-Regular"),
+    url(NewHelvetica-Regular.otf);
+}
