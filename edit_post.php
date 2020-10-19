@@ -59,7 +59,7 @@ if (empty($post)) {
                     }
                     ?>
                 </select>
-                <button type="submit" name="edit_post_btn_e" id="edit_post_btn_e" class="btn btn-primary btn-lg btn-block">Edit</button>
+                <button type="submit" name="edit_post_btn_e" id="edit_post_btn_e" class="btn btn-primary btn-lg btn-block bg-primary text-light">Edit</button>
             </form>
         </div>
 

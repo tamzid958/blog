@@ -11,7 +11,7 @@ include "includes/admin_header.php";
         <div class="wrapper">
 
             <input type="text" id="category_name" class="form-control" placeholder="Create New Category" required>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="add_new_category">Create</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block bg-primary text-light" id="add_new_category">Create</button>
 
             <br>
             <h1>All Categories</h1>

@@ -39,7 +39,7 @@ if (postsbycategory($_REQUEST["id"])) {
                         <h3>Subscribe to NewsLetter</h3>
                         <input type="text" id="subscribe" class="form-control" placeholder="@email">
                         <p class="text-danger text-center" id="alert-mail"></p>
-                        <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block">Subscribe</a>
+                        <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block bg-info">Subscribe</a>
                     </div>
                     <br>
                     <div class="div_ad">

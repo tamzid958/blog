@@ -1,10 +1,9 @@
 <?php
 include "includes/header.php";
-include "includes/categories_header.php";
+include "includes/admin_header.php";
 if (getPost($_REQUEST["url"])) {
     $post_url = $_REQUEST["url"];
     $post = getPost($post_url);
-    countview($post_url);
     $comments = getcommentsforpost($post[0]["post_id"]);
     $post_body = utf8_decode(base64_decode($post[0]["post_body"]));
 } else {
@@ -12,6 +11,10 @@ if (getPost($_REQUEST["url"])) {
 }
 ?>
 <meta name="description" content="<?php echo substr(strip_tags($post_body), 0, 100) ?>">
+<meta property="fb:app_id" content="568504490481111">
+<meta property="og:type" content='article'>
+<meta property='article:author' content='https://www.facebook.com/Mr.Tvirus/' />
+<meta property='article:publisher' content='https://www.facebook.com/technologea' />
 <meta property="og:type" content="article:section">
 <meta property="og:title" content="<?php echo $post[0]["post_heading"]  ?>">
 <meta property="og:description" content="<?php echo substr(strip_tags($post_body), 0, 100) ?>">
@@ -32,7 +35,7 @@ if (getPost($_REQUEST["url"])) {
             <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
             <?php echo $site_details[0]["author_name"] ?>
         </a>
-        <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-info btn-sm bg-light">Follow</a>
+        <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-info btn-sm">Follow</a>
     </div>
     <div class="container">
         <div class="wrapper">
@@ -51,7 +54,7 @@ if (getPost($_REQUEST["url"])) {
                     <input type="text" class="form-control" name="comment-name" id="comment-name" placeholder="Enter Your Name" required>
                     <input type="email" class="form-control" name="comment-mail" id="comment-mail" placeholder="@email" required>
                     <textarea id="comment_post" class="form-control" name="comment-body" rows="4" placeholder="Leave a comment here" required></textarea>
-                    <button type="submit" name="cmnt-btn" class="btn btn-primary btn-lg btn-block text-white bg-primary">Comment</button>
+                    <button type="submit" name="cmnt-btn" class="btn btn-primary btn-lg btn-block text-white">Comment</button>
                 </form>
                 <br>
                 <?php

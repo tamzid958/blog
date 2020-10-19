@@ -13,7 +13,7 @@ include "includes/admin_header.php";
                 <div class="col-md-6">
                     <h1 class="text-center">ADD NEW MAIL</h1>
                     <input type="email" name="" class="form-control" id="addnew-mail" placeholder="EMAIL ADDRESS" required>
-                    <button type="button" class="btn btn-primary btn-lg btn-block" id="add_new-mail-btn">ADD NEW MAIL</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block bg-primary text-light" id="add_new-mail-btn">ADD NEW MAIL</button>
                     <p class="text-danger text-center"><?php echo $err_invalid ?></p>
                     <br>
                     <form action="" method="post">
@@ -21,7 +21,7 @@ include "includes/admin_header.php";
                         <input type="text" name="mail-subject" class="form-control" id="mail-subject" placeholder="Subject of the mail" required>
                         <textarea class="form-control admin_textarea" name="mail-body" id="mail-body" rows="20" placeholder="Mail Body"></textarea>
                         <br>
-                        <button type="submit" name="bulk-mail" class="btn btn-primary btn-lg btn-block">SEND MAIL</button>
+                        <button type="submit" name="bulk-mail" class="btn btn-primary btn-lg btn-block bg-success text-white">SEND MAIL</button>
                         <p class="text-center text-danger"><?php echo $err_invalid ?></p>
                     </form>
                 </div>

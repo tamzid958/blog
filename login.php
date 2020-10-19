@@ -15,7 +15,7 @@ include "includes/header.php";
                             <input type="email" class="form-control" name="author_email" id="author_email" placeholder="Email Address" required>
                             <input type="password" class="form-control" name="author_password" id="author_password" placeholder="Password" required>
                             <p class="text-danger text-center"><?php echo $err_invalid ?></p>
-                            <button type="submit" name="login" class="btn btn-primary btn-lg btn-block text-light">Login</button>
+                            <button type="submit" name="login" class="btn btn-primary btn-lg btn-block text-light bg-primary">Login</button>
                         </div>
                     </div>
                 </div>

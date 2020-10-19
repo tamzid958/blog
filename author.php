@@ -57,7 +57,7 @@ include "includes/admin_header.php";
                 <p id="new_pass_match" class="text-danger"></p>
                 <textarea class="form-control admin_textarea" id="auther-bio" placeholder="Author BioGraphy" required><?php echo base64_decode($author[0]["biography"]) ?></textarea>
                 <textarea class="form-control" id="adsense-code" placeholder="Put Your Adsense Code Here"><?php echo base64_decode($author[0]["adsense_code"])  ?></textarea>
-                <button type="submit" class="btn btn-success btn-lg btn-block" id="author-data-save">Save changes</button>
+                <button type="submit" class="btn btn-success btn-lg btn-block bg-success text-white" id="author-data-save">Save changes</button>
             </form>
         </div>
     </div>

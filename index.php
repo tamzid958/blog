@@ -43,7 +43,7 @@ include "includes/categories_header.php";
                         <h3>Subscribe to NewsLetter</h3>
                         <input type="text" id="subscribe" class="form-control" placeholder="@email">
                         <p class="text-danger text-center" id="alert-mail"></p>
-                        <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block">Subscribe</a>
+                        <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block bg-info">Subscribe</a>
                     </div>
                     <br>
                     <div class="div_ad">
@@ -60,7 +60,7 @@ include "includes/categories_header.php";
                                     <?php echo $site_details[0]["author_name"] ?>
                                 </a>
                                 <p class="card-text">Total Articles: <?php echo $postcount ?></p>
-                                <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-light">Follow</a>
+                                <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-light text-dark bg-light">Follow</a>
                             </div>
                         </div>
                     </div>

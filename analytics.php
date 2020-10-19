@@ -111,13 +111,13 @@ $notengagingposts = chart2notengaging();
             <br>
             <div class="popular-post-list">
                 <h1 class="text-center">POPULAR POSTS</h1>
-                <table class="table  table-dark">
+                <table class="table bg-dark text-light">
                     <thead>
                         <tr>
-                            <th scope="col">#ID</th>
-                            <th scope="col">POST TITLE</th>
-                            <th scope="col">POST TIME</th>
-                            <th scope="col">TOTAL VIEWS</th>
+                            <th class="text-light" scope="col">#ID</th>
+                            <th class="text-light" scope="col">POST TITLE</th>
+                            <th class="text-light" scope="col">POST TIME</th>
+                            <th class="text-light" scope="col">TOTAL VIEWS</th>
                         </tr>
                     </thead>
                     <tbody>

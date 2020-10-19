@@ -9,7 +9,7 @@ $post_id_add = $_REQUEST["id"];
 </head>
 
 <body>
-    <div class="container">
+    <div class="container force-bottom">
         <div class="wrapper">
             <h1 class="text-center"><?php echo $post[0]["post_heading"] ?></h1>
             <h3 class="text-center">COMMENT SECTION</h3>
@@ -17,7 +17,7 @@ $post_id_add = $_REQUEST["id"];
             <input type="hidden" id="post_mail_cmnt" value="<?php echo $site_details[0]["author_mail"] ?>">
             <input type="hidden" id="commenter_name" value="<?php echo $site_details[0]["author_name"] ?>">
             <textarea type="text" id="comment_body" class="form-control" placeholder="POST NEW COMMENT" required></textarea>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="add_new_comment">COMMENT</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block bg-primary text-light" id="add_new_comment">COMMENT</button>
             <div class="card mb-3">
                 <table class="table">
                     <thead class="thead-dark">

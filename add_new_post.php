@@ -27,10 +27,10 @@ include "includes/admin_header.php";
                     ?>
                 </select>
                 <br>
-                <button type="button" class="btn btn-primary" id='gallery_upload' data-toggle="modal" data-target="#gallerytab" style="width: 50%;">
+                <button type="button" class="btn btn-primary bg-primary text-light" id='gallery_upload' data-toggle="modal" data-target="#gallerytab" style="width: 50%;">
                     Upload From Gallery
                 </button>
-                <button type="button" id='direct_upload' class="btn btn-primary" style="width: 49%;">
+                <button type="button" id='direct_upload' class="btn btn-primary bg-primary text-light" style="width: 49%;">
                     Direct Upload
                 </button>
                 <br><br>
@@ -47,7 +47,7 @@ include "includes/admin_header.php";
                     <option selected>Normal</option>
                     <option>Featured</option>
                 </select>
-                <button type="submit" name="add_new_post" id="add_new_post" class="btn btn-primary btn-lg btn-block">Publish</button>
+                <button type="submit" name="add_new_post" id="add_new_post" class="btn btn-primary btn-lg btn-block bg-primary text-light">Publish</button>
             </form>
         </div>
 
