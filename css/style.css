@@ -10,6 +10,9 @@ p{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
   font-size:1 rem;
 }
+.card-title{
+  font-size: 1.2 rem;
+}
 strong{
 font-family: Visage_Bold !important;
 font-size: 1.1rem;
