@@ -1,3 +1,3 @@
-User-agent: *
-Disallow: /login.php
-Allow: /sitemap.xml
+#Begin Sitemap. Do not remove
+sitemap: https://blog.mrtvirushub.com/sitemap.xml
+#End Sitemap. Do not remove
