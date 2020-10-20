@@ -27,7 +27,7 @@ include "includes/admin_header.php";
                             <p class='card-text'><span class='text-mute'>Category: </span><mark>" . $post["category_name"] . "</mark> &nbsp;
                             <span class='text-muted'>Date: </span><mark>" . $post["created_at"] . "</mark></p>
                             <a href='edit_post.php?id=" . $post["post_id"] . "' type='button' class='btn btn-success btn-sm' id=" . $post["post_id"] . ">Edit</a>
-                            <a href='view_post.php?url=" . $post["post_slug"] . "' type='button'  class='btn btn-info btn-sm'>View Post</a>
+                            <a href='view_post.php?url=" . $post["post_slug"] . "' type='button'  class='btn btn-info btn-sm' target='_blank'>View Post</a>
                             <a href='comments.php?id=" . $post["post_id"] . "' type='button'  class='btn btn-info btn-sm check-cmnt'>Check Comments</a>
                             <button type='button' class='btn btn-danger btn-sm del-post-btn' id=" . $post["post_id"] . ">Delete</button>
                         </div>

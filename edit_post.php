@@ -66,53 +66,6 @@ if (empty($post)) {
     </div>
 
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="gallerytab" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Upload From Gallery</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="wrapper">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <?php
-
-                                        foreach ($images as $image) {
-                                            echo " 
-                            <div class='col-md-3 choose-img' id='" . substr($image, 7)  . "'>                          
-                            <div class='card card-gap'>        
-                            <div class='card-body gallery-img'>
-                            <img src='$image' class='card-img-top' alt='' loading='lazy'>
-                            </div>                                    
-                            </div>  
-                            </div>";
-                                        }
-                                        ?>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
     <?php
     include "includes/footer.php";
     ?>
