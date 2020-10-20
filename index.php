@@ -31,10 +31,13 @@ include "includes/categories_header.php";
                         <div class="card card-inner">
                             <h3>&nbsp; &nbsp; Featured Topics</h3>
                             <?php
-
+                            $i = 0;
                             foreach ($featureposts as $post) {
-
-                                echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
+                                if (++$i == 10) {
+                                    break;
+                                } else {
+                                    echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
+                                }
                             }
                             ?>
                         </div>
