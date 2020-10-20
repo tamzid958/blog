@@ -31,8 +31,9 @@ include "includes/categories_header.php";
                         <div class="card card-inner">
                             <h3>&nbsp; &nbsp; Featured Topics</h3>
                             <?php
-                            foreach ($featureposts as $post) {
-                                for ($i = 0; $i < 10; $i++) {
+                            for ($i = 0; $i < 10; $i++) {
+                                foreach ($featureposts as $post) {
+
                                     echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
                                 }
                             }
