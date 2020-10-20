@@ -500,7 +500,7 @@ function postsbycategory($category_id)
 }
 function featuredpost()
 {
-    $query = "SELECT * FROM `post` WHERE `feature_category`='Featured'";
+    $query = "SELECT * FROM `post` WHERE `feature_category`='Featured' ORDER BY `post`.`created_at` DESC";
     $featuredpost = getArray($query);
     return  $featuredpost;
 }
