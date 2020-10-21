@@ -67,17 +67,18 @@ body::-webkit-scrollbar {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #55b9f3;
-  box-shadow:  20px 20px 60px #489dcf, 
-             -20px -20px 60px #62d5ff;
+  background: #0e2a39;
+  box-shadow:  20px 20px 60px #0c2430, 
+               -20px -20px 60px #103042;
   border-radius: 3px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #0e2a39;
-  box-shadow:  20px 20px 60px #0c2430, 
-             -20px -20px 60px #103042;
+  background: #0e1316;
+  box-shadow:  20px 20px 60px #0c1013, 
+             -20px -20px 60px #101619;
 }
 /* The switch - the box around the slider */
 .switch {
