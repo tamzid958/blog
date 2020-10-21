@@ -1,3 +1,4 @@
 #Begin Sitemap. Do not remove
+user-agent: *
 sitemap: https://blog.mrtvirushub.com/sitemap.xml
 #End Sitemap. Do not remove
