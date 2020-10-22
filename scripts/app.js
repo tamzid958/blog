@@ -6,9 +6,8 @@ $(document).ready(function () {
     selector: ".admin_textarea",
     plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
     toolbar_mode: 'floating',
-    toolbar_mode: "floating",
     tinycomments_mode: "embedded",
-    tinycomments_author: "Author name",
+    tinycomments_author: "Tamzid Ahmed",
   });
 
   $("#dark_moder").on("change", function () {
