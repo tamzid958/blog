@@ -494,7 +494,7 @@ function updatepost($post_id, $post_slug, $post_heading, $post_body, $category_i
 }
 function postsbycategory($category_id)
 {
-    $query = "SELECT * FROM `post` WHERE `category_id`='$category_id'";
+    $query = "SELECT * FROM `post` WHERE `category_id`='$category_id' ORDER BY `post`.`created_at` DESC";
     $postsbycategory = getArray($query);
     return $postsbycategory;
 }
