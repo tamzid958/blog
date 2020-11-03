@@ -57,21 +57,22 @@ if (getPost($_REQUEST["url"])) {
                     <button type="submit" name="cmnt-btn" class="btn btn-primary btn-lg btn-block text-white bg-primary">Comment</button>
                 </form>
                 <br>
-                <?php
-                foreach ($comments as $comment) {
-                    echo " <div class='card card-comment'><div class='media'>
+                <div class="card">
+                    <?php
+                    foreach ($comments as $comment) {
+                        echo " <div class='card-comment'><div class='media'>
                     <img src='../images/logo/commenter.png' class='mr-3 rounded-circle author' alt='' width='70' height='70' loading='lazy'>
                     <div class='media-body'>
                         <h5 class='mt-0 text-dark'>" . $comment['commenter'] . "</h5>
                         <p class='text-dark'>" .
-                        $comment['comment'] . "
+                            $comment['comment'] . "
                         <p>
                     </div>
                     </div>
                 </div>";
-                }
-                ?>
-
+                    }
+                    ?>
+                </div>
             </div>
         </div>
 

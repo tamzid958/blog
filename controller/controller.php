@@ -517,7 +517,7 @@ function countview($post_url)
 }
 function getcommentsforpost($post_id)
 {
-    $query = "SELECT * FROM `comments` WHERE `post_id` = '$post_id' ORDER BY `comments`.`id` DESC";
+    $query = "SELECT * FROM `comments` WHERE `post_id` = '$post_id'";
     $comments = getArray($query);
     return $comments;
 }
