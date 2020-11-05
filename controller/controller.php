@@ -582,7 +582,7 @@ function topicSearcher($search_topic)
 {
     $search_post_body = base64_encode($search_topic);
     //`post_slug`, `post_heading`, `post_body`,
-    $query = " SELECT * FROM post WHERE `post_slug` like '%" . $search_topic . "%' OR `post_heading` ='%" . $search_topic . "%' OR `post_body` ='%" . $search_post_body . "%'";
+    $query = " SELECT * FROM post WHERE `post_slug` like '%" . $search_topic . "%' OR `post_heading` like '%" . $search_topic . "%' OR `post_body` like '%" . $search_post_body . "%'";
     $searchposts = getArray($query);
     return $searchposts;
 }
