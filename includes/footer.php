@@ -1,5 +1,5 @@
 <footer id="footer">
-    <div class="bg-dark text-white copyright-div" id="copyright-div">
+    <div class="bg-dark text-white copyright-div fixed-bottom" id="copyright-div">
         <div class="container">
             <p class="text-center">Copyright &#169; by Tamzid Ahmed </p>
         </div>

@@ -39,7 +39,7 @@ $postcount =  postcount();
     <meta name="theme-color" content="#343a40">
     <link rel="stylesheet" type="text/css" href="/css/style.min.css">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark stick sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img src="/images/logo/<?php echo $site_details[0]["site_logo"] ?>" width="50" height="35" class="d-inline-block align-top" alt="" loading="lazy">
