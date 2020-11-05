@@ -16,6 +16,7 @@ if ($_REQUEST["searching"]) {
         <div class="wrapper">
             <div class="row">
                 <?php
+                echo $topics;
                 if ($topics > 0) {
                     foreach ($topics as $post) {
                         echo " <div class='col-md-4'> <div class='card card-gap post-card'> <a href='" . $post["post_slug"] . "/'>
@@ -27,11 +28,11 @@ if ($_REQUEST["searching"]) {
                         </div></div>";
                     }
                 } else {
-                    echo "   <div class='jumbotron'>
-                             <div class='container'>
-                             <h1 class='display-4'>No Topic Found</h1>
-                             </div>
-                            </div>";
+                    echo "<div class='jumbotron'>
+                          <div class='container'>
+                          <h1 class='display-4'>No Topic Found</h1>
+                          </div>
+                          </div>";
                 }
                 ?>
             </div>
