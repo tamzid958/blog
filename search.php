@@ -16,7 +16,7 @@ if ($_REQUEST["searching"]) {
         <div class="wrapper">
             <div class="row">
                 <?php
-                echo $topics;
+                var_dump($topics);
                 if ($topics > 0) {
                     foreach ($topics as $post) {
                         echo " <div class='col-md-4'> <div class='card card-gap post-card'> <a href='" . $post["post_slug"] . "/'>
