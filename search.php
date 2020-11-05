@@ -1,6 +1,7 @@
 <?php
 include "includes/header.php";
 include "includes/categories_header.php";
+include "includes/meta_header.php";
 if ($_REQUEST["searching"]) {
     $search_topic = $_REQUEST["searching"];
     $topics = topicSearcher($search_topic);

@@ -1,6 +1,7 @@
 <?php
 include "includes/header.php";
 include "includes/categories_header.php";
+include "includes/meta_header.php";
 if (postsbycategory($_REQUEST["id"])) {
     $categoryid = $_REQUEST["id"];
     $postsbycategory = postsbycategory($categoryid);
