@@ -78,7 +78,7 @@ $postcount =  postcount();
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
-                        <button type="subm" it name="searchPostBtn" class="btn btn-primary">Search</button>
+                        <button type="submit" it name="searchPostBtn" class="btn btn-primary">Search</button>
                     </div>
                 </div>
             </form>
