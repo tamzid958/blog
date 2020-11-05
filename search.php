@@ -1,15 +1,18 @@
 <?php
 include "includes/header.php";
 include "includes/categories_header.php";
-
-$search_topic = $_REQUEST["searching"];
-$topics = topicSearcher($search_topic);
+if ($_REQUEST["searching"]) {
+    $search_topic = $_REQUEST["searching"];
+    $topics = topicSearcher($search_topic);
+} else {
+    $topics = 0;
+}
 ?>
 <title>Search | <?php echo $site_details[0]["site_name"] ?></title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container force-bottom">
         <div class="wrapper">
             <div class="row">
                 <?php
