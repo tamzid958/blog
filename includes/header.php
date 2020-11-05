@@ -51,12 +51,6 @@ $postcount =  postcount();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <label class="switch">
-                                <input type="checkbox" id="dark_moder">
-                                <span class="slider round"></span>
-                            </label>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-white" href="/index.php">Blog</a>
                         </li>
                         <li class="nav-item">
