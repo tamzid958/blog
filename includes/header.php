@@ -56,8 +56,31 @@ $postcount =  postcount();
                         <li class="nav-item">
                             <a class="nav-link text-white" href="/contact.php">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" data-toggle="modal" data-target="#staticSearchBackdrop" style="cursor:pointer;"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </li>
                 </div>
             </div>
         </nav>
 
     </header>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticSearchBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form action="" method="post">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <input class="form-control form-control-lg" name="searchPost" type="text" placeholder="Which post you want to find?" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="subm" it name="searchPostBtn" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

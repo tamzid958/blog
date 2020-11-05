@@ -162,6 +162,12 @@ if (isset($_POST["sub_mail"])) {
     }
 }
 
+if (isset($_POST["searchPostBtn"])) {
+
+    $searchPost = $_POST["searchPost"];
+    header("Location: /search.php?searching=" . $searchPost);
+}
+
 function deletecomment($comment_id)
 {
 
@@ -570,4 +576,13 @@ function sitemap()
     $query = "SELECT `post_slug` FROM `post`";
     $sitemap = getArray($query);
     return  $sitemap;
+}
+
+function topicSearcher($search_topic)
+{
+    $search_post_body = base64_encode($search_topic);
+    //`post_slug`, `post_heading`, `post_body`,
+    $query = " SELECT * FROM post WHERE `post_slug` like '%" . $search_topic . "%' OR `post_slug` ='%" . $search_topic . "%' OR `post_body` ='%" . $search_post_body . "%'";
+    $searchposts = getArray($query);
+    return $searchposts;
 }
