@@ -17,7 +17,7 @@ if ($_REQUEST["searching"]) {
             <div class="row">
                 <?php
                 var_dump($topics);
-                if ($topics > 0) {
+                if ($topics) {
                     foreach ($topics as $post) {
                         echo " <div class='col-md-4'> <div class='card card-gap post-card'> <a href='" . $post["post_slug"] . "/'>
                             <img src='/images/" . $post["post_img"] . "' class='card-img-top post-img' alt='' loading='lazy'>
