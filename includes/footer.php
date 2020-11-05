@@ -20,7 +20,7 @@
 
 <script type="text/javascript">
     function parseJSAtOnload() {
-        var links = ["/scripts/popper.min.js", "/scripts/bootstrap.material.min.js", "/scripts/chart.bundle.min.js", "/scripts/fontawesome.min.js", "/scripts/hashes.min.js", "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f6a2229f290dcba", "/scripts/app.min.js"],
+        var links = ["/scripts/popper.min.js", "/scripts/mdb.min.js", "/scripts/chart.bundle.min.js", "/scripts/fontawesome.min.js", "/scripts/hashes.min.js", "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f6a2229f290dcba", "/scripts/app.min.js"],
             headElement = document.getElementsByTagName("head")[0],
             linkElement, i;
         for (i = 0; i < links.length; i++) {
