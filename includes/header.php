@@ -57,7 +57,7 @@ $postcount =  postcount();
                             <a class="nav-link text-white" href="/contact.php">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" data-toggle="modal" data-target="#staticSearchBackdrop" style="cursor:pointer;"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <a class="nav-link text-white" data-toggle="modal" data-target="#staticSearchBackdrop" style="cursor:pointer;">Search</a>
                         </li>
                 </div>
             </div>
