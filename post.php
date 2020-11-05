@@ -31,7 +31,7 @@ if (getPost($_REQUEST["url"])) {
         <h1 class="text-center">
             <?php echo $post[0]["post_heading"] ?>
         </h1>
-        <a class="navbar-brand">
+        <a class="navbar-brand text-white">
             <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
             <?php echo $site_details[0]["author_name"] ?>
         </a>

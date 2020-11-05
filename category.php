@@ -51,7 +51,7 @@ if (postsbycategory($_REQUEST["id"])) {
                     <div>
                         <div class="card bg-info text-white">
                             <div class="card-body">
-                                <a class="navbar-brand">
+                                <a class="navbar-brand text-white">
                                     <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
                                     <?php echo $site_details[0]["author_name"] ?>
                                 </a>
