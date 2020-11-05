@@ -1,4 +1,5 @@
 #Begin Sitemap. Do not remove
 user-agent: *
+disallow: https://blog.mrtvirushub.com/includes/admin_header.php
 sitemap: https://blog.mrtvirushub.com/sitemap.xml
 #End Sitemap. Do not remove
