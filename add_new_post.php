@@ -35,7 +35,7 @@ include "includes/admin_header.php";
                 </button>
                 <br><br>
                 <div id="direct_upload_input_div" class="input-group mb-3">
-                    <div class="custom-file">
+                    <div class="custom-file form-file">
                         <input type="file" id="direct_upload_input" class="custom-file-input" id="post-featured-img" name="post-featured-img">
                         <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Featured Image</label>
                     </div>

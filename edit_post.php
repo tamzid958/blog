@@ -37,7 +37,7 @@ if (empty($post)) {
                     ?>
                 </select>
                 <div class="input-group mb-3">
-                    <div class="custom-file">
+                    <div class="custom-file form-file">
                         <input type="file" class="custom-file-input" name="post-featured-img-edit" id="post-featured-img-edit">
                         <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Edit Featured Image</label>
                     </div>

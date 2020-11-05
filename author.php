@@ -14,7 +14,7 @@ include "includes/admin_header.php";
         <div class="wrapper">
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="input-group mb-3">
-                    <div class="custom-file">
+                    <div class="custom-file form-file">
                         <input type="file" name="author-img" class="custom-file-input" id="author-img" required>
                         <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Author Image</label>
                     </div>
@@ -25,7 +25,7 @@ include "includes/admin_header.php";
             </form>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="input-group mb-3">
-                    <div class="custom-file">
+                    <div class="custom-file form-file">
                         <input type="file" name="author-site-logo-img" class="custom-file-input" id="author-site-logo-img" required>
                         <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Site Logo</label>
                     </div>
@@ -36,7 +36,7 @@ include "includes/admin_header.php";
             </form>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="input-group mb-3">
-                    <div class="custom-file">
+                    <div class="custom-file form-file">
                         <input type="file" name="author-site-favicon" class="custom-file-input" id="author-site-favicon" required>
                         <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose Site Favicon</label>
                     </div>

@@ -15,12 +15,12 @@ include "includes/admin_header.php";
                     <h1 class="text-center">GALLERY</h1>
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="input-group mb-3">
-                            <div class="custom-file">
+                            <div class="custom-file form-file">
                                 <input type="file" name="gallery-img" class="custom-file-input" id="gallery-img" required>
                                 <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Upload Image</label>
                             </div>
                             <div class="input-group-append">
-                                <button type="submit" name="gallery-img-upload" class="input-group-text bg-primary text-white" id="gallery-img-upload">Upload JPG/JPEG/PNG</button>
+                                <button type="submit" name="gallery-img-upload" class="input-group-text bg-primary text-white form-file-button" id="gallery-img-upload">Upload JPG/JPEG/PNG</button>
                             </div>
                         </div>
                     </form>
