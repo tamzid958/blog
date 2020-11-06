@@ -547,6 +547,15 @@ function popularposts()
     return $popularposts;
 }
 
+function popularpostsforfront()
+{
+    $query = "SELECT * FROM `post` GROUP BY `post_id` ORDER BY `post_view` DESC LIMIT 10";
+    $popularposts = getArray($query);
+    return $popularposts;
+}
+
+
+
 function fixposts()
 {
     $query = "SELECT `post_id`, `post_heading`, `post_view`,`created_at` FROM `post` GROUP BY `post_id` ORDER BY `post_view` ASC LIMIT 5";

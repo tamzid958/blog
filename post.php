@@ -77,7 +77,6 @@ if (getPost($_REQUEST["url"])) {
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <br>
                     <ul class="list-group list-group-flush text-dark">
                         <div class="card card-inner">
                             <h3>&nbsp; &nbsp; Featured Topics</h3>
