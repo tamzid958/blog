@@ -76,7 +76,7 @@ if (getPost($_REQUEST["url"])) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-md-none d-lg-block">
+                <div class="col-md-4 d-sm-none d-lg-block">
                     <br>
                     <ul class="list-group list-group-flush text-dark">
                         <div class="card card-inner">
