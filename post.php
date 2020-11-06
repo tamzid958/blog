@@ -33,7 +33,7 @@ if (getPost($_REQUEST["url"])) {
         </h1>
         <a class="navbar-brand text-white">
             <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
-            <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="text-white font-weight-light">by <?php echo $site_details[0]["author_name"] ?> - <?php echo date('F d, Y', strtotime($post[0]["created_at"])) ?> </a>
+            <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="text-white font-weight-normal">by <?php echo $site_details[0]["author_name"] ?> - <?php echo date('F d, Y', strtotime($post[0]["created_at"])) ?> </a>
         </a>
 
     </div>
