@@ -39,45 +39,91 @@ if (getPost($_REQUEST["url"])) {
     </div>
     <div class="container">
         <div class="wrapper">
-
-            <br><br>
-            <div id="post-font">
-                <?php echo  $post_body ?>
-            </div>
-            <br><br>
-            <div class="addthis_inline_share_toolbox"></div>
-            <br> <br>
-            <h4>Share Your Thoughts</h4>
-            <div class="comment-div">
-                <form action="" method="post">
-                    <input type="hidden" name="post_id" value="<?php echo $post[0]["post_id"] ?>">
-                    <input type="text" class="form-control" name="comment-name" id="comment-name" placeholder="Enter Your Name" required>
-                    <input type="email" class="form-control" name="comment-mail" id="comment-mail" placeholder="@email" required>
-                    <textarea id="comment_post" class="form-control" name="comment-body" rows="4" placeholder="Leave a comment here" required></textarea>
-                    <button type="submit" name="cmnt-btn" class="btn btn-primary btn-lg btn-block text-white bg-primary">Comment</button>
-                </form>
-                <br>
-                <div class="card">
-                    <?php
-                    foreach ($comments as $comment) {
-                        echo " <div class='card-comment'><div class='media'>
+            <div class="row">
+                <div class="col-md-8 text-dark">
+                    <br><br>
+                    <div id="post-font">
+                        <?php echo  $post_body ?>
+                    </div>
+                    <br><br>
+                    <div class="addthis_inline_share_toolbox"></div>
+                    <br> <br>
+                    <h4>Share Your Thoughts</h4>
+                    <div class="comment-div">
+                        <form action="" method="post">
+                            <input type="hidden" name="post_id" value="<?php echo $post[0]["post_id"] ?>">
+                            <input type="text" class="form-control" name="comment-name" id="comment-name" placeholder="Enter Your Name" required>
+                            <input type="email" class="form-control" name="comment-mail" id="comment-mail" placeholder="@email" required>
+                            <textarea id="comment_post" class="form-control" name="comment-body" rows="4" placeholder="Leave a comment here" required></textarea>
+                            <button type="submit" name="cmnt-btn" class="btn btn-primary btn-lg btn-block text-white bg-primary">Comment</button>
+                        </form>
+                        <br>
+                        <div class="card">
+                            <?php
+                            foreach ($comments as $comment) {
+                                echo " <div class='card-comment'><div class='media'>
                     <img src='../images/logo/commenter.png' class='mr-3 rounded-circle author' alt='' width='70' height='70' loading='lazy'>
                     <div class='media-body'>
                         <h5 class='mt-0 text-dark'>" . $comment['commenter'] . "</h5>
                         <p class='text-dark'>" .
-                            $comment['comment'] . "
+                                    $comment['comment'] . "
                         <p>
                     </div>
                     </div>
-                </div> <hr class='my-4'>";
-                    }
-                    ?>
+                    </div> <hr class='my-4'>";
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <br>
+                    <ul class="list-group list-group-flush text-dark">
+                        <div class="card card-inner">
+                            <h3>&nbsp; &nbsp; Featured Topics</h3>
+                            <?php
+                            $i = 0;
+                            foreach ($featureposts as $post) {
+                                if (++$i == 10) {
+                                    break;
+                                } else {
+                                    echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </ul>
+
+                    <br>
+                    <div>
+                        <h3>Subscribe to NewsLetter</h3>
+                        <input type="text" id="subscribe" class="form-control" placeholder="@email">
+                        <p class="text-danger text-center" id="alert-mail"></p>
+                        <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block bg-info">Subscribe</a>
+                    </div>
+                    <br>
+                    <div class="div_ad">
+                        <a href="https://technologea.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="/images/test_ad.png" alt="technologea">
+                        </a>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <a class="navbar-brand text-white">
+                                    <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
+                                    <?php echo $site_details[0]["author_name"] ?>
+                                </a>
+                                <p class="card-text">Total Articles: <?php echo $postcount ?></p>
+                                <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-light text-dark bg-light">Follow</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
-
     <?php
     include "includes/footer.php";
     ?>
