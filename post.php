@@ -64,9 +64,9 @@ if (getPost($_REQUEST["url"])) {
                                 echo " <div class='card-comment'><div class='media'>
                     <img src='../images/logo/commenter.png' class='mr-3 rounded-circle author' alt='' width='70' height='70' loading='lazy'>
                     <div class='media-body'>
-                        <h5 class='mt-0 text-dark'>" . $comment['commenter'] . "</h5>
+                        <h5 class='mt-0 text-dark'>" . htmlspecialchars($comment['commenter'], ENT_QUOTES, 'UTF-8') . "</h5>
                         <p class='text-dark'>" .
-                                    $comment['comment'] . "
+                                    htmlspecialchars($comment['comment'], ENT_QUOTES, 'UTF-8') . "
                         <p>
                     </div>
                     </div>
