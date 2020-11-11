@@ -33,8 +33,8 @@ $post_id_add = $_REQUEST["id"];
                         foreach ($comments as $comment) {
                             echo "<tr>
                         <th scope=row'>" . $comment["id"] . "</th>
-                        <td>" . $comment["commenter"] . "</td>
-                        <td>" . substr($comment["comment"], 0, 70) . "</td>
+                        <td>" . htmlspecialchars($comment["commenter"], ENT_QUOTES, 'UTF-8') . "</td>
+                        <td>" . htmlspecialchars(substr($comment["comment"], 0, 70), ENT_QUOTES, 'UTF-8') . "</td>
                         <td>
                         <a href='' type='button' class='btn btn-danger btn-sm comment-del-btn' id=" . $comment["id"] . ">Delete</a></td>
                     </tr>";
