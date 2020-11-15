@@ -16,7 +16,7 @@
 -->
     <script src="/scripts/jquery.min.js" type="text/javascript" defer></script>
     <script src="https://cdn.tiny.cloud/1/e4f32vgxciwftxmzhe11ch7ruh2i0wyw6jrb0qh5v986h2xr/tinymce/5/tinymce.min.js" referrerpolicy="origin" defer></script>
-    <script src="/syntax/src/highlighter.js"></script>
+    <script src="/syntax/src/highlighters.js"></script>
     <!--   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
