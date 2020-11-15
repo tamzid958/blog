@@ -58,13 +58,14 @@
   },
   "dependencies": {
     "brush-base": "^4.0.0",
-    "syntaxhighlighter-match": "^4.0.0",
-    "syntaxhighlighter-html-renderer": "^4.0.0",
-    "syntaxhighlighter-regex": "^4.0.0",
+    "domready": "^1.0.5",
     "opts-parser": "^4.0.0",
+    "requirejs": "^2.3.6",
     "retabber": "^4.0.0",
-    "unindenter": "^4.0.0",
-    "domready": "^1.0.5"
+    "syntaxhighlighter-html-renderer": "^4.0.0",
+    "syntaxhighlighter-match": "^4.0.0",
+    "syntaxhighlighter-regex": "^4.0.0",
+    "unindenter": "^4.0.0"
   },
   "license": "MIT",
   "babel": {
