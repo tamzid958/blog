@@ -16,6 +16,8 @@
 -->
     <script src="/scripts/jquery.min.js" type="text/javascript" defer></script>
     <script src="https://cdn.tiny.cloud/1/e4f32vgxciwftxmzhe11ch7ruh2i0wyw6jrb0qh5v986h2xr/tinymce/5/tinymce.min.js" referrerpolicy="origin" defer></script>
+    <script src="/scripts/MooTools-Core-1.6.0.js"></script>
+    <script src="/scripts/microlight.js"></script>
     <!--   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
