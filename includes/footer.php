@@ -16,6 +16,8 @@
 -->
     <script src="/scripts/jquery.min.js" type="text/javascript" defer></script>
     <script src="https://cdn.tiny.cloud/1/e4f32vgxciwftxmzhe11ch7ruh2i0wyw6jrb0qh5v986h2xr/tinymce/5/tinymce.min.js" referrerpolicy="origin" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js" integrity="sha512-Z5dAQyvO8EyY1cHQcqYTYL8z6PDjM0URql6AioNodsSxxTJS5Fqfujr+o/4ye2dLp0he1qAVTiZABTunv6oLow==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.min.js" integrity="sha512-fgB2B2iNPSMDR0e4sUBX9rVPhScqSJlamsQBhe+1CI+TbvoBL0N7hmlpOGwmO4gr5T0ho+JN0EP8J6JjzHuq/w==" crossorigin="anonymous"></script>
     <!--   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
