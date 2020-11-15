@@ -267,6 +267,6 @@ input:checked + .slider:before {
 .microlight {
   font-family : monospace;
   white-space : pre;
-  background-color : #C4E4E8;
-  color            : #052C36;    
+  background-color : #C4E4E8 !important;
+  color            : #052C36 !important;    
 }
