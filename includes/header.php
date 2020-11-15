@@ -39,6 +39,7 @@ $postcount =  postcount();
     <?php echo base64_decode($site_details[0]["adsense_code"]) ?>
     <meta name="theme-color" content="#343a40">
     <link rel="stylesheet" type="text/css" href="/css/style.min.css">
+    <link href="https://myCDN.com/prism@v1.x/themes/prism.css" type="text/css" rel="stylesheet" />
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">

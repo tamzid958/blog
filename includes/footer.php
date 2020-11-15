@@ -16,6 +16,8 @@
 -->
     <script src="/scripts/jquery.min.js" type="text/javascript" defer></script>
     <script src="https://cdn.tiny.cloud/1/e4f32vgxciwftxmzhe11ch7ruh2i0wyw6jrb0qh5v986h2xr/tinymce/5/tinymce.min.js" referrerpolicy="origin" defer></script>
+    <script src="https://myCDN.com/prism@v1.x/components/prism-core.min.js" defer></script>
+    <script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js" defer></script>
 </footer>
 
 <script type="text/javascript">
