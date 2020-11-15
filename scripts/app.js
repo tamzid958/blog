@@ -2,6 +2,9 @@ $(document).ready(function () {
   $("input").on("focus", function () {
     $(this).attr("autocomplete", "off");
   });
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightBlock(block);
+  });
   tinymce.init({
     selector: ".admin_textarea",
     plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
