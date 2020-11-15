@@ -40,10 +40,10 @@ $postcount =  postcount();
     <meta name="theme-color" content="#343a40">
     <link rel="stylesheet" type="text/css" href="/css/style.min.css">
     <link rel="stylesheet" type="text/css" href="/css/EnlighterJS.min.css">
-    <script type="text/javascript" src="/js/MooTools-Core-1.6.0.js"></script>
+    <script type="text/javascript" src="/scripts/MooTools-Core-1.6.0.js"></script>
 
     <!-- Include EnlighterJS -->
-    <script type="text/javascript" src="/jsEnlighterJS.min.js"></script>
+    <script type="text/javascript" src="/scripts/EnlighterJS.min.js"></script>
     <meta name="EnlighterJS" content="Advanced javascript based syntax highlighting" data-indent="4" data-selector-block="pre" data-selector-inline="code.special" />
     <!--  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css"> -->
     <header>
