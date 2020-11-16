@@ -1,9 +1,6 @@
 <?php
 session_start();
-ob_start();;
-
-?>
-<?php
+ob_start();
 
 if (file_exists("./controller/controller.php")) {
     require_once "./controller/controller.php";
