@@ -1,7 +1,6 @@
 <?php
 session_start();
 ob_start();
-$cookie_name = "user";
 if (file_exists("./controller/controller.php")) {
     require_once "./controller/controller.php";
 } else {

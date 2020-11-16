@@ -480,9 +480,8 @@ function authenticate($email, $password)
     $author = getArray($query);
 
     if ($author) {
-        $cookie_mail = "";
-        $cookie_value =  md5($author[0]["author_mail"]);
-        setcookie($cookie_mail, $cookie_value, time() + (86400 * 30 * 30), "/");
+
+        $_SESSION["session_value"] =  md5($author[0]["author_mail"]);
     }
     return $author;
 }
