@@ -6,8 +6,7 @@ $subs = getallsubs();
 $dirname = "images/";
 $images = glob($dirname . "*.{jpg,jpeg,png}", GLOB_BRACE);
 //$images = glob($dirname . "*.jpg");
-if ($_COOKIE[$cookie_mail] == md5($author[0]["author_mail"])) {
-} else {
+if ($_COOKIE[$cookie_mail] != md5($author[0]["author_mail"])) {
     header("Location: ./controller/log_out.php");
 }
 ?>
