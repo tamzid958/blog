@@ -168,13 +168,6 @@ if (isset($_POST["searchPostBtn"])) {
     header("Location: /search.php?searching=" . $searchPost);
 }
 
-function deletecomment($comment_id)
-{
-
-    $query = "DELETE FROM `comments` WHERE `id`= '$comment_id'";
-    execute($query);
-}
-
 
 if (isset($_POST["add_new_post"])) {
 
@@ -246,6 +239,15 @@ if (isset($_POST["comment_edit_id_a"])) {
 if (isset($_POST["contact_btn"])) {
     contactform($_POST["contact_name"], $_POST["contact_mail"], $_POST["contact_body"]);
 }
+
+
+function deletecomment($comment_id)
+{
+
+    $query = "DELETE FROM `comments` WHERE `id`= '$comment_id'";
+    execute($query);
+}
+
 
 function contactform($name, $mail, $body)
 {
@@ -478,7 +480,9 @@ function authenticate($email, $password)
     $author = getArray($query);
 
     if ($author) {
-        $_SESSION["username"] = md5($author[0]["author_mail"]);
+
+        $cookie_mail = md5($author[0]["author_mail"]);
+        setcookie($cookie_mail, time() + (86400 * 30 * 30), "/");
     }
     return $author;
 }

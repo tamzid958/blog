@@ -1,5 +1,10 @@
 <?php
 include "includes/header.php";
+if ($_COOKIE[$cookie_mail] == md5($author[0]["author_mail"])) {
+    header("Location: ./posts.php");
+} else {
+    header("Location: ./controller/log_out.php");
+}
 ?>
 <title>Login | <?php echo $site_details[0]["site_name"] ?></title>
 </head>
