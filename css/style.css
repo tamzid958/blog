@@ -271,7 +271,3 @@ input:checked + .slider:before {
   -ms-user-select: none;
   user-select: none;
 }
-.custom-tooltip{
-  background-color:red !important;
-  color: white !important;
-}
