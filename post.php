@@ -41,6 +41,7 @@ if (getPost($_REQUEST["url"])) {
         <div class="wrapper">
             <div class="row">
                 <div class="col-md-8 text-dark">
+                    <a href="#" class="material-tooltip-main custom-tooltip" data-toggle="tooltip" title="The last tip!">Direct Copy is Prohibited </a>
                     <br><br>
                     <div id="post-font" class="no-copy" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
                         <?php echo  $post_body ?>

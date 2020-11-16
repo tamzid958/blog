@@ -6,6 +6,10 @@ $(document).ready(function () {
   $("input").on("focus", function () {
     $(this).attr("autocomplete", "off");
   });
+  $('#no-copy').on("click",function (){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
   tinymce.init({
     selector: ".admin_textarea",
     plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
