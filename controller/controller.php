@@ -481,7 +481,8 @@ function authenticate($email, $password)
 
     if ($author) {
         $cookie_mail = "";
-        setcookie($cookie_mail, md5($author[0]["author_mail"]), time() + (86400 * 30 * 30), "/");
+        $cookie_value =  md5($author[0]["author_mail"]);
+        setcookie($cookie_mail, $cookie_value, time() + (86400 * 30 * 30), "/");
     }
     return $author;
 }

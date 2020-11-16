@@ -1,8 +1,9 @@
 <?php
 include "includes/header.php";
-var_dump($_COOKIE[$cookie_mail]);
-if ($_COOKIE[$cookie_mail] == md5($author[0]["author_mail"])) {
-    header("Location: ./posts.php");
+if ($_COOKIE[$cookie_mail]) {
+    if ($cookie_mail == md5($author[0]["author_mail"])) {
+        header("Location: ./posts.php");
+    }
 }
 ?>
 <title>Login | <?php echo $site_details[0]["site_name"] ?></title>
