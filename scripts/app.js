@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var target = document.getElementsByClassName("no-copy");
+  var target = $("#no-copy");
    // PREVENT CONTEXT MENU FROM OPENING
    target.addEventListener("contextmenu", function(evt){
     evt.preventDefault();
