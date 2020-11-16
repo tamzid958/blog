@@ -41,39 +41,40 @@ if (getPost($_REQUEST["url"])) {
         <div class="wrapper">
             <div class="row">
                 <div class="col-md-8 text-dark">
-                    <a href="#" class="material-tooltip-main custom-tooltip" data-toggle="tooltip" title="The last tip!">Direct Copy is Prohibited </a>
-                    <br><br>
-                    <div id="post-font" class="no-copy" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
-                        <?php echo  $post_body ?>
-                    </div>
-                    <br><br>
-                    <div class="addthis_inline_share_toolbox"></div>
-                    <br> <br>
-                    <h4>Share Your Thoughts</h4>
-                    <div class="comment-div">
-                        <form action="" method="post">
-                            <input type="hidden" name="post_id" value="<?php echo $post[0]["post_id"] ?>">
-                            <input type="text" class="form-control" name="comment-name" id="comment-name" placeholder="Enter Your Name" required>
-                            <input type="email" class="form-control" name="comment-mail" id="comment-mail" placeholder="@email" required>
-                            <textarea id="comment_post" class="form-control" name="comment-body" rows="4" placeholder="Leave a comment here" required></textarea>
-                            <button type="submit" name="cmnt-btn" class="btn btn-primary btn-lg btn-block text-white bg-primary">Comment</button>
-                        </form>
-                        <br>
-                        <div class="card">
-                            <?php
-                            foreach ($comments as $comment) {
-                                echo " <div class='card-comment'><div class='media'>
+                    <div class="material-tooltip-main custom-tooltip" data-toggle="tooltip" title="Direct Copy is Prohibited!">
+                        <br><br>
+                        <div id="post-font" class="no-copy" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+                            <?php echo  $post_body ?>
+                        </div>
+                        <br><br>
+                        <div class="addthis_inline_share_toolbox"></div>
+                        <br> <br>
+                        <h4>Share Your Thoughts</h4>
+                        <div class="comment-div">
+                            <form action="" method="post">
+                                <input type="hidden" name="post_id" value="<?php echo $post[0]["post_id"] ?>">
+                                <input type="text" class="form-control" name="comment-name" id="comment-name" placeholder="Enter Your Name" required>
+                                <input type="email" class="form-control" name="comment-mail" id="comment-mail" placeholder="@email" required>
+                                <textarea id="comment_post" class="form-control" name="comment-body" rows="4" placeholder="Leave a comment here" required></textarea>
+                                <button type="submit" name="cmnt-btn" class="btn btn-primary btn-lg btn-block text-white bg-primary">Comment</button>
+                            </form>
+                            <br>
+                            <div class="card">
+                                <?php
+                                foreach ($comments as $comment) {
+                                    echo " <div class='card-comment'><div class='media'>
                     <img src='../images/logo/commenter.png' class='mr-3 rounded-circle author' alt='' width='70' height='70' loading='lazy'>
                     <div class='media-body'>
                         <h5 class='mt-0 text-dark'>" . htmlspecialchars($comment['commenter'], ENT_QUOTES, 'UTF-8') . "</h5>
                         <p class='text-dark'>" .
-                                    htmlspecialchars($comment['comment'], ENT_QUOTES, 'UTF-8') . "
+                                        htmlspecialchars($comment['comment'], ENT_QUOTES, 'UTF-8') . "
                         <p>
                     </div>
                     </div>
                     </div> <hr class='my-4'>";
-                            }
-                            ?>
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
