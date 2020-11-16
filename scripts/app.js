@@ -1,8 +1,7 @@
 $(document).ready(function () {
-  $("#no-copy").ready(function() {
-    $('body').bind('cut copy', function(e) {
+  $('#no-copy').bind('cut copy', function(e) {
         e.preventDefault();
-      });
+        e.clipboardData.setData("text/plain", "Copying is not allowed on this webpage");
   });
   $("input").on("focus", function () {
     $(this).attr("autocomplete", "off");
