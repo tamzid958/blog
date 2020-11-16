@@ -42,7 +42,7 @@ if (getPost($_REQUEST["url"])) {
             <div class="row">
                 <div class="col-md-8 text-dark">
                     <br><br>
-                    <div id="post-font" class="no-copy">
+                    <div id="post-font" class="no-copy" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
                         <?php echo  $post_body ?>
                     </div>
                     <br><br>

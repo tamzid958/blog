@@ -1,17 +1,9 @@
 $(document).ready(function () {
-  var target = $("#no-copy");
-   // PREVENT CONTEXT MENU FROM OPENING
-   target.addEventListener("contextmenu", function(evt){
-    evt.preventDefault();
-  }, false);
- 
-  // PREVENT CLIPBOARD COPYING
-  target.addEventListener("copy", function(evt){
-    // Change the copied text if you want
-    evt.clipboardData.setData("text/plain", "Direct Copying is not allowed on this webpage");
-    // Prevent the default copy action
-    evt.preventDefault();
-  }, false);
+  $("#no-copy").ready(function() {
+    $('body').bind('cut copy', function(e) {
+        e.preventDefault();
+      });
+  });
   $("input").on("focus", function () {
     $(this).attr("autocomplete", "off");
   });
