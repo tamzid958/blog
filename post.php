@@ -77,46 +77,48 @@ if (getPost($_REQUEST["url"])) {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 sticky">
-                    <ul class="list-group list-group-flush text-dark">
-                        <div class="card card-inner">
-                            <h3>&nbsp; &nbsp; Featured Topics</h3>
-                            <?php
-                            $i = 0;
-                            foreach ($featureposts as $post) {
-                                if (++$i == 10) {
-                                    break;
-                                } else {
-                                    echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
+                <div class='sticky'>
+                    <div class="col-md-4">
+                        <ul class="list-group list-group-flush text-dark">
+                            <div class="card card-inner">
+                                <h3>&nbsp; &nbsp; Featured Topics</h3>
+                                <?php
+                                $i = 0;
+                                foreach ($featureposts as $post) {
+                                    if (++$i == 10) {
+                                        break;
+                                    } else {
+                                        echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
+                                    }
                                 }
-                            }
-                            ?>
-                        </div>
-                    </ul>
+                                ?>
+                            </div>
+                        </ul>
 
-                    <br>
-                    <div>
-                        <h3>Subscribe to NewsLetter</h3>
-                        <input type="text" id="subscribe" class="form-control" placeholder="@email">
-                        <p class="text-danger text-center" id="alert-mail"></p>
-                        <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block bg-info">Subscribe</a>
-                    </div>
-                    <br>
-                    <!--  <div class="div_ad">
+                        <br>
+                        <div>
+                            <h3>Subscribe to NewsLetter</h3>
+                            <input type="text" id="subscribe" class="form-control" placeholder="@email">
+                            <p class="text-danger text-center" id="alert-mail"></p>
+                            <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block bg-info">Subscribe</a>
+                        </div>
+                        <br>
+                        <!--  <div class="div_ad">
                         <a href="https://technologea.com/" target="_blank" rel="noopener noreferrer">
                             <img src="/images/test_ad.png" alt="technologea">
                         </a>
                     </div>
                     <br> -->
-                    <div>
-                        <div class="card bg-info text-white">
-                            <div class="card-body">
-                                <a class="navbar-brand text-white">
-                                    <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
-                                    <?php echo $site_details[0]["author_name"] ?>
-                                </a>
-                                <p class="card-text">Total Articles: <?php echo $postcount ?></p>
-                                <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-light text-dark bg-light">Follow</a>
+                        <div>
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <a class="navbar-brand text-white">
+                                        <img src="/images/logo/<?php echo $site_details[0]["author_img"] ?>" id="author" class="d-inline-block align-middle rounded-circle author" alt="" loading="lazy">
+                                        <?php echo $site_details[0]["author_name"] ?>
+                                    </a>
+                                    <p class="card-text">Total Articles: <?php echo $postcount ?></p>
+                                    <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-light text-dark bg-light">Follow</a>
+                                </div>
                             </div>
                         </div>
                     </div>
