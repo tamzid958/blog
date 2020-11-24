@@ -14,6 +14,7 @@ include "includes/meta_header.php";
             <div class="card">
                 <div class="container contact-form">
                     <h3 class="text-center">FEEL FREE TO CONTACT</h3>
+                    <h4 class="text-center"><a href="mailto:admin@mrtivrushub.com">admin@mrtivrushub.com</a></h4>
                     <form method="post" action="">
                         <input type="text" class="form-control" type="text" name="contact_name" id="" placeholder="NAME" required>
                         <input type="email" class="form-control" name="contact_mail" id="" placeholder="EMAIL" required>

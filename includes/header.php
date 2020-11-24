@@ -57,6 +57,9 @@ $postcount =  postcount();
                         <li class="nav-item">
                             <a class="nav-link text-white" data-toggle="modal" data-target="#staticSearchBackdrop" style="cursor:pointer;">Search</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/privacy_policy.php">Privacy Policy</a>
+                        </li>
                 </div>
             </div>
         </nav>

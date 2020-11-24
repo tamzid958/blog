@@ -102,12 +102,12 @@ if (getPost($_REQUEST["url"])) {
                         <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block bg-info">Subscribe</a>
                     </div>
                     <br>
-                    <div class="div_ad">
+                    <!--  <div class="div_ad">
                         <a href="https://technologea.com/" target="_blank" rel="noopener noreferrer">
                             <img src="/images/test_ad.png" alt="technologea">
                         </a>
                     </div>
-                    <br>
+                    <br> -->
                     <div>
                         <div class="card bg-info text-white">
                             <div class="card-body">
