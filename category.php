@@ -35,25 +35,25 @@ if (postsbycategory($_REQUEST["id"])) {
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="sticky">
-                        <ul class="list-group list-group-flush text-dark">
-                            <div class="card card-inner">
-                                <h3>&nbsp; Popular Topics</h3>
-                                <?php
-                                $i = 0;
-                                foreach ($popularposts  as $post) {
-                                    if (++$i == 10) {
-                                        break;
-                                    } else {
-                                        echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
-                                    }
+
+                    <ul class="list-group list-group-flush text-dark">
+                        <div class="card card-inner">
+                            <h3>&nbsp; Popular Topics</h3>
+                            <?php
+                            $i = 0;
+                            foreach ($popularposts  as $post) {
+                                if (++$i == 10) {
+                                    break;
+                                } else {
+                                    echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
                                 }
-                                ?>
-                            </div>
-                        </ul>
+                            }
+                            ?>
+                        </div>
+                    </ul>
 
-                        <br>
-
+                    <br>
+                    <div class="sticky">
                         <div>
                             <h3>Subscribe to NewsLetter</h3>
                             <input type="text" id="subscribe" class="form-control" placeholder="@email">

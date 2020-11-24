@@ -79,24 +79,25 @@ if (getPost($_REQUEST["url"])) {
                 </div>
 
                 <div class="col-md-4">
-                    <div class='sticky'>
-                        <ul class="list-group list-group-flush text-dark">
-                            <div class="card card-inner">
-                                <h3>&nbsp; &nbsp; Featured Topics</h3>
-                                <?php
-                                $i = 0;
-                                foreach ($featureposts as $post) {
-                                    if (++$i == 10) {
-                                        break;
-                                    } else {
-                                        echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
-                                    }
-                                }
-                                ?>
-                            </div>
-                        </ul>
 
-                        <br>
+                    <ul class="list-group list-group-flush text-dark">
+                        <div class="card card-inner">
+                            <h3>&nbsp; &nbsp; Featured Topics</h3>
+                            <?php
+                            $i = 0;
+                            foreach ($featureposts as $post) {
+                                if (++$i == 10) {
+                                    break;
+                                } else {
+                                    echo "<a href='" . $post["post_slug"] . "/'><li class='list-group-item'>" . $post["post_heading"] . "</li></a>";
+                                }
+                            }
+                            ?>
+                        </div>
+                    </ul>
+
+                    <br>
+                    <div class='sticky'>
                         <div>
                             <h3>Subscribe to NewsLetter</h3>
                             <input type="text" id="subscribe" class="form-control" placeholder="@email">
@@ -108,8 +109,8 @@ if (getPost($_REQUEST["url"])) {
                         <a href="https://technologea.com/" target="_blank" rel="noopener noreferrer">
                             <img src="/images/test_ad.png" alt="technologea">
                         </a>
-                    </div>
-                    <br> -->
+                      </div>
+                      <br> -->
                         <div>
                             <div class="card bg-info text-white">
                                 <div class="card-body">
