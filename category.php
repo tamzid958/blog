@@ -34,8 +34,8 @@ if (postsbycategory($_REQUEST["id"])) {
                         ?>
                     </div>
                 </div>
-                <div class="sticky">
-                    <div class="col-md-4">
+                <div class="col-md-4">
+                    <div class="sticky">
                         <ul class="list-group list-group-flush text-dark">
                             <div class="card card-inner">
                                 <h3>&nbsp; Popular Topics</h3>
