@@ -16,7 +16,7 @@ FEATURES:
 
 WATCH DEMO VIDEO:
 
-[![Watch the video](https://i.imgur.com/ia3Jrgc.png)](https://vimeo.com/user108456576/review/484864789/41db1503b4)
+[![Watch the video](https://i.imgur.com/ia3Jrgc.png)](https://vimeo.com/484864789)
 
 
 
