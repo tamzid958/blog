@@ -2,8 +2,10 @@
 session_start();
 ob_start();
 if (file_exists("./controller/controller.php")) {
+    require_once "./controller/database_model.php";
     require_once "./controller/controller.php";
 } else {
+    require_once "../controller/database_model.php";
     require_once "../controller/controller.php";
 }
 $site_details = sitedetails();
