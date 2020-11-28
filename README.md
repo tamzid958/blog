@@ -1,6 +1,7 @@
 STABLE BLOG DOWNLOAD LINK - [STABLE BLOG V2.0](https://github.com/tamzid958/blog/releases/tag/v2.0)
 
 FEATURES:
+
 1. MATERIAL DESIGN WITH MDB5
 2. AUTO CREATE DATABASE NO HASSLE.
 3. BLOG POSTING
@@ -12,26 +13,28 @@ FEATURES:
 9. GALLERY AVAILABLE
 10. READY FOR GOOGLE ADSENSE OR AMAZON AFFILIATE
 
-
 USED:
+
 1. PHP
 2. JQUERY
 3. HTML & Material Bootstrap CSS
 4. MYSQL DATABASE
 
 INSTALLATION PROCESS:
+
 1. DOWNLOAD THE ZIP
 2. UPLOAD THE ZIP IN CPANEL
 
-CONTACT HOSTING COMPANY OR MY PERSONAL MAIL - admin@mrtvirushub.com FOR STEPS  3, 4, 5, 6
+CONTACT HOSTING COMPANY OR MY PERSONAL MAIL - admin@mrtvirushub.com FOR STEPS 3, 4, 5, 6
 IF FOUND DIFFICULTY.
 
-3. EXTRACT THE ZIP AND DOWNLOAD CONFIG FILE FROM [HERE](https://drive.google.com/file/d/1UlFt-y81lQPkh9JMwZ1zSrMdQctAQVom/view?usp=sharing)
-4. OPEN WITH ANY TEXT EDITOR
-5. CHANGE VARIABLE $servername = "var1" , $db_username = "var2" , $db_password = "var3"
-   var1 , var2 and var3 will be according to your cpanel details. 
-6. UPLOAD THE CONFIG FILE IN CONTROLLER FOLDER (/controller/) IN CPANEL
-7. VISIT YOUR WEBSITE BY DOMAIN NAME
+3. EXTRACT THE ZIP
+4. DOWNLOAD CONFIG FILE FROM [HERE](https://drive.google.com/file/d/1UlFt-y81lQPkh9JMwZ1zSrMdQctAQVom/view?usp=sharing)
+5. OPEN WITH ANY TEXT EDITOR
+6. CHANGE VARIABLE $servername = "var1" , $db_username = "var2" , $db_password = "var3"
+   var1 , var2 and var3 will be according to your cpanel details.
+7. UPLOAD THE CONFIG FILE IN CONTROLLER FOLDER (/controller/) IN CPANEL
+8. VISIT YOUR WEBSITE BY DOMAIN NAME
 
 ONE TIME USE LOGIN DETAILS:
 
