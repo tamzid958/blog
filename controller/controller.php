@@ -613,12 +613,12 @@ function export_to_CSV()
     header('Content-Disposition: attachment; filename=post.csv');
 
     $output = fopen("php://output", "w");
-    fputcsv($output, array('post_id', 'post_slug', 'post_heading', 'post_body', 'category_id', 'post_img', 'post_alt', 'feature_category', 'created_at', 'updated_at', 'post_view'));
+    fputcsv($output, array('post_id', 'post_slug', 'post_heading', 'post_body', 'category_name', 'post_img', 'post_alt', 'feature_category', 'created_at', 'updated_at', 'post_view'));
     $query = "SELECT * FROM `post`,`category` WHERE post.category_id = category.category_id ORDER BY `post_id` DESC";
     $xcvs = getArray($query);
     $xcvs = $xcvs;
     foreach ($xcvs as $xcv) {
-        fputcsv($output, array($xcv['post_id'], $xcv['post_slug'], $xcv['post_heading'], $xcv['post_body'], $xcv['category_id'], $xcv['post_img'], $xcv['post_alt'], $xcv['feature_category'], $xcv['created_at'], $xcv['updated_at'], $xcv['post_view']));
+        fputcsv($output, array($xcv['post_id'], $xcv['post_slug'], $xcv['post_heading'], $xcv['post_body'], $xcv["category_name"], $xcv['post_img'], $xcv['post_alt'], $xcv['feature_category'], $xcv['created_at'], $xcv['updated_at'], $xcv['post_view']));
     }
 
     fclose($output);
