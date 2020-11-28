@@ -15,7 +15,7 @@ $init_sqls = array(
     "ALTER TABLE `subscriber` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `email` (`email`); ",
     "ALTER TABLE `comments` ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`);",
     "ALTER TABLE `post` ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);",
-    "INSERT INTO `author` (`id`, `author_name`, `author_tel`, `author_mail`, `password`, `biography`, `adsense_code`, `site_name`, `site_logo`, `author_img`, `site_favicon`) VALUES ('1', 'admin', '0000000', 'admin@example.com', '21232f297a57a5a743894a0e4a801fc3', 'dummy', '', 'dummy', 'logo.png', 'author.png', 'favicon.ico');"
+    "INSERT INTO `author` (`id`, `author_name`, `author_tel`, `author_mail`, `password`, `biography`, `adsense_code`, `site_name`, `site_logo`, `author_img`, `site_favicon`) VALUES ('1', 'admin', '0000000', 'admin@example.com', '21232f297a57a5a743894a0e4a801fc3', '', '', 'dummy', 'logo.png', 'author.png', 'favicon.ico');"
 );
 
 
