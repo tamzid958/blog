@@ -30,10 +30,13 @@ if ($mysqli === false) {
 }
 
 if (getArrayforDatabaseCheck($check_database_exist_or_not) == null) {
+    $booting_message = "Default Login Details: \\nmail: admin@example.com \\npass: admin";
     executeforfirsttime($db_create);
     foreach ($init_sqls as $init_sql) {
         execute($init_sql);
     }
+    echo "<script type='text/javascript'> alert('$booting_message'); window.location.href = '/login.php'; </script>";
+    $booting_message = null;
 }
 
 function getArrayforDatabaseCheck($check_database_exist_or_not)
