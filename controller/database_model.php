@@ -38,7 +38,7 @@ if (getArrayforDatabaseCheck($check_database_exist_or_not) == null) {
         foreach ($init_sqls as $init_sql) {
             execute($init_sql);
         }
-        echo "<script type='text/javascript'> alert('$booting_message'); window.location.href = '/login.php'; </script>";
+        echo "<script type='text/javascript'> if(window.confirm('$booting_message')) { window.location.href = '/login.php'; } </script>";
         $booting_message = null;
     } catch (Exception $e) {
         executeforfirsttime($db_remove);
