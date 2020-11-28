@@ -618,8 +618,7 @@ function export_to_CSV()
     $xcvs = getArray($query);
     $xcvs = $xcvs;
     foreach ($xcvs as $xcv) {
-        $post_body = htmlspecialchars(utf8_decode(base64_decode($xcv['post_body']), ENT_QUOTES, 'UTF-8'));
-        fputcsv($output, array($xcv['post_id'], $xcv['post_slug'], $xcv['post_heading'], $post_body, $xcv['category_id'], $xcv['post_img'], $xcv['post_alt'], $xcv['feature_category'], $xcv['created_at'], $xcv['updated_at'], $xcv['post_view']));
+        fputcsv($output, array($xcv['post_id'], $xcv['post_slug'], $xcv['post_heading'], $xcv['post_body'], $xcv['category_id'], $xcv['post_img'], $xcv['post_alt'], $xcv['feature_category'], $xcv['created_at'], $xcv['updated_at'], $xcv['post_view']));
     }
 
     fclose($output);
