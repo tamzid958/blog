@@ -24,11 +24,12 @@ INSTALLATION PROCESS:
 
 1. DOWNLOAD THE ZIP
 2. UPLOAD THE ZIP IN CPANEL
-
-CONTACT HOSTING COMPANY OR MY PERSONAL MAIL - admin@mrtvirushub.com FOR STEPS 3, 4, 5, 6
-IF FOUND DIFFICULTY.
-
 3. EXTRACT THE ZIP
+
+   <div class="text-purple">
+   CONTACT HOSTING COMPANY OR MY PERSONAL MAIL - admin@mrtvirushub.com FOR STEPS 4, 5, 6, 7 IF FOUND DIFFICULTY.
+   </div>
+
 4. DOWNLOAD CONFIG FILE FROM [HERE](https://drive.google.com/file/d/1UlFt-y81lQPkh9JMwZ1zSrMdQctAQVom/view?usp=sharing)
 5. OPEN WITH ANY TEXT EDITOR
 6. CHANGE VARIABLE $servername = "var1" , $db_username = "var2" , $db_password = "var3"
