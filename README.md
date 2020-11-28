@@ -13,6 +13,13 @@ FEATURES:
 9. GALLERY AVAILABLE
 10. READY FOR GOOGLE ADSENSE OR AMAZON AFFILIATE
 
+
+WATCH DEMO VIDEO:
+
+[![Watch the video](https://i.imgur.com/ia3Jrgc.png)](https://vimeo.com/user108456576/review/484864789/41db1503b4)
+
+
+
 USED:
 
 1. PHP
