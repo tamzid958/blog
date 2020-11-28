@@ -1,4 +1,4 @@
-STABLE BLOG DOWNLOAD LINK - [STABLE BLOG V2.0](https://github.com/tamzid958/blog/releases/tag/v2.0)
+STABLE BLOG DOWNLOAD LINK - [STABLE BLOG V2.0](https://github.com/tamzid958/blog/archive/v2.0.zip)
 
 FEATURES:
 
