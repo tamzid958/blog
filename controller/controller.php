@@ -239,6 +239,9 @@ if (isset($_POST["comment_edit_id_a"])) {
 if (isset($_POST["contact_btn"])) {
     contactform($_POST["contact_name"], $_POST["contact_mail"], $_POST["contact_body"]);
 }
+if (isset($_POST["Export"])) {
+    export_to_CSV();
+}
 
 
 function deletecomment($comment_id)
@@ -597,4 +600,28 @@ function topicSearcher($search_topic)
     $query = " SELECT * FROM post WHERE `post_slug` like '%" . $search_topic . "%' OR `post_heading` like '%" . $search_topic . "%' OR `post_body` like '%" . $search_post_body . "%'";
     $searchposts = getArray($query);
     return $searchposts;
+}
+
+
+
+
+function export_to_CSV()
+{
+    ob_clean();
+
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename=post.csv');
+
+    $output = fopen("php://output", "w");
+    fputcsv($output, array('post_id', 'post_slug', 'post_heading', 'post_body', 'category_id', 'post_img', 'post_alt', 'feature_category', 'created_at', 'updated_at', 'post_view'));
+    $query = "SELECT * FROM `post`,`category` WHERE post.category_id = category.category_id ORDER BY `post_id` DESC";
+    $xcvs = getArray($query);
+    $xcvs = $xcvs;
+    foreach ($xcvs as $xcv) {
+        $post_body = htmlspecialchars(utf8_decode(base64_decode($xcv['post_body']), ENT_QUOTES, 'UTF-8'));
+        fputcsv($output, array($xcv['post_id'], $xcv['post_slug'], $xcv['post_heading'], $post_body, $xcv['category_id'], $xcv['post_img'], $xcv['post_alt'], $xcv['feature_category'], $xcv['created_at'], $xcv['updated_at'], $xcv['post_view']));
+    }
+
+    fclose($output);
+    exit;
 }

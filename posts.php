@@ -11,6 +11,10 @@ include "includes/admin_header.php";
         <div class="wrapper">
             <h1>All Posts</h1>
             <input type="text" id="search-post" class="form-control" placeholder="Search Post">
+            <form class="form-horizontal" action="" method="post" name="upload_excel">
+                <input type="submit" name="Export" class="btn btn-success btn-lg btn-block" value="export to excel" />
+            </form>
+
             <?php
 
 
