@@ -26,9 +26,7 @@ INSTALLATION PROCESS:
 2. UPLOAD THE ZIP IN CPANEL
 3. EXTRACT THE ZIP
 
-   <div class="text-purple">
-   CONTACT HOSTING COMPANY OR MY PERSONAL MAIL - admin@mrtvirushub.com FOR STEPS 4, 5, 6, 7 IF FOUND DIFFICULTY.
-   </div>
+   **_CONTACT HOSTING COMPANY OR MY PERSONAL MAIL - admin@mrtvirushub.com FOR STEPS 4, 5, 6, 7 IF FOUND DIFFICULTY._**
 
 4. DOWNLOAD CONFIG FILE FROM [HERE](https://drive.google.com/file/d/1UlFt-y81lQPkh9JMwZ1zSrMdQctAQVom/view?usp=sharing)
 5. OPEN WITH ANY TEXT EDITOR
