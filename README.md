@@ -35,5 +35,5 @@ IF FOUND DIFFICULTY.
 
 ONE TIME USE LOGIN DETAILS:
 
-MAIL : admin@example.com
-PASS : admin
+MAIL: admin@example.com
+PASS: admin
