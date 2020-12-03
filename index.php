@@ -79,8 +79,8 @@ include "includes/meta_header.php";
                         </a>
                       </div>
                       <br> -->
-                        <div class="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="tamzid-ahmed958">
-                            <a class="LI-simple-link" href='https://bd.linkedin.com/in/tamzid-ahmed958?trk=profile-badge'>Tamzid Ahmed</a>
+                        <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="tamzid-ahmed958" style="max-width:100%">
+                            <a class="LI-simple-link" target="_blank" href='https://bd.linkedin.com/in/tamzid-ahmed958?trk=profile-badge'>Tamzid Ahmed</a>
                         </div>
                         <br>
                         <div>
