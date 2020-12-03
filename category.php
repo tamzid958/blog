@@ -67,6 +67,9 @@ if (postsbycategory($_REQUEST["id"])) {
                         </a>
                     </div>
                     <br> -->
+                        <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="tamzid-ahmed958">
+                            <a class="LI-simple-link" href='https://bd.linkedin.com/in/tamzid-ahmed958?trk=profile-badge'>Tamzid Ahmed</a>
+                        </div>
                         <div>
                             <div class="card bg-info text-white">
                                 <div class="card-body">
@@ -75,7 +78,6 @@ if (postsbycategory($_REQUEST["id"])) {
                                         <?php echo $site_details[0]["author_name"] ?>
                                     </a>
                                     <p class="card-text">Total Articles: <?php echo $postcount ?></p>
-                                    <a href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank" class="btn btn-light">Follow</a>
                                 </div>
                             </div>
                         </div>
