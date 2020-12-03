@@ -111,7 +111,7 @@ if (getPost($_REQUEST["url"])) {
                         </a>
                       </div>
                       <br> -->
-                        <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="tamzid-ahmed958" data-width="400">
+                        <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="tamzid-ahmed958" data-width="700">
                             <a class="LI-simple-link" target="_blank" href='https://bd.linkedin.com/in/tamzid-ahmed958?trk=profile-badge'>Tamzid Ahmed</a>
                         </div>
                         <br>
