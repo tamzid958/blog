@@ -72,17 +72,6 @@ include "includes/meta_header.php";
                             <a type="button" id="subscribe_btn" class="btn btn-info text-white btn-lg btn-block bg-info">Subscribe</a>
                         </div>
                         <br>
-                        <!--
-                      <div class="div_ad">
-                        <a href="https://technologea.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="/images/test_ad.png" alt="technologea">
-                        </a>
-                      </div>
-                      <br> -->
-                        <div class="LI-profile-badge card" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="tamzid-ahmed958" data-width="700">
-                            <a class="LI-simple-link" target="_blank" href='https://bd.linkedin.com/in/tamzid-ahmed958?trk=profile-badge'>Tamzid Ahmed</a>
-                        </div>
-                        <br>
                         <div>
                             <div class="card bg-info text-white">
                                 <div class="card-body">
